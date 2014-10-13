@@ -28,7 +28,7 @@ GuiClose:
 ExitApp
 
 Help:
-	run http://google.com
+	run http://hammerwatch.com/forum/index.php?topic=2197.0
 return
 
 About:
