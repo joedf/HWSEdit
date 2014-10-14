@@ -3,3 +3,9 @@
 *.tmp
 *.log
 *.hws
+*.pdb
+*.dmp
+*.xml
+*/bin/*
+*/obj/*
+*.cache
