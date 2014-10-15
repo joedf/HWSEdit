@@ -1,5 +1,6 @@
 ~*
 *.db
+*.lnk
 *.tmp
 *.log
 *.hws
@@ -9,3 +10,5 @@
 */bin/*
 */obj/*
 *.cache
+*/old/
+*/testfiles/

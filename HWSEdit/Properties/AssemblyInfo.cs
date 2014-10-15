@@ -9,11 +9,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("hws2xml")]
-[assembly: AssemblyDescription("hws2xml / xml2hws")]
+[assembly: AssemblyTitle("HWSEdit")]
+[assembly: AssemblyDescription("Hammerwatch Save Editor")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Joe DF")]
-[assembly: AssemblyProduct("hws2xml")]
+[assembly: AssemblyProduct("HWSEdit")]
 [assembly: AssemblyCopyright("Copyright 2014")]
 [assembly: AssemblyTrademark("Joe DF")]
 [assembly: AssemblyCulture("")]
