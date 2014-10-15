@@ -278,7 +278,7 @@ namespace HWSEdit
 			// 
 			this.InputSpawnY.DecimalPlaces = 1;
 			this.InputSpawnY.Increment = new decimal(new int[] {
-									5,
+									1,
 									0,
 									0,
 									65536});
@@ -311,7 +311,7 @@ namespace HWSEdit
 			// 
 			this.InputSpawnX.DecimalPlaces = 1;
 			this.InputSpawnX.Increment = new decimal(new int[] {
-									5,
+									1,
 									0,
 									0,
 									65536});
