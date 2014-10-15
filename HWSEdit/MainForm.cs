@@ -1,4 +1,24 @@
 ﻿/*
+Copyright (c) 2014 Joe DF (joedf@ahkscript.org)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this
+software and associated documentation files (the "Software"), to deal in the Software
+without restriction, including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons
+to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+*/
+
+/*
  * Created by SharpDevelop.
  * User: Joachim
  * Date: 2014-10-14
@@ -26,7 +46,7 @@ namespace HWSEdit
 		public static string AppTitle = AppName + " - Hammerwatch Save Editor";
 		public static string AppURL = "http://hammerwatch.com/forum/index.php?topic=2197.0";
 		public static string AppAuthors = "Joe DF";
-		public static string RevisionDate = "14/10/2014";
+		public static string RevisionDate = "15/10/2014";
 		
 		public SValue MAINBUFFER;
 		
@@ -46,7 +66,9 @@ namespace HWSEdit
 		
 		void AboutToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			MessageBox.Show(AppTitle+"\nBy "+ AppAuthors+
+			MessageBox.Show(AppTitle+"\nBy "+ AppAuthors+ "\n" +
+			                "A grand thanks to Myran (for the core of this application)\n"+
+			                "Fugue Icons - (C) 2012 Yusuke Kamiyamane"+
 							"\n\nReleased under the MIT License\n"+
 							"Revision Date: "+RevisionDate,
 							AppTitle,
@@ -130,6 +152,7 @@ namespace HWSEdit
 				tabGeneral.Enabled = true;
 				tabModifiers.Enabled = true;
 				//tabPlayers.Enabled = true;
+				tabPageSelector.SelectedIndex = 0;
 				
 				string inFile = openHWSDialog.FileName;
 				
@@ -225,23 +248,25 @@ namespace HWSEdit
 		
 		void ButtonSaveAsClick(object sender, EventArgs e)
 		{
-			string inFileNoExt = Path.GetFileNameWithoutExtension(textBoxCurrentFile.Text);
-			saveHWSDialog.FileName = inFileNoExt + ".hws";
-			
-			DialogResult result = saveHWSDialog.ShowDialog();
-			if (result == DialogResult.OK) {
+			if (textBoxCurrentFile.Text.Length > 4) {
+				string inFileNoExt = Path.GetFileNameWithoutExtension(textBoxCurrentFile.Text);
+				saveHWSDialog.FileName = inFileNoExt + ".hws";
 				
-				string outFile = saveHWSDialog.FileName;
-				
-				//get data and update the MAINBUFFER
-				ValidifyModifiersCheckBoxes();
-				FormDatatoMAINBUFFER();
-				
-				BinaryWriter BW = new BinaryWriter(File.Open(outFile,FileMode.Create));
-				SValue.SaveStream(MAINBUFFER,BW);
-				BW.Close();
-				
-				MessageBox.Show("Successfully modified HWS file.\nSaved to:\n\""+outFile+"\"");
+				DialogResult result = saveHWSDialog.ShowDialog();
+				if (result == DialogResult.OK) {
+					
+					string outFile = saveHWSDialog.FileName;
+					
+					//get data and update the MAINBUFFER
+					ValidifyModifiersCheckBoxes();
+					FormDatatoMAINBUFFER();
+					
+					BinaryWriter BW = new BinaryWriter(File.Open(outFile,FileMode.Create));
+					SValue.SaveStream(MAINBUFFER,BW);
+					BW.Close();
+					
+					MessageBox.Show("Successfully modified HWS file.\nSaved to:\n\""+outFile+"\"");
+				}
 			}
 		}
 		

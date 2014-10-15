@@ -131,22 +131,29 @@ namespace HWSEdit
 			// 
 			// openToolStripMenuItem
 			// 
+			this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
 			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-			this.openToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+			this.openToolStripMenuItem.ShortcutKeyDisplayString = "";
+			this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+			this.openToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
 			this.openToolStripMenuItem.Text = "Open...";
 			this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItemClick);
 			// 
 			// saveAsToolStripMenuItem
 			// 
+			this.saveAsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveAsToolStripMenuItem.Image")));
 			this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-			this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+			this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+			this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
 			this.saveAsToolStripMenuItem.Text = "Save As...";
 			this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.ButtonSaveAsClick);
 			// 
 			// exitCancelToolStripMenuItem
 			// 
+			this.exitCancelToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exitCancelToolStripMenuItem.Image")));
 			this.exitCancelToolStripMenuItem.Name = "exitCancelToolStripMenuItem";
-			this.exitCancelToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+			this.exitCancelToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+			this.exitCancelToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
 			this.exitCancelToolStripMenuItem.Text = "Exit/Cancel";
 			this.exitCancelToolStripMenuItem.Click += new System.EventHandler(this.ButtonQuit);
 			// 
@@ -161,15 +168,19 @@ namespace HWSEdit
 			// 
 			// helpTopicToolStripMenuItem
 			// 
+			this.helpTopicToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("helpTopicToolStripMenuItem.Image")));
 			this.helpTopicToolStripMenuItem.Name = "helpTopicToolStripMenuItem";
-			this.helpTopicToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+			this.helpTopicToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+			this.helpTopicToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.helpTopicToolStripMenuItem.Text = "Help Topic";
 			this.helpTopicToolStripMenuItem.Click += new System.EventHandler(this.HelpTopicToolStripMenuItemClick);
 			// 
 			// aboutToolStripMenuItem
 			// 
+			this.aboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aboutToolStripMenuItem.Image")));
 			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+			this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
+			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.aboutToolStripMenuItem.Text = "About";
 			this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItemClick);
 			// 

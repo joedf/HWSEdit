@@ -71,11 +71,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Resources\cross-circle-frame.png" />
+    <None Include="Resources\disk-black.png" />
+    <None Include="Resources\folder-horizontal-open.png" />
+    <None Include="Resources\information-balloon.png" />
+    <None Include="Resources\question-frame.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
