@@ -12,3 +12,5 @@
 *.cache
 */old/
 */testfiles/
+obj/
+*/hws2xml/bin/*
