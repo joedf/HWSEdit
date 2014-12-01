@@ -276,7 +276,7 @@ namespace HWSEdit
 			InputPlaytime.Value = MAINBUFFER.GetObject().Get("play-time").GetInteger();
 			InputSpawnX.Value = (decimal)MAINBUFFER.GetObject().Get("spawn-pos").GetObject().Get("x").GetFloat();
 			InputSpawnY.Value = (decimal)MAINBUFFER.GetObject().Get("spawn-pos").GetObject().Get("y").GetFloat();
-			InputLevelID.Value = Int32.Parse(MAINBUFFER.GetObject().Get("level-id").GetString());
+			InputLevelID.Text = MAINBUFFER.GetObject().Get("level-id").GetString();
 			dropdownDifficulty.SelectedIndex = MAINBUFFER.GetObject().Get("difficulty").GetInteger();
 			checkboxNetworked.Checked = MAINBUFFER.GetObject().Get("networked").GetBoolean();
 			//+->modifiers
@@ -303,8 +303,8 @@ namespace HWSEdit
 			Obj_spawnpos.Set("x",new SValue((float)InputSpawnX.Value));
 			Obj_spawnpos.Set("y",new SValue((float)InputSpawnY.Value));
 			MAINBUFFER.GetObject().Set("spawn-pos",new SValue(Obj_spawnpos));
-			MAINBUFFER.GetObject().Set("level-id",new SValue(InputLevelID.Value.ToString()));
-			MAINBUFFER.GetObject().Set("difficulty",new SValue((int)InputLevelID.Value));
+			MAINBUFFER.GetObject().Set("level-id",new SValue(InputLevelID.Text));
+			MAINBUFFER.GetObject().Set("difficulty",new SValue((int)dropdownDifficulty.SelectedIndex));
 			MAINBUFFER.GetObject().Set("networked",new SValue((bool)checkboxNetworked.Checked));
 			//+->modifiers
 			//  +->challenges

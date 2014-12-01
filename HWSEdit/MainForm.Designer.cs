@@ -47,11 +47,11 @@ namespace HWSEdit
 			this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabPageSelector = new System.Windows.Forms.TabControl();
 			this.tabGeneral = new System.Windows.Forms.TabPage();
+			this.InputLevelID = new System.Windows.Forms.TextBox();
 			this.textBoxCurrentFile = new System.Windows.Forms.TextBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.InputPlaytime = new System.Windows.Forms.NumericUpDown();
 			this.label9 = new System.Windows.Forms.Label();
-			this.InputLevelID = new System.Windows.Forms.NumericUpDown();
 			this.label8 = new System.Windows.Forms.Label();
 			this.InputSpawnY = new System.Windows.Forms.NumericUpDown();
 			this.label7 = new System.Windows.Forms.Label();
@@ -96,7 +96,6 @@ namespace HWSEdit
 			this.tabPageSelector.SuspendLayout();
 			this.tabGeneral.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.InputPlaytime)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.InputLevelID)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.InputSpawnY)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.InputSpawnX)).BeginInit();
 			this.tabModifiers.SuspendLayout();
@@ -110,8 +109,8 @@ namespace HWSEdit
 			// 
 			this.menuStrip1.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.fileToolStripMenuItem,
-									this.helpToolStripMenuItem});
+			this.fileToolStripMenuItem,
+			this.helpToolStripMenuItem});
 			this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
@@ -122,9 +121,9 @@ namespace HWSEdit
 			// fileToolStripMenuItem
 			// 
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.openToolStripMenuItem,
-									this.saveAsToolStripMenuItem,
-									this.exitCancelToolStripMenuItem});
+			this.openToolStripMenuItem,
+			this.saveAsToolStripMenuItem,
+			this.exitCancelToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
 			this.fileToolStripMenuItem.Text = "File";
@@ -160,8 +159,8 @@ namespace HWSEdit
 			// helpToolStripMenuItem
 			// 
 			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.helpTopicToolStripMenuItem,
-									this.aboutToolStripMenuItem});
+			this.helpTopicToolStripMenuItem,
+			this.aboutToolStripMenuItem});
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
 			this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
 			this.helpToolStripMenuItem.Text = "Help";
@@ -171,7 +170,7 @@ namespace HWSEdit
 			this.helpTopicToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("helpTopicToolStripMenuItem.Image")));
 			this.helpTopicToolStripMenuItem.Name = "helpTopicToolStripMenuItem";
 			this.helpTopicToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-			this.helpTopicToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.helpTopicToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
 			this.helpTopicToolStripMenuItem.Text = "Help Topic";
 			this.helpTopicToolStripMenuItem.Click += new System.EventHandler(this.HelpTopicToolStripMenuItemClick);
 			// 
@@ -180,15 +179,15 @@ namespace HWSEdit
 			this.aboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aboutToolStripMenuItem.Image")));
 			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
 			this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
 			this.aboutToolStripMenuItem.Text = "About";
 			this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItemClick);
 			// 
 			// tabPageSelector
 			// 
 			this.tabPageSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Left) 
-									| System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.tabPageSelector.Controls.Add(this.tabGeneral);
 			this.tabPageSelector.Controls.Add(this.tabModifiers);
 			this.tabPageSelector.Controls.Add(this.tabPlayers);
@@ -202,11 +201,11 @@ namespace HWSEdit
 			// 
 			// tabGeneral
 			// 
+			this.tabGeneral.Controls.Add(this.InputLevelID);
 			this.tabGeneral.Controls.Add(this.textBoxCurrentFile);
 			this.tabGeneral.Controls.Add(this.label10);
 			this.tabGeneral.Controls.Add(this.InputPlaytime);
 			this.tabGeneral.Controls.Add(this.label9);
-			this.tabGeneral.Controls.Add(this.InputLevelID);
 			this.tabGeneral.Controls.Add(this.label8);
 			this.tabGeneral.Controls.Add(this.InputSpawnY);
 			this.tabGeneral.Controls.Add(this.label7);
@@ -223,6 +222,13 @@ namespace HWSEdit
 			this.tabGeneral.TabIndex = 0;
 			this.tabGeneral.Text = "General";
 			this.tabGeneral.UseVisualStyleBackColor = true;
+			// 
+			// InputLevelID
+			// 
+			this.InputLevelID.Location = new System.Drawing.Point(64, 84);
+			this.InputLevelID.Name = "InputLevelID";
+			this.InputLevelID.Size = new System.Drawing.Size(103, 20);
+			this.InputLevelID.TabIndex = 14;
 			// 
 			// textBoxCurrentFile
 			// 
@@ -244,10 +250,10 @@ namespace HWSEdit
 			// 
 			this.InputPlaytime.Location = new System.Drawing.Point(64, 108);
 			this.InputPlaytime.Maximum = new decimal(new int[] {
-									2147483647,
-									0,
-									0,
-									0});
+			2147483647,
+			0,
+			0,
+			0});
 			this.InputPlaytime.Name = "InputPlaytime";
 			this.InputPlaytime.Size = new System.Drawing.Size(103, 20);
 			this.InputPlaytime.TabIndex = 11;
@@ -259,23 +265,6 @@ namespace HWSEdit
 			this.label9.Size = new System.Drawing.Size(55, 23);
 			this.label9.TabIndex = 10;
 			this.label9.Text = "Play time :";
-			// 
-			// InputLevelID
-			// 
-			this.InputLevelID.Location = new System.Drawing.Point(64, 84);
-			this.InputLevelID.Minimum = new decimal(new int[] {
-									1,
-									0,
-									0,
-									0});
-			this.InputLevelID.Name = "InputLevelID";
-			this.InputLevelID.Size = new System.Drawing.Size(103, 20);
-			this.InputLevelID.TabIndex = 9;
-			this.InputLevelID.Value = new decimal(new int[] {
-									1,
-									0,
-									0,
-									0});
 			// 
 			// label8
 			// 
@@ -289,24 +278,29 @@ namespace HWSEdit
 			// 
 			this.InputSpawnY.DecimalPlaces = 1;
 			this.InputSpawnY.Increment = new decimal(new int[] {
-									1,
-									0,
-									0,
-									65536});
+			1,
+			0,
+			0,
+			65536});
 			this.InputSpawnY.Location = new System.Drawing.Point(197, 58);
 			this.InputSpawnY.Maximum = new decimal(new int[] {
-									500,
-									0,
-									0,
-									0});
+			500,
+			0,
+			0,
+			0});
 			this.InputSpawnY.Minimum = new decimal(new int[] {
-									500,
-									0,
-									0,
-									-2147483648});
+			500,
+			0,
+			0,
+			0});
 			this.InputSpawnY.Name = "InputSpawnY";
 			this.InputSpawnY.Size = new System.Drawing.Size(54, 20);
 			this.InputSpawnY.TabIndex = 7;
+			this.InputSpawnY.Value = new decimal(new int[] {
+			500,
+			0,
+			0,
+			0});
 			// 
 			// label7
 			// 
@@ -322,24 +316,29 @@ namespace HWSEdit
 			// 
 			this.InputSpawnX.DecimalPlaces = 1;
 			this.InputSpawnX.Increment = new decimal(new int[] {
-									1,
-									0,
-									0,
-									65536});
+			1,
+			0,
+			0,
+			65536});
 			this.InputSpawnX.Location = new System.Drawing.Point(113, 58);
 			this.InputSpawnX.Maximum = new decimal(new int[] {
-									500,
-									0,
-									0,
-									0});
+			500,
+			0,
+			0,
+			0});
 			this.InputSpawnX.Minimum = new decimal(new int[] {
-									500,
-									0,
-									0,
-									-2147483648});
+			500,
+			0,
+			0,
+			0});
 			this.InputSpawnX.Name = "InputSpawnX";
 			this.InputSpawnX.Size = new System.Drawing.Size(54, 20);
 			this.InputSpawnX.TabIndex = 5;
+			this.InputSpawnX.Value = new decimal(new int[] {
+			500,
+			0,
+			0,
+			0});
 			// 
 			// label6
 			// 
@@ -364,9 +363,9 @@ namespace HWSEdit
 			this.dropdownDifficulty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.dropdownDifficulty.FormattingEnabled = true;
 			this.dropdownDifficulty.Items.AddRange(new object[] {
-									"Easy",
-									"Medium",
-									"Hard"});
+			"Easy",
+			"Medium",
+			"Hard"});
 			this.dropdownDifficulty.Location = new System.Drawing.Point(59, 30);
 			this.dropdownDifficulty.Name = "dropdownDifficulty";
 			this.dropdownDifficulty.Size = new System.Drawing.Size(83, 21);
@@ -560,8 +559,8 @@ namespace HWSEdit
 			// label2
 			// 
 			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-									| System.Windows.Forms.AnchorStyles.Left) 
-									| System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.Location = new System.Drawing.Point(6, 3);
 			this.label2.Name = "label2";
@@ -724,7 +723,6 @@ namespace HWSEdit
 			this.tabGeneral.ResumeLayout(false);
 			this.tabGeneral.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.InputPlaytime)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.InputLevelID)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.InputSpawnY)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.InputSpawnX)).EndInit();
 			this.tabModifiers.ResumeLayout(false);
@@ -736,6 +734,7 @@ namespace HWSEdit
 			this.groupBox1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
+
 		}
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.TextBox textBoxCurrentFile;
@@ -753,7 +752,6 @@ namespace HWSEdit
 		private System.Windows.Forms.OpenFileDialog openHWSDialog;
 		private System.Windows.Forms.TabPage tabhws2xml;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.NumericUpDown InputLevelID;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.NumericUpDown InputPlaytime;
 		private System.Windows.Forms.Label label5;
@@ -792,5 +790,6 @@ namespace HWSEdit
 		private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.MenuStrip menuStrip1;
+		private System.Windows.Forms.TextBox InputLevelID;
 	}
 }
