@@ -284,23 +284,18 @@ namespace HWSEdit
 			65536});
 			this.InputSpawnY.Location = new System.Drawing.Point(197, 58);
 			this.InputSpawnY.Maximum = new decimal(new int[] {
-			500,
+			-2147483648,
 			0,
 			0,
 			0});
 			this.InputSpawnY.Minimum = new decimal(new int[] {
-			500,
+			-2147483648,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.InputSpawnY.Name = "InputSpawnY";
 			this.InputSpawnY.Size = new System.Drawing.Size(54, 20);
 			this.InputSpawnY.TabIndex = 7;
-			this.InputSpawnY.Value = new decimal(new int[] {
-			500,
-			0,
-			0,
-			0});
 			// 
 			// label7
 			// 
@@ -322,23 +317,18 @@ namespace HWSEdit
 			65536});
 			this.InputSpawnX.Location = new System.Drawing.Point(113, 58);
 			this.InputSpawnX.Maximum = new decimal(new int[] {
-			500,
+			-2147483648,
 			0,
 			0,
 			0});
 			this.InputSpawnX.Minimum = new decimal(new int[] {
-			500,
+			-2147483648,
 			0,
 			0,
-			0});
+			-2147483648});
 			this.InputSpawnX.Name = "InputSpawnX";
 			this.InputSpawnX.Size = new System.Drawing.Size(54, 20);
 			this.InputSpawnX.TabIndex = 5;
-			this.InputSpawnX.Value = new decimal(new int[] {
-			500,
-			0,
-			0,
-			0});
 			// 
 			// label6
 			// 
