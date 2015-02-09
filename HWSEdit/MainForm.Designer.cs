@@ -118,6 +118,7 @@ namespace HWSEdit
 			this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
 			this.menuStrip1.SuspendLayout();
 			this.tabPageSelector.SuspendLayout();
 			this.tabGeneral.SuspendLayout();
@@ -134,6 +135,7 @@ namespace HWSEdit
 			this.groupBox1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
+			this.tableLayoutPanel3.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
@@ -274,7 +276,7 @@ namespace HWSEdit
 			this.tabPageSelector.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
 			this.tabPageSelector.Name = "tabPageSelector";
 			this.tabPageSelector.SelectedIndex = 0;
-			this.tabPageSelector.Size = new System.Drawing.Size(396, 197);
+			this.tabPageSelector.Size = new System.Drawing.Size(396, 191);
 			this.tabPageSelector.TabIndex = 1;
 			// 
 			// tabGeneral
@@ -284,7 +286,7 @@ namespace HWSEdit
 			this.tabGeneral.Location = new System.Drawing.Point(4, 22);
 			this.tabGeneral.Name = "tabGeneral";
 			this.tabGeneral.Padding = new System.Windows.Forms.Padding(3);
-			this.tabGeneral.Size = new System.Drawing.Size(388, 184);
+			this.tabGeneral.Size = new System.Drawing.Size(388, 165);
 			this.tabGeneral.TabIndex = 0;
 			this.tabGeneral.Text = "General";
 			this.tabGeneral.UseVisualStyleBackColor = true;
@@ -316,13 +318,13 @@ namespace HWSEdit
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(382, 178);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(382, 159);
 			this.tableLayoutPanel1.TabIndex = 16;
 			// 
 			// textBoxCurrentFile
 			// 
 			this.textBoxCurrentFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxCurrentFile.Location = new System.Drawing.Point(123, 4);
+			this.textBoxCurrentFile.Location = new System.Drawing.Point(123, 3);
 			this.textBoxCurrentFile.Name = "textBoxCurrentFile";
 			this.textBoxCurrentFile.ReadOnly = true;
 			this.textBoxCurrentFile.Size = new System.Drawing.Size(256, 20);
@@ -336,7 +338,7 @@ namespace HWSEdit
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.label10.Location = new System.Drawing.Point(3, 0);
 			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(114, 29);
+			this.label10.Size = new System.Drawing.Size(114, 26);
 			this.label10.TabIndex = 12;
 			this.label10.Text = "Current file:";
 			this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -346,9 +348,9 @@ namespace HWSEdit
 			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.label1.Location = new System.Drawing.Point(3, 116);
+			this.label1.Location = new System.Drawing.Point(3, 104);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(114, 29);
+			this.label1.Size = new System.Drawing.Size(114, 26);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Difficulty:";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -356,7 +358,7 @@ namespace HWSEdit
 			// InputPlaytime
 			// 
 			this.InputPlaytime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputPlaytime.Location = new System.Drawing.Point(123, 33);
+			this.InputPlaytime.Location = new System.Drawing.Point(123, 29);
 			this.InputPlaytime.Maximum = new decimal(new int[] {
             2147483647,
             0,
@@ -371,9 +373,9 @@ namespace HWSEdit
 			this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.label9.Location = new System.Drawing.Point(3, 29);
+			this.label9.Location = new System.Drawing.Point(3, 26);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(114, 29);
+			this.label9.Size = new System.Drawing.Size(114, 26);
 			this.label9.TabIndex = 10;
 			this.label9.Text = "Play time:";
 			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -383,9 +385,9 @@ namespace HWSEdit
 			this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.label8.Location = new System.Drawing.Point(3, 58);
+			this.label8.Location = new System.Drawing.Point(3, 52);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(114, 29);
+			this.label8.Size = new System.Drawing.Size(114, 26);
 			this.label8.TabIndex = 8;
 			this.label8.Text = "Level ID:";
 			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -395,9 +397,9 @@ namespace HWSEdit
 			this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.label5.Location = new System.Drawing.Point(3, 87);
+			this.label5.Location = new System.Drawing.Point(3, 78);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(114, 29);
+			this.label5.Size = new System.Drawing.Size(114, 26);
 			this.label5.TabIndex = 3;
 			this.label5.Text = "Spawn position:";
 			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -405,7 +407,7 @@ namespace HWSEdit
 			// InputLevelID
 			// 
 			this.InputLevelID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputLevelID.Location = new System.Drawing.Point(123, 62);
+			this.InputLevelID.Location = new System.Drawing.Point(123, 55);
 			this.InputLevelID.Name = "InputLevelID";
 			this.InputLevelID.Size = new System.Drawing.Size(256, 20);
 			this.InputLevelID.TabIndex = 14;
@@ -419,7 +421,7 @@ namespace HWSEdit
             "Easy",
             "Medium",
             "Hard"});
-			this.dropdownDifficulty.Location = new System.Drawing.Point(123, 120);
+			this.dropdownDifficulty.Location = new System.Drawing.Point(123, 107);
 			this.dropdownDifficulty.Name = "dropdownDifficulty";
 			this.dropdownDifficulty.Size = new System.Drawing.Size(256, 21);
 			this.dropdownDifficulty.TabIndex = 2;
@@ -428,7 +430,7 @@ namespace HWSEdit
 			// 
 			this.checkboxNetworked.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.checkboxNetworked.AutoSize = true;
-			this.checkboxNetworked.Location = new System.Drawing.Point(123, 154);
+			this.checkboxNetworked.Location = new System.Drawing.Point(123, 137);
 			this.checkboxNetworked.Name = "checkboxNetworked";
 			this.checkboxNetworked.Size = new System.Drawing.Size(256, 14);
 			this.checkboxNetworked.TabIndex = 16;
@@ -440,9 +442,9 @@ namespace HWSEdit
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(3, 145);
+			this.label12.Location = new System.Drawing.Point(3, 130);
 			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(114, 33);
+			this.label12.Size = new System.Drawing.Size(114, 29);
 			this.label12.TabIndex = 17;
 			this.label12.Text = "Networked multiplayer:";
 			this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -461,12 +463,12 @@ namespace HWSEdit
 			this.tableLayoutPanel2.Controls.Add(this.InputSpawnX, 1, 0);
 			this.tableLayoutPanel2.Controls.Add(this.InputSpawnY, 3, 0);
 			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel2.Location = new System.Drawing.Point(120, 87);
+			this.tableLayoutPanel2.Location = new System.Drawing.Point(120, 78);
 			this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
 			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
 			this.tableLayoutPanel2.RowCount = 1;
 			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel2.Size = new System.Drawing.Size(262, 29);
+			this.tableLayoutPanel2.Size = new System.Drawing.Size(262, 26);
 			this.tableLayoutPanel2.TabIndex = 15;
 			// 
 			// label7
@@ -478,7 +480,7 @@ namespace HWSEdit
 			this.label7.Location = new System.Drawing.Point(131, 0);
 			this.label7.Margin = new System.Windows.Forms.Padding(0);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(15, 29);
+			this.label7.Size = new System.Drawing.Size(15, 26);
 			this.label7.TabIndex = 7;
 			this.label7.Text = "Y";
 			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -492,7 +494,7 @@ namespace HWSEdit
 			this.label6.Location = new System.Drawing.Point(0, 0);
 			this.label6.Margin = new System.Windows.Forms.Padding(0);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(15, 29);
+			this.label6.Size = new System.Drawing.Size(15, 26);
 			this.label6.TabIndex = 4;
 			this.label6.Text = "X";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -506,7 +508,7 @@ namespace HWSEdit
             0,
             0,
             65536});
-			this.InputSpawnX.Location = new System.Drawing.Point(18, 4);
+			this.InputSpawnX.Location = new System.Drawing.Point(18, 3);
 			this.InputSpawnX.Maximum = new decimal(new int[] {
             -2147483648,
             0,
@@ -531,7 +533,7 @@ namespace HWSEdit
             0,
             0,
             65536});
-			this.InputSpawnY.Location = new System.Drawing.Point(149, 4);
+			this.InputSpawnY.Location = new System.Drawing.Point(149, 3);
 			this.InputSpawnY.Maximum = new decimal(new int[] {
             -2147483648,
             0,
@@ -549,56 +551,47 @@ namespace HWSEdit
 			// 
 			// tabModifiers
 			// 
-			this.tabModifiers.Controls.Add(this.label4);
-			this.tabModifiers.Controls.Add(this.label3);
-			this.tabModifiers.Controls.Add(this.checkBox5XManaRegen);
-			this.tabModifiers.Controls.Add(this.checkBoxDoubleLives);
-			this.tabModifiers.Controls.Add(this.checkBoxDoubleDamage);
-			this.tabModifiers.Controls.Add(this.checkBoxHPRegen);
-			this.tabModifiers.Controls.Add(this.checkBoxInfiniteLives);
-			this.tabModifiers.Controls.Add(this.checkBoxReverseHPRegen);
-			this.tabModifiers.Controls.Add(this.checkBoxNoManaRegen);
-			this.tabModifiers.Controls.Add(this.checkBoxNoHPPickups);
-			this.tabModifiers.Controls.Add(this.checkBoxSharedHPPool);
-			this.tabModifiers.Controls.Add(this.checkBox1HP);
-			this.tabModifiers.Controls.Add(this.checkBoxNoExtraLives);
+			this.tabModifiers.Controls.Add(this.tableLayoutPanel3);
 			this.tabModifiers.Location = new System.Drawing.Point(4, 22);
 			this.tabModifiers.Name = "tabModifiers";
 			this.tabModifiers.Padding = new System.Windows.Forms.Padding(3);
-			this.tabModifiers.Size = new System.Drawing.Size(388, 184);
+			this.tabModifiers.Size = new System.Drawing.Size(388, 165);
 			this.tabModifiers.TabIndex = 1;
 			this.tabModifiers.Text = "Modifiers";
 			this.tabModifiers.UseVisualStyleBackColor = true;
 			// 
 			// label4
 			// 
+			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.label4.BackColor = System.Drawing.Color.Transparent;
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.ForeColor = System.Drawing.Color.Red;
-			this.label4.Location = new System.Drawing.Point(6, 3);
+			this.label4.Location = new System.Drawing.Point(3, 2);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(104, 17);
+			this.label4.Size = new System.Drawing.Size(185, 17);
 			this.label4.TabIndex = 12;
 			this.label4.Text = "Challenges";
-			this.label4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// label3
 			// 
+			this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.label3.BackColor = System.Drawing.Color.Transparent;
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.Green;
-			this.label3.Location = new System.Drawing.Point(131, 3);
+			this.label3.Location = new System.Drawing.Point(194, 2);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(104, 17);
+			this.label3.Size = new System.Drawing.Size(185, 17);
 			this.label3.TabIndex = 11;
 			this.label3.Text = "Crutches";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// checkBox5XManaRegen
 			// 
-			this.checkBox5XManaRegen.Location = new System.Drawing.Point(131, 106);
+			this.checkBox5XManaRegen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.checkBox5XManaRegen.Location = new System.Drawing.Point(194, 113);
 			this.checkBox5XManaRegen.Name = "checkBox5XManaRegen";
-			this.checkBox5XManaRegen.Size = new System.Drawing.Size(104, 24);
+			this.checkBox5XManaRegen.Size = new System.Drawing.Size(185, 16);
 			this.checkBox5XManaRegen.TabIndex = 10;
 			this.checkBox5XManaRegen.Text = "5x Mana regen";
 			this.checkBox5XManaRegen.UseVisualStyleBackColor = true;
@@ -606,9 +599,10 @@ namespace HWSEdit
 			// 
 			// checkBoxDoubleLives
 			// 
-			this.checkBoxDoubleLives.Location = new System.Drawing.Point(131, 85);
+			this.checkBoxDoubleLives.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.checkBoxDoubleLives.Location = new System.Drawing.Point(194, 91);
 			this.checkBoxDoubleLives.Name = "checkBoxDoubleLives";
-			this.checkBoxDoubleLives.Size = new System.Drawing.Size(104, 24);
+			this.checkBoxDoubleLives.Size = new System.Drawing.Size(185, 16);
 			this.checkBoxDoubleLives.TabIndex = 9;
 			this.checkBoxDoubleLives.Text = "Double lives";
 			this.checkBoxDoubleLives.UseVisualStyleBackColor = true;
@@ -616,9 +610,10 @@ namespace HWSEdit
 			// 
 			// checkBoxDoubleDamage
 			// 
-			this.checkBoxDoubleDamage.Location = new System.Drawing.Point(131, 65);
+			this.checkBoxDoubleDamage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.checkBoxDoubleDamage.Location = new System.Drawing.Point(194, 69);
 			this.checkBoxDoubleDamage.Name = "checkBoxDoubleDamage";
-			this.checkBoxDoubleDamage.Size = new System.Drawing.Size(104, 24);
+			this.checkBoxDoubleDamage.Size = new System.Drawing.Size(185, 16);
 			this.checkBoxDoubleDamage.TabIndex = 8;
 			this.checkBoxDoubleDamage.Text = "Double damage";
 			this.checkBoxDoubleDamage.UseVisualStyleBackColor = true;
@@ -626,9 +621,10 @@ namespace HWSEdit
 			// 
 			// checkBoxHPRegen
 			// 
-			this.checkBoxHPRegen.Location = new System.Drawing.Point(131, 44);
+			this.checkBoxHPRegen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.checkBoxHPRegen.Location = new System.Drawing.Point(194, 47);
 			this.checkBoxHPRegen.Name = "checkBoxHPRegen";
-			this.checkBoxHPRegen.Size = new System.Drawing.Size(104, 24);
+			this.checkBoxHPRegen.Size = new System.Drawing.Size(185, 16);
 			this.checkBoxHPRegen.TabIndex = 7;
 			this.checkBoxHPRegen.Text = "HP regen";
 			this.checkBoxHPRegen.UseVisualStyleBackColor = true;
@@ -636,9 +632,10 @@ namespace HWSEdit
 			// 
 			// checkBoxInfiniteLives
 			// 
-			this.checkBoxInfiniteLives.Location = new System.Drawing.Point(131, 23);
+			this.checkBoxInfiniteLives.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.checkBoxInfiniteLives.Location = new System.Drawing.Point(194, 25);
 			this.checkBoxInfiniteLives.Name = "checkBoxInfiniteLives";
-			this.checkBoxInfiniteLives.Size = new System.Drawing.Size(104, 24);
+			this.checkBoxInfiniteLives.Size = new System.Drawing.Size(185, 16);
 			this.checkBoxInfiniteLives.TabIndex = 6;
 			this.checkBoxInfiniteLives.Text = "Infinite Lives";
 			this.checkBoxInfiniteLives.UseVisualStyleBackColor = true;
@@ -646,9 +643,10 @@ namespace HWSEdit
 			// 
 			// checkBoxReverseHPRegen
 			// 
-			this.checkBoxReverseHPRegen.Location = new System.Drawing.Point(6, 126);
+			this.checkBoxReverseHPRegen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.checkBoxReverseHPRegen.Location = new System.Drawing.Point(3, 135);
 			this.checkBoxReverseHPRegen.Name = "checkBoxReverseHPRegen";
-			this.checkBoxReverseHPRegen.Size = new System.Drawing.Size(120, 24);
+			this.checkBoxReverseHPRegen.Size = new System.Drawing.Size(185, 21);
 			this.checkBoxReverseHPRegen.TabIndex = 5;
 			this.checkBoxReverseHPRegen.Text = "Reverse HP regen";
 			this.checkBoxReverseHPRegen.UseVisualStyleBackColor = true;
@@ -656,9 +654,10 @@ namespace HWSEdit
 			// 
 			// checkBoxNoManaRegen
 			// 
-			this.checkBoxNoManaRegen.Location = new System.Drawing.Point(6, 105);
+			this.checkBoxNoManaRegen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.checkBoxNoManaRegen.Location = new System.Drawing.Point(3, 113);
 			this.checkBoxNoManaRegen.Name = "checkBoxNoManaRegen";
-			this.checkBoxNoManaRegen.Size = new System.Drawing.Size(114, 24);
+			this.checkBoxNoManaRegen.Size = new System.Drawing.Size(185, 16);
 			this.checkBoxNoManaRegen.TabIndex = 4;
 			this.checkBoxNoManaRegen.Text = "No Mana regen";
 			this.checkBoxNoManaRegen.UseVisualStyleBackColor = true;
@@ -666,9 +665,10 @@ namespace HWSEdit
 			// 
 			// checkBoxNoHPPickups
 			// 
-			this.checkBoxNoHPPickups.Location = new System.Drawing.Point(6, 84);
+			this.checkBoxNoHPPickups.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.checkBoxNoHPPickups.Location = new System.Drawing.Point(3, 91);
 			this.checkBoxNoHPPickups.Name = "checkBoxNoHPPickups";
-			this.checkBoxNoHPPickups.Size = new System.Drawing.Size(104, 24);
+			this.checkBoxNoHPPickups.Size = new System.Drawing.Size(185, 16);
 			this.checkBoxNoHPPickups.TabIndex = 3;
 			this.checkBoxNoHPPickups.Text = "No HP pickups";
 			this.checkBoxNoHPPickups.UseVisualStyleBackColor = true;
@@ -676,9 +676,10 @@ namespace HWSEdit
 			// 
 			// checkBoxSharedHPPool
 			// 
-			this.checkBoxSharedHPPool.Location = new System.Drawing.Point(6, 64);
+			this.checkBoxSharedHPPool.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.checkBoxSharedHPPool.Location = new System.Drawing.Point(3, 69);
 			this.checkBoxSharedHPPool.Name = "checkBoxSharedHPPool";
-			this.checkBoxSharedHPPool.Size = new System.Drawing.Size(104, 24);
+			this.checkBoxSharedHPPool.Size = new System.Drawing.Size(185, 16);
 			this.checkBoxSharedHPPool.TabIndex = 2;
 			this.checkBoxSharedHPPool.Text = "Shared HP pool";
 			this.checkBoxSharedHPPool.UseVisualStyleBackColor = true;
@@ -686,9 +687,10 @@ namespace HWSEdit
 			// 
 			// checkBox1HP
 			// 
-			this.checkBox1HP.Location = new System.Drawing.Point(6, 43);
+			this.checkBox1HP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.checkBox1HP.Location = new System.Drawing.Point(3, 47);
 			this.checkBox1HP.Name = "checkBox1HP";
-			this.checkBox1HP.Size = new System.Drawing.Size(104, 24);
+			this.checkBox1HP.Size = new System.Drawing.Size(185, 16);
 			this.checkBox1HP.TabIndex = 1;
 			this.checkBox1HP.Text = "1 HP";
 			this.checkBox1HP.UseVisualStyleBackColor = true;
@@ -696,9 +698,10 @@ namespace HWSEdit
 			// 
 			// checkBoxNoExtraLives
 			// 
-			this.checkBoxNoExtraLives.Location = new System.Drawing.Point(6, 23);
+			this.checkBoxNoExtraLives.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.checkBoxNoExtraLives.Location = new System.Drawing.Point(3, 25);
 			this.checkBoxNoExtraLives.Name = "checkBoxNoExtraLives";
-			this.checkBoxNoExtraLives.Size = new System.Drawing.Size(104, 24);
+			this.checkBoxNoExtraLives.Size = new System.Drawing.Size(185, 16);
 			this.checkBoxNoExtraLives.TabIndex = 0;
 			this.checkBoxNoExtraLives.Text = "No extra lives";
 			this.checkBoxNoExtraLives.UseVisualStyleBackColor = true;
@@ -1016,6 +1019,41 @@ namespace HWSEdit
 			this.toolStripStatusLabel.Size = new System.Drawing.Size(26, 17);
 			this.toolStripStatusLabel.Text = "Idle";
 			// 
+			// tableLayoutPanel3
+			// 
+			this.tableLayoutPanel3.ColumnCount = 2;
+			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
+			this.tableLayoutPanel3.Controls.Add(this.checkBox5XManaRegen, 1, 5);
+			this.tableLayoutPanel3.Controls.Add(this.label3, 1, 0);
+			this.tableLayoutPanel3.Controls.Add(this.checkBoxDoubleLives, 1, 4);
+			this.tableLayoutPanel3.Controls.Add(this.checkBoxNoExtraLives, 0, 1);
+			this.tableLayoutPanel3.Controls.Add(this.checkBoxDoubleDamage, 1, 3);
+			this.tableLayoutPanel3.Controls.Add(this.checkBox1HP, 0, 2);
+			this.tableLayoutPanel3.Controls.Add(this.checkBoxHPRegen, 1, 2);
+			this.tableLayoutPanel3.Controls.Add(this.checkBoxSharedHPPool, 0, 3);
+			this.tableLayoutPanel3.Controls.Add(this.checkBoxInfiniteLives, 1, 1);
+			this.tableLayoutPanel3.Controls.Add(this.checkBoxNoHPPickups, 0, 4);
+			this.tableLayoutPanel3.Controls.Add(this.checkBoxReverseHPRegen, 0, 6);
+			this.tableLayoutPanel3.Controls.Add(this.checkBoxNoManaRegen, 0, 5);
+			this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+			this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+			this.tableLayoutPanel3.RowCount = 7;
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+			this.tableLayoutPanel3.Size = new System.Drawing.Size(382, 159);
+			this.tableLayoutPanel3.TabIndex = 13;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1056,6 +1094,7 @@ namespace HWSEdit
 			this.toolStrip1.PerformLayout();
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
+			this.tableLayoutPanel3.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1140,5 +1179,6 @@ namespace HWSEdit
 		private System.Windows.Forms.ColumnHeader columnHeader1;
 		private System.Windows.Forms.StatusStrip statusStrip1;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
 	}
 }

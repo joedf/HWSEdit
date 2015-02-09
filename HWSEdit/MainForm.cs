@@ -237,67 +237,91 @@ namespace HWSEdit
 		private void saveToolStripMenuItem_Click(object sender, EventArgs e) { Save(currentFile); }
 		private void ButtonSaveAsClick(object sender, EventArgs e) { SaveAs(); }
 		
-		void MAINBUFFERtoFormData() {
+		bool MAINBUFFERtoFormData() {
 			//load values into form
-			//+->general
-			SObject root = MAINBUFFER.GetObject();
-			InputPlaytime.Value = root.Get("play-time").GetInteger();
-			InputSpawnX.Value = (decimal) root.Get("spawn-pos").GetObject().Get("x").GetFloat();
-			InputSpawnY.Value = (decimal) root.Get("spawn-pos").GetObject().Get("y").GetFloat();
-			InputLevelID.Text = root.Get("level-id").GetString();
-			dropdownDifficulty.SelectedIndex = root.Get("difficulty").GetInteger();
-			checkboxNetworked.Checked = root.Get("networked").GetBoolean();
-			//+->modifiers
-			SObject modifiers = root.Get("modifiers").GetObject();
-			//  +->challenges
-			checkBoxNoExtraLives.Checked = modifiers.Get("nolives").GetBoolean();
-			checkBox1HP.Checked = modifiers.Get("1hp").GetBoolean();
-			checkBoxSharedHPPool.Checked = modifiers.Get("sharehp").GetBoolean();
-			checkBoxNoHPPickups.Checked = modifiers.Get("nohppup").GetBoolean();
-			checkBoxNoManaRegen.Checked = modifiers.Get("nomanaregen").GetBoolean();
-			checkBoxReverseHPRegen.Checked = modifiers.Get("revhpregen").GetBoolean();
-			//  +->crutches
-			checkBoxInfiniteLives.Checked = modifiers.Get("inflives").GetBoolean();
-			checkBoxHPRegen.Checked = modifiers.Get("hpregen").GetBoolean();
-			checkBoxDoubleDamage.Checked = modifiers.Get("doubledmg").GetBoolean();
-			checkBoxDoubleLives.Checked = modifiers.Get("doublelife").GetBoolean();
-			checkBox5XManaRegen.Checked = modifiers.Get("quickmana").GetBoolean();
-			//+->players
-			foreach (SValue player in root.Get("players").GetArray()) {
-				if (player.GetObject() != null) {
-					playerListView.Items.Add(player.GetObject().Get("name").GetString(), player.GetObject().Get("class").GetInteger());
+			try
+			{
+				//+->general
+				SObject root = MAINBUFFER.GetObject();
+				InputPlaytime.Value = root.Get("play-time").GetInteger();
+				InputSpawnX.Value = (decimal) root.Get("spawn-pos").GetObject().Get("x").GetFloat();
+				InputSpawnY.Value = (decimal) root.Get("spawn-pos").GetObject().Get("y").GetFloat();
+				InputLevelID.Text = root.Get("level-id").GetString();
+				dropdownDifficulty.SelectedIndex = root.Get("difficulty").GetInteger();
+				checkboxNetworked.Checked = root.Get("networked").GetBoolean();
+				//+->modifiers
+				SObject modifiers = root.Get("modifiers").GetObject();
+				//  +->challenges
+				checkBoxNoExtraLives.Checked = modifiers.Get("nolives").GetBoolean();
+				checkBox1HP.Checked = modifiers.Get("1hp").GetBoolean();
+				checkBoxSharedHPPool.Checked = modifiers.Get("sharehp").GetBoolean();
+				checkBoxNoHPPickups.Checked = modifiers.Get("nohppup").GetBoolean();
+				checkBoxNoManaRegen.Checked = modifiers.Get("nomanaregen").GetBoolean();
+				checkBoxReverseHPRegen.Checked = modifiers.Get("revhpregen").GetBoolean();
+				//  +->crutches
+				checkBoxInfiniteLives.Checked = modifiers.Get("inflives").GetBoolean();
+				checkBoxHPRegen.Checked = modifiers.Get("hpregen").GetBoolean();
+				checkBoxDoubleDamage.Checked = modifiers.Get("doubledmg").GetBoolean();
+				checkBoxDoubleLives.Checked = modifiers.Get("doublelife").GetBoolean();
+				checkBox5XManaRegen.Checked = modifiers.Get("quickmana").GetBoolean();
+				//+->players
+				foreach (SValue player in root.Get("players").GetArray())
+				{
+					if (player.GetObject() != null)
+					{
+						playerListView.Items.Add(player.GetObject().Get("name").GetString(), player.GetObject().Get("class").GetInteger());
+					}
 				}
+				return true;
+			}
+			catch(Exception e)
+			{
+				MessageBox.Show("Invalid save data. The data is either corrupted or did not adhere to a recognized format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				toolStripStatusLabel.Text = "Error encountered while loading.";
+				toolStripStatusLabel.ToolTipText = "Invalid save data. The file is either corrupted or not a valid save.";
+				return false;
 			}
 		}
 		
-		void FormDatatoMAINBUFFER() {
+		bool FormDatatoMAINBUFFER() {
 			//load values into MAINBUFFER
-			//+->general
-			MAINBUFFER.GetObject().Set("play-time",new SValue((int)InputPlaytime.Value));
-			SObject Obj_spawnpos = new SObject();
-			Obj_spawnpos.Set("x",new SValue((float)InputSpawnX.Value));
-			Obj_spawnpos.Set("y",new SValue((float)InputSpawnY.Value));
-			MAINBUFFER.GetObject().Set("spawn-pos",new SValue(Obj_spawnpos));
-			MAINBUFFER.GetObject().Set("level-id",new SValue(InputLevelID.Text));
-			MAINBUFFER.GetObject().Set("difficulty",new SValue((int)dropdownDifficulty.SelectedIndex));
-			MAINBUFFER.GetObject().Set("networked",new SValue((bool)checkboxNetworked.Checked));
-			//+->modifiers
-			//  +->challenges
-			SObject Obj_modifiers = new SObject();
-			Obj_modifiers.Set("nolives",new SValue((bool)checkBoxNoExtraLives.Checked));
-			Obj_modifiers.Set("1hp",new SValue((bool)checkBox1HP.Checked));
-			Obj_modifiers.Set("sharehp",new SValue((bool)checkBoxSharedHPPool.Checked));
-			Obj_modifiers.Set("nohppup",new SValue((bool)checkBoxNoHPPickups.Checked));
-			Obj_modifiers.Set("nomanaregen",new SValue((bool)checkBoxNoManaRegen.Checked));
-			Obj_modifiers.Set("revhpregen",new SValue((bool)checkBoxReverseHPRegen.Checked));
-			//  +->crutches
-			Obj_modifiers.Set("inflives",new SValue((bool)checkBoxInfiniteLives.Checked));
-			Obj_modifiers.Set("hpregen",new SValue((bool)checkBoxHPRegen.Checked));
-			Obj_modifiers.Set("doubledmg",new SValue((bool)checkBoxDoubleDamage.Checked));
-			Obj_modifiers.Set("doublelife",new SValue((bool)checkBoxDoubleLives.Checked));
-			Obj_modifiers.Set("quickmana",new SValue((bool)checkBox5XManaRegen.Checked));
-			MAINBUFFER.GetObject().Set("modifiers",new SValue(Obj_modifiers));
-			//+->players
+			try
+			{
+				//+->general
+				MAINBUFFER.GetObject().Set("play-time", new SValue((int) InputPlaytime.Value));
+				SObject Obj_spawnpos = new SObject();
+				Obj_spawnpos.Set("x", new SValue((float) InputSpawnX.Value));
+				Obj_spawnpos.Set("y", new SValue((float) InputSpawnY.Value));
+				MAINBUFFER.GetObject().Set("spawn-pos", new SValue(Obj_spawnpos));
+				MAINBUFFER.GetObject().Set("level-id", new SValue(InputLevelID.Text));
+				MAINBUFFER.GetObject().Set("difficulty", new SValue((int) dropdownDifficulty.SelectedIndex));
+				MAINBUFFER.GetObject().Set("networked", new SValue((bool) checkboxNetworked.Checked));
+				//+->modifiers
+				//  +->challenges
+				SObject Obj_modifiers = new SObject();
+				Obj_modifiers.Set("nolives", new SValue((bool) checkBoxNoExtraLives.Checked));
+				Obj_modifiers.Set("1hp", new SValue((bool) checkBox1HP.Checked));
+				Obj_modifiers.Set("sharehp", new SValue((bool) checkBoxSharedHPPool.Checked));
+				Obj_modifiers.Set("nohppup", new SValue((bool) checkBoxNoHPPickups.Checked));
+				Obj_modifiers.Set("nomanaregen", new SValue((bool) checkBoxNoManaRegen.Checked));
+				Obj_modifiers.Set("revhpregen", new SValue((bool) checkBoxReverseHPRegen.Checked));
+				//  +->crutches
+				Obj_modifiers.Set("inflives", new SValue((bool) checkBoxInfiniteLives.Checked));
+				Obj_modifiers.Set("hpregen", new SValue((bool) checkBoxHPRegen.Checked));
+				Obj_modifiers.Set("doubledmg", new SValue((bool) checkBoxDoubleDamage.Checked));
+				Obj_modifiers.Set("doublelife", new SValue((bool) checkBoxDoubleLives.Checked));
+				Obj_modifiers.Set("quickmana", new SValue((bool) checkBox5XManaRegen.Checked));
+				MAINBUFFER.GetObject().Set("modifiers", new SValue(Obj_modifiers));
+				//+->players
+			}
+			catch (Exception e)
+			{
+				MessageBox.Show("An error occurred while trying to prepare the data for saving:\n" + e.Message + "\n" + e.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				toolStripStatusLabel.Text = "Error encountered while saving.";
+				toolStripStatusLabel.ToolTipText = "An error occurred while trying to prepare the data for saving.";
+				return false;
+			}
+			return true;
 		}
 
 		private void playerListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -339,16 +363,6 @@ namespace HWSEdit
 			DialogResult result = openHWSDialog.ShowDialog();
 			if (result == DialogResult.OK)
 			{
-				buttonSave.Enabled = true;
-				buttonClose.Enabled = true;
-				saveToolStripMenuItem.Enabled = true;
-				saveAsToolStripMenuItem.Enabled = true;
-				closeToolStripMenuItem.Enabled = true;
-				tabGeneral.Enabled = true;
-				tabModifiers.Enabled = true;
-				tabPlayers.Enabled = true;
-				tabPageSelector.SelectedIndex = 0;
-
 				currentFile = openHWSDialog.FileName;
 				textBoxCurrentFile.Text = Path.GetFileName(currentFile);
 
@@ -370,11 +384,23 @@ namespace HWSEdit
 				}
 
 				//load values into form
-				MAINBUFFERtoFormData();
-				ValidifyModifiersCheckBoxes();
+				if (MAINBUFFERtoFormData())
+				{
+					buttonSave.Enabled = true;
+					buttonClose.Enabled = true;
+					saveToolStripMenuItem.Enabled = true;
+					saveAsToolStripMenuItem.Enabled = true;
+					closeToolStripMenuItem.Enabled = true;
+					tabGeneral.Enabled = true;
+					tabModifiers.Enabled = true;
+					tabPlayers.Enabled = true;
+					tabPageSelector.SelectedIndex = 0;
 
-				toolStripStatusLabel.Text = "Successfully loaded data.";
-				toolStripStatusLabel.ToolTipText = "Successfully loaded data from: \"" + currentFile + "\"";
+					ValidifyModifiersCheckBoxes();
+
+					toolStripStatusLabel.Text = "Successfully loaded data.";
+					toolStripStatusLabel.ToolTipText = "Successfully loaded data from: \"" + currentFile + "\"";
+				}
 			}
 		}
 
@@ -392,33 +418,34 @@ namespace HWSEdit
 		{
 			//get data and update the MAINBUFFER
 			ValidifyModifiersCheckBoxes();
-			FormDatatoMAINBUFFER();
-
-			string ext = Path.GetExtension(file);
-			if (ext == ".xml")
+			if (FormDatatoMAINBUFFER())
 			{
-				using (TextWriter TW = new StreamWriter(File.Open(file, FileMode.Create)))
+				string ext = Path.GetExtension(file);
+				if (ext == ".xml")
 				{
-					SValue.SaveXML(MAINBUFFER, TW);
+					using (TextWriter TW = new StreamWriter(File.Open(file, FileMode.Create)))
+					{
+						SValue.SaveXML(MAINBUFFER, TW);
+					}
 				}
-			}
-			else if (ext == ".hws")
-			{
-				using (BinaryWriter BW = new BinaryWriter(File.Open(file, FileMode.Create)))
+				else if (ext == ".hws")
 				{
-					SValue.SaveStream(MAINBUFFER, BW);
+					using (BinaryWriter BW = new BinaryWriter(File.Open(file, FileMode.Create)))
+					{
+						SValue.SaveStream(MAINBUFFER, BW);
+					}
 				}
-			}
-			else
-			{
-				MessageBox.Show("Invalid save file type. You must save with either an XML or HWS extension so we know how to save the file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-				toolStripStatusLabel.Text = "Error encountered while saving.";
-				toolStripStatusLabel.ToolTipText = "Invalid save file type. You must save with either an XML or HWS extension so we know how to save the file.";
-				return;
-			}
+				else
+				{
+					MessageBox.Show("Invalid save file type. You must save with either an XML or HWS extension so we know how to save the file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+					toolStripStatusLabel.Text = "Error encountered while saving.";
+					toolStripStatusLabel.ToolTipText = "Invalid save file type. You must save with either an XML or HWS extension so we know how to save the file.";
+					return;
+				}
 
-			toolStripStatusLabel.Text = "Successfully saved data.";
-			toolStripStatusLabel.ToolTipText = "Successfully saved data to: \"" + file + "\"";
+				toolStripStatusLabel.Text = "Successfully saved data.";
+				toolStripStatusLabel.ToolTipText = "Successfully saved data to: \"" + file + "\"";
+			}
 		}
 
 		public string GetDefaultFileDialogPath()
