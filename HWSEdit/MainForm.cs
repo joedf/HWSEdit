@@ -47,6 +47,8 @@ namespace HWSEdit
 		public static string AppURL = "http://hammerwatch.com/forum/index.php?topic=2197.0";
 		public static string AppAuthors = "Joe DF";
 		public static string RevisionDate = "15/10/2014";
+
+		private string currentFile = "";
 		
 		public SValue MAINBUFFER;
 		
@@ -57,14 +59,21 @@ namespace HWSEdit
 			//
 			InitializeComponent();
 			this.dropdownDifficulty.SelectedIndex=1;
-			buttonSaveAs.Enabled = false;
+			buttonSave.Enabled = false;
+			buttonClose.Enabled = false;
+			saveToolStripMenuItem.Enabled = false;
+			saveAsToolStripMenuItem.Enabled = false;
+			closeToolStripMenuItem.Enabled = false;
 			tabGeneral.Enabled = false;
 			tabModifiers.Enabled = false;
 			tabPlayers.Enabled = false;
 			tabhws2xml.Enabled = true;
+			InputPlayerClass.Enabled = false;
+			InputPlayerName.Enabled = false;
+			playerListView.Columns[0].Width = -2;
 		}
-		
-		void AboutToolStripMenuItemClick(object sender, EventArgs e)
+
+		private void AboutToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			MessageBox.Show(AppTitle+"\nBy "+ AppAuthors+ "\n" +
 			                "A grand thanks to Myran (for the core of this application)\n"+
@@ -75,13 +84,13 @@ namespace HWSEdit
 							MessageBoxButtons.OK,
 							MessageBoxIcon.Information);
 		}
-		
-		void HelpTopicToolStripMenuItemClick(object sender, EventArgs e)
+
+		private void HelpTopicToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			System.Diagnostics.Process.Start(AppURL);
 		}
-		
-		void Button3Click(object sender, EventArgs e)
+
+		private void saveXMLBrowseButtonClick(object sender, EventArgs e)
 		{
 			DialogResult result = openHWSDialog.ShowDialog();
 			if (result == DialogResult.OK) {
@@ -89,13 +98,13 @@ namespace HWSEdit
 				textBox1.Text = fn;
 			}
 		}
-		
-		void ButtonQuit(object sender, EventArgs e)
+
+		private void ButtonQuit(object sender, EventArgs e)
 		{
 			Application.Exit();
 		}
-		
-		void Button4Click(object sender, EventArgs e)
+
+		private void saveXMLButtonClick(object sender, EventArgs e)
 		{
 			string inFile = textBox1.Text;
 			saveXMLDialog.FileName = Path.GetFileNameWithoutExtension(inFile) + ".xml";
@@ -114,8 +123,8 @@ namespace HWSEdit
 				MessageBox.Show("Converted from HWS to XML.\nSaved to:\n\""+outFile+"\"");
 			}
 		}
-		
-		void Button6Click(object sender, EventArgs e)
+
+		private void saveHWSBrowseButtonClick(object sender, EventArgs e)
 		{
 			DialogResult result = openXMLDialog.ShowDialog();
 			if (result == DialogResult.OK) {
@@ -123,8 +132,8 @@ namespace HWSEdit
 				textBox2.Text = fn;
 			}
 		}
-		
-		void Button5Click(object sender, EventArgs e)
+
+		private void saveHWSButtonClick(object sender, EventArgs e)
 		{
 			string inFile = textBox2.Text;
 			saveHWSDialog.FileName = Path.GetFileNameWithoutExtension(inFile) + ".hws";
@@ -141,30 +150,6 @@ namespace HWSEdit
 				BW.Close();
 				
 				MessageBox.Show("Converted from XML to HWS.\nSaved to:\n\""+outFile+"\"");
-			}
-		}
-		
-		void OpenToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			DialogResult result = openHWSDialog.ShowDialog();
-			if (result == DialogResult.OK) {
-				buttonSaveAs.Enabled = true;
-				tabGeneral.Enabled = true;
-				tabModifiers.Enabled = true;
-				//tabPlayers.Enabled = true;
-				tabPageSelector.SelectedIndex = 0;
-				
-				string inFile = openHWSDialog.FileName;
-				
-				textBoxCurrentFile.Text = Path.GetFileName(inFile);
-				
-				//load file to mainbuffer
-				BinaryReader BR = new BinaryReader(File.Open(inFile,FileMode.Open));
-				MAINBUFFER = SValue.LoadStream(BR);
-				
-				//load values into form
-				MAINBUFFERtoFormData();
-				ValidifyModifiersCheckBoxes();
 			}
 		}
 		
@@ -240,59 +225,49 @@ namespace HWSEdit
 				checkBoxHPRegen.Enabled = true;
 			}
 		}
-		
-		void CheckboxModifiersChanged(object sender, EventArgs e)
+
+		private void CheckboxModifiersChanged(object sender, EventArgs e)
 		{
 			ValidifyModifiersCheckBoxes();
 		}
-		
-		void ButtonSaveAsClick(object sender, EventArgs e)
-		{
-			if (textBoxCurrentFile.Text.Length > 4) {
-				string inFileNoExt = Path.GetFileNameWithoutExtension(textBoxCurrentFile.Text);
-				saveHWSDialog.FileName = inFileNoExt + ".hws";
-				
-				DialogResult result = saveHWSDialog.ShowDialog();
-				if (result == DialogResult.OK) {
-					
-					string outFile = saveHWSDialog.FileName;
-					
-					//get data and update the MAINBUFFER
-					ValidifyModifiersCheckBoxes();
-					FormDatatoMAINBUFFER();
-					
-					BinaryWriter BW = new BinaryWriter(File.Open(outFile,FileMode.Create));
-					SValue.SaveStream(MAINBUFFER,BW);
-					BW.Close();
-					
-					MessageBox.Show("Successfully modified HWS file.\nSaved to:\n\""+outFile+"\"");
-				}
-			}
-		}
+
+		private void OpenToolStripMenuItemClick(object sender, EventArgs e) { Open(); }
+		private void openToolStripButton_Click(object sender, EventArgs e) { Open(); }
+		private void buttonSave_Click(object sender, EventArgs e) { Save(currentFile); }
+		private void saveToolStripMenuItem_Click(object sender, EventArgs e) { Save(currentFile); }
+		private void ButtonSaveAsClick(object sender, EventArgs e) { SaveAs(); }
 		
 		void MAINBUFFERtoFormData() {
 			//load values into form
 			//+->general
-			InputPlaytime.Value = MAINBUFFER.GetObject().Get("play-time").GetInteger();
-			InputSpawnX.Value = (decimal)MAINBUFFER.GetObject().Get("spawn-pos").GetObject().Get("x").GetFloat();
-			InputSpawnY.Value = (decimal)MAINBUFFER.GetObject().Get("spawn-pos").GetObject().Get("y").GetFloat();
-			InputLevelID.Text = MAINBUFFER.GetObject().Get("level-id").GetString();
-			dropdownDifficulty.SelectedIndex = MAINBUFFER.GetObject().Get("difficulty").GetInteger();
-			checkboxNetworked.Checked = MAINBUFFER.GetObject().Get("networked").GetBoolean();
+			SObject root = MAINBUFFER.GetObject();
+			InputPlaytime.Value = root.Get("play-time").GetInteger();
+			InputSpawnX.Value = (decimal) root.Get("spawn-pos").GetObject().Get("x").GetFloat();
+			InputSpawnY.Value = (decimal) root.Get("spawn-pos").GetObject().Get("y").GetFloat();
+			InputLevelID.Text = root.Get("level-id").GetString();
+			dropdownDifficulty.SelectedIndex = root.Get("difficulty").GetInteger();
+			checkboxNetworked.Checked = root.Get("networked").GetBoolean();
 			//+->modifiers
+			SObject modifiers = root.Get("modifiers").GetObject();
 			//  +->challenges
-			checkBoxNoExtraLives.Checked = MAINBUFFER.GetObject().Get("modifiers").GetObject().Get("nolives").GetBoolean();
-			checkBox1HP.Checked = MAINBUFFER.GetObject().Get("modifiers").GetObject().Get("1hp").GetBoolean();
-			checkBoxSharedHPPool.Checked = MAINBUFFER.GetObject().Get("modifiers").GetObject().Get("sharehp").GetBoolean();
-			checkBoxNoHPPickups.Checked = MAINBUFFER.GetObject().Get("modifiers").GetObject().Get("nohppup").GetBoolean();
-			checkBoxNoManaRegen.Checked = MAINBUFFER.GetObject().Get("modifiers").GetObject().Get("nomanaregen").GetBoolean();
-			checkBoxReverseHPRegen.Checked = MAINBUFFER.GetObject().Get("modifiers").GetObject().Get("revhpregen").GetBoolean();
+			checkBoxNoExtraLives.Checked = modifiers.Get("nolives").GetBoolean();
+			checkBox1HP.Checked = modifiers.Get("1hp").GetBoolean();
+			checkBoxSharedHPPool.Checked = modifiers.Get("sharehp").GetBoolean();
+			checkBoxNoHPPickups.Checked = modifiers.Get("nohppup").GetBoolean();
+			checkBoxNoManaRegen.Checked = modifiers.Get("nomanaregen").GetBoolean();
+			checkBoxReverseHPRegen.Checked = modifiers.Get("revhpregen").GetBoolean();
 			//  +->crutches
-			checkBoxInfiniteLives.Checked = MAINBUFFER.GetObject().Get("modifiers").GetObject().Get("inflives").GetBoolean();
-			checkBoxHPRegen.Checked = MAINBUFFER.GetObject().Get("modifiers").GetObject().Get("hpregen").GetBoolean();
-			checkBoxDoubleDamage.Checked = MAINBUFFER.GetObject().Get("modifiers").GetObject().Get("doubledmg").GetBoolean();
-			checkBoxDoubleLives.Checked = MAINBUFFER.GetObject().Get("modifiers").GetObject().Get("doublelife").GetBoolean();
-			checkBox5XManaRegen.Checked = MAINBUFFER.GetObject().Get("modifiers").GetObject().Get("quickmana").GetBoolean();
+			checkBoxInfiniteLives.Checked = modifiers.Get("inflives").GetBoolean();
+			checkBoxHPRegen.Checked = modifiers.Get("hpregen").GetBoolean();
+			checkBoxDoubleDamage.Checked = modifiers.Get("doubledmg").GetBoolean();
+			checkBoxDoubleLives.Checked = modifiers.Get("doublelife").GetBoolean();
+			checkBox5XManaRegen.Checked = modifiers.Get("quickmana").GetBoolean();
+			//+->players
+			foreach (SValue player in root.Get("players").GetArray()) {
+				if (player.GetObject() != null) {
+					playerListView.Items.Add(player.GetObject().Get("name").GetString(), player.GetObject().Get("class").GetInteger());
+				}
+			}
 		}
 		
 		void FormDatatoMAINBUFFER() {
@@ -322,15 +297,143 @@ namespace HWSEdit
 			Obj_modifiers.Set("doublelife",new SValue((bool)checkBoxDoubleLives.Checked));
 			Obj_modifiers.Set("quickmana",new SValue((bool)checkBox5XManaRegen.Checked));
 			MAINBUFFER.GetObject().Set("modifiers",new SValue(Obj_modifiers));
+			//+->players
 		}
-		
-		void TabPageSelectorSelectedIndexChanged(object sender, EventArgs e)
+
+		private void playerListView_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (tabPageSelector.SelectedIndex == 3) {
-				buttonSaveAs.Enabled = false;
-			} else if (textBoxCurrentFile.Text.Length > 4) {
-				buttonSaveAs.Enabled = true;
+			if (playerListView.SelectedItems.Count > 0) {
+				InputPlayerName.Text = playerListView.SelectedItems[0].Text;
+				InputPlayerName.Enabled = true;
+				InputPlayerClass.SelectedIndex = playerListView.SelectedItems[0].ImageIndex;
+				InputPlayerClass.Enabled = true;
 			}
+			else {
+				InputPlayerName.Text = "";
+				InputPlayerName.Enabled = false;
+				InputPlayerClass.SelectedIndex = -1;
+				InputPlayerClass.Enabled = false;
+			}
+		}
+
+		private void playerListView_AfterLabelEdit(object sender, LabelEditEventArgs e)
+		{
+			InputPlayerName.Text = e.Label;
+		}
+
+		private void InputPlayerName_TextChanged(object sender, EventArgs e)
+		{
+			if (playerListView.SelectedItems.Count > 0) playerListView.SelectedItems[0].Text = InputPlayerName.Text;
+		}
+
+		private void playerContextMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+		{
+			if (e.ClickedItem == renameToolStripMenuItem) {
+				if (playerListView.SelectedItems.Count > 0) playerListView.SelectedItems[0].BeginEdit();
+			}
+		}
+
+		public void Open()
+		{
+			openHWSDialog.InitialDirectory = GetDefaultFileDialogPath();
+			DialogResult result = openHWSDialog.ShowDialog();
+			if (result == DialogResult.OK)
+			{
+				buttonSave.Enabled = true;
+				buttonClose.Enabled = true;
+				saveToolStripMenuItem.Enabled = true;
+				saveAsToolStripMenuItem.Enabled = true;
+				closeToolStripMenuItem.Enabled = true;
+				tabGeneral.Enabled = true;
+				tabModifiers.Enabled = true;
+				tabPlayers.Enabled = true;
+				tabPageSelector.SelectedIndex = 0;
+
+				currentFile = openHWSDialog.FileName;
+				textBoxCurrentFile.Text = Path.GetFileName(currentFile);
+
+				//load file to mainbuffer
+				string ext = Path.GetExtension(currentFile);
+				if (ext == ".xml")
+				{
+					using (StreamReader SR = new StreamReader(File.Open(currentFile, FileMode.Open)))
+					{
+						MAINBUFFER = SValue.FromXMLFile(SR);
+					}
+				}
+				else if (ext == ".hws")
+				{
+					using (BinaryReader BR = new BinaryReader(File.Open(currentFile, FileMode.Open)))
+					{
+						MAINBUFFER = SValue.LoadStream(BR);
+					}
+				}
+
+				//load values into form
+				MAINBUFFERtoFormData();
+				ValidifyModifiersCheckBoxes();
+
+				toolStripStatusLabel.Text = "Successfully loaded data.";
+				toolStripStatusLabel.ToolTipText = "Successfully loaded data from: \"" + currentFile + "\"";
+			}
+		}
+
+		public void SaveAs()
+		{
+			saveHWSDialog.FileName = Path.GetFileName(currentFile);
+				
+			DialogResult result = saveHWSDialog.ShowDialog();
+			if (result == DialogResult.OK) {
+				Save(saveHWSDialog.FileName);
+			}
+		}
+
+		public void Save(string file)
+		{
+			//get data and update the MAINBUFFER
+			ValidifyModifiersCheckBoxes();
+			FormDatatoMAINBUFFER();
+
+			string ext = Path.GetExtension(file);
+			if (ext == ".xml")
+			{
+				using (TextWriter TW = new StreamWriter(File.Open(file, FileMode.Create)))
+				{
+					SValue.SaveXML(MAINBUFFER, TW);
+				}
+			}
+			else if (ext == ".hws")
+			{
+				using (BinaryWriter BW = new BinaryWriter(File.Open(file, FileMode.Create)))
+				{
+					SValue.SaveStream(MAINBUFFER, BW);
+				}
+			}
+			else
+			{
+				MessageBox.Show("Invalid save file type. You must save with either an XML or HWS extension so we know how to save the file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				toolStripStatusLabel.Text = "Error encountered while saving.";
+				toolStripStatusLabel.ToolTipText = "Invalid save file type. You must save with either an XML or HWS extension so we know how to save the file.";
+				return;
+			}
+
+			toolStripStatusLabel.Text = "Successfully saved data.";
+			toolStripStatusLabel.ToolTipText = "Successfully saved data to: \"" + file + "\"";
+		}
+
+		public string GetDefaultFileDialogPath()
+		{
+			string pathAttempt = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "/Steam/steamapps/common/Hammerwatch/saves");
+			if (Directory.Exists(pathAttempt)) return pathAttempt;
+			pathAttempt = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "/Steam/steamapps/common/Hammerwatch/saves");
+			if (Directory.Exists(pathAttempt)) return pathAttempt;
+
+			return "";
+		}
+
+		private void InputPlayerClass_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (playerListView.SelectedItems.Count > 0) playerListView.SelectedItems[0].ImageIndex = InputPlayerClass.SelectedIndex;
 		}
 	}
 }
