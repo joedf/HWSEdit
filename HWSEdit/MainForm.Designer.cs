@@ -63,7 +63,7 @@ namespace HWSEdit
 			this.label8 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.InputLevelID = new System.Windows.Forms.TextBox();
-			this.dropdownDifficulty = new System.Windows.Forms.ComboBox();
+			this.InputDifficulty = new System.Windows.Forms.ComboBox();
 			this.checkboxNetworked = new System.Windows.Forms.CheckBox();
 			this.label12 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -132,7 +132,7 @@ namespace HWSEdit
 			this.label11 = new System.Windows.Forms.Label();
 			this.InputPlayerMoney = new System.Windows.Forms.NumericUpDown();
 			this.label14 = new System.Windows.Forms.Label();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.InputPlayerPotion = new System.Windows.Forms.ComboBox();
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
@@ -334,7 +334,7 @@ namespace HWSEdit
 			this.tableLayoutPanel1.Controls.Add(this.label8, 0, 2);
 			this.tableLayoutPanel1.Controls.Add(this.label5, 0, 3);
 			this.tableLayoutPanel1.Controls.Add(this.InputLevelID, 1, 2);
-			this.tableLayoutPanel1.Controls.Add(this.dropdownDifficulty, 1, 4);
+			this.tableLayoutPanel1.Controls.Add(this.InputDifficulty, 1, 4);
 			this.tableLayoutPanel1.Controls.Add(this.checkboxNetworked, 1, 5);
 			this.tableLayoutPanel1.Controls.Add(this.label12, 0, 5);
 			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 3);
@@ -441,19 +441,19 @@ namespace HWSEdit
 			this.InputLevelID.Size = new System.Drawing.Size(370, 20);
 			this.InputLevelID.TabIndex = 14;
 			// 
-			// dropdownDifficulty
+			// InputDifficulty
 			// 
-			this.dropdownDifficulty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.dropdownDifficulty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.dropdownDifficulty.FormattingEnabled = true;
-			this.dropdownDifficulty.Items.AddRange(new object[] {
+			this.InputDifficulty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.InputDifficulty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.InputDifficulty.FormattingEnabled = true;
+			this.InputDifficulty.Items.AddRange(new object[] {
             "Easy",
             "Medium",
             "Hard"});
-			this.dropdownDifficulty.Location = new System.Drawing.Point(123, 107);
-			this.dropdownDifficulty.Name = "dropdownDifficulty";
-			this.dropdownDifficulty.Size = new System.Drawing.Size(370, 21);
-			this.dropdownDifficulty.TabIndex = 2;
+			this.InputDifficulty.Location = new System.Drawing.Point(123, 107);
+			this.InputDifficulty.Name = "InputDifficulty";
+			this.InputDifficulty.Size = new System.Drawing.Size(370, 21);
+			this.InputDifficulty.TabIndex = 2;
 			// 
 			// checkboxNetworked
 			// 
@@ -584,7 +584,7 @@ namespace HWSEdit
 			this.tabModifiers.Location = new System.Drawing.Point(4, 22);
 			this.tabModifiers.Name = "tabModifiers";
 			this.tabModifiers.Padding = new System.Windows.Forms.Padding(3);
-			this.tabModifiers.Size = new System.Drawing.Size(461, 236);
+			this.tabModifiers.Size = new System.Drawing.Size(502, 229);
 			this.tabModifiers.TabIndex = 1;
 			this.tabModifiers.Text = "Modifiers";
 			this.tabModifiers.UseVisualStyleBackColor = true;
@@ -621,7 +621,7 @@ namespace HWSEdit
 			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
 			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel3.Size = new System.Drawing.Size(455, 230);
+			this.tableLayoutPanel3.Size = new System.Drawing.Size(496, 223);
 			this.tableLayoutPanel3.TabIndex = 13;
 			// 
 			// label4
@@ -632,7 +632,7 @@ namespace HWSEdit
 			this.label4.ForeColor = System.Drawing.Color.Red;
 			this.label4.Location = new System.Drawing.Point(3, 7);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(221, 17);
+			this.label4.Size = new System.Drawing.Size(242, 17);
 			this.label4.TabIndex = 12;
 			this.label4.Text = "Challenges";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -640,9 +640,9 @@ namespace HWSEdit
 			// checkBox5XManaRegen
 			// 
 			this.checkBox5XManaRegen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBox5XManaRegen.Location = new System.Drawing.Point(230, 168);
+			this.checkBox5XManaRegen.Location = new System.Drawing.Point(251, 162);
 			this.checkBox5XManaRegen.Name = "checkBox5XManaRegen";
-			this.checkBox5XManaRegen.Size = new System.Drawing.Size(222, 16);
+			this.checkBox5XManaRegen.Size = new System.Drawing.Size(242, 16);
 			this.checkBox5XManaRegen.TabIndex = 10;
 			this.checkBox5XManaRegen.Text = "5x Mana regen";
 			this.checkBox5XManaRegen.UseVisualStyleBackColor = true;
@@ -654,9 +654,9 @@ namespace HWSEdit
 			this.label3.BackColor = System.Drawing.Color.Transparent;
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.Green;
-			this.label3.Location = new System.Drawing.Point(230, 7);
+			this.label3.Location = new System.Drawing.Point(251, 7);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(222, 17);
+			this.label3.Size = new System.Drawing.Size(242, 17);
 			this.label3.TabIndex = 11;
 			this.label3.Text = "Crutches";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -664,9 +664,9 @@ namespace HWSEdit
 			// checkBoxDoubleLives
 			// 
 			this.checkBoxDoubleLives.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxDoubleLives.Location = new System.Drawing.Point(230, 136);
+			this.checkBoxDoubleLives.Location = new System.Drawing.Point(251, 131);
 			this.checkBoxDoubleLives.Name = "checkBoxDoubleLives";
-			this.checkBoxDoubleLives.Size = new System.Drawing.Size(222, 16);
+			this.checkBoxDoubleLives.Size = new System.Drawing.Size(242, 16);
 			this.checkBoxDoubleLives.TabIndex = 9;
 			this.checkBoxDoubleLives.Text = "Double lives";
 			this.checkBoxDoubleLives.UseVisualStyleBackColor = true;
@@ -675,9 +675,9 @@ namespace HWSEdit
 			// checkBoxNoExtraLives
 			// 
 			this.checkBoxNoExtraLives.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxNoExtraLives.Location = new System.Drawing.Point(3, 40);
+			this.checkBoxNoExtraLives.Location = new System.Drawing.Point(3, 38);
 			this.checkBoxNoExtraLives.Name = "checkBoxNoExtraLives";
-			this.checkBoxNoExtraLives.Size = new System.Drawing.Size(221, 16);
+			this.checkBoxNoExtraLives.Size = new System.Drawing.Size(242, 16);
 			this.checkBoxNoExtraLives.TabIndex = 0;
 			this.checkBoxNoExtraLives.Text = "No extra lives";
 			this.checkBoxNoExtraLives.UseVisualStyleBackColor = true;
@@ -686,9 +686,9 @@ namespace HWSEdit
 			// checkBoxDoubleDamage
 			// 
 			this.checkBoxDoubleDamage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxDoubleDamage.Location = new System.Drawing.Point(230, 104);
+			this.checkBoxDoubleDamage.Location = new System.Drawing.Point(251, 100);
 			this.checkBoxDoubleDamage.Name = "checkBoxDoubleDamage";
-			this.checkBoxDoubleDamage.Size = new System.Drawing.Size(222, 16);
+			this.checkBoxDoubleDamage.Size = new System.Drawing.Size(242, 16);
 			this.checkBoxDoubleDamage.TabIndex = 8;
 			this.checkBoxDoubleDamage.Text = "Double damage";
 			this.checkBoxDoubleDamage.UseVisualStyleBackColor = true;
@@ -697,9 +697,9 @@ namespace HWSEdit
 			// checkBox1HP
 			// 
 			this.checkBox1HP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBox1HP.Location = new System.Drawing.Point(3, 72);
+			this.checkBox1HP.Location = new System.Drawing.Point(3, 69);
 			this.checkBox1HP.Name = "checkBox1HP";
-			this.checkBox1HP.Size = new System.Drawing.Size(221, 16);
+			this.checkBox1HP.Size = new System.Drawing.Size(242, 16);
 			this.checkBox1HP.TabIndex = 1;
 			this.checkBox1HP.Text = "1 HP";
 			this.checkBox1HP.UseVisualStyleBackColor = true;
@@ -708,9 +708,9 @@ namespace HWSEdit
 			// checkBoxHPRegen
 			// 
 			this.checkBoxHPRegen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxHPRegen.Location = new System.Drawing.Point(230, 72);
+			this.checkBoxHPRegen.Location = new System.Drawing.Point(251, 69);
 			this.checkBoxHPRegen.Name = "checkBoxHPRegen";
-			this.checkBoxHPRegen.Size = new System.Drawing.Size(222, 16);
+			this.checkBoxHPRegen.Size = new System.Drawing.Size(242, 16);
 			this.checkBoxHPRegen.TabIndex = 7;
 			this.checkBoxHPRegen.Text = "HP regen";
 			this.checkBoxHPRegen.UseVisualStyleBackColor = true;
@@ -719,9 +719,9 @@ namespace HWSEdit
 			// checkBoxSharedHPPool
 			// 
 			this.checkBoxSharedHPPool.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxSharedHPPool.Location = new System.Drawing.Point(3, 104);
+			this.checkBoxSharedHPPool.Location = new System.Drawing.Point(3, 100);
 			this.checkBoxSharedHPPool.Name = "checkBoxSharedHPPool";
-			this.checkBoxSharedHPPool.Size = new System.Drawing.Size(221, 16);
+			this.checkBoxSharedHPPool.Size = new System.Drawing.Size(242, 16);
 			this.checkBoxSharedHPPool.TabIndex = 2;
 			this.checkBoxSharedHPPool.Text = "Shared HP pool";
 			this.checkBoxSharedHPPool.UseVisualStyleBackColor = true;
@@ -730,9 +730,9 @@ namespace HWSEdit
 			// checkBoxInfiniteLives
 			// 
 			this.checkBoxInfiniteLives.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxInfiniteLives.Location = new System.Drawing.Point(230, 40);
+			this.checkBoxInfiniteLives.Location = new System.Drawing.Point(251, 38);
 			this.checkBoxInfiniteLives.Name = "checkBoxInfiniteLives";
-			this.checkBoxInfiniteLives.Size = new System.Drawing.Size(222, 16);
+			this.checkBoxInfiniteLives.Size = new System.Drawing.Size(242, 16);
 			this.checkBoxInfiniteLives.TabIndex = 6;
 			this.checkBoxInfiniteLives.Text = "Infinite Lives";
 			this.checkBoxInfiniteLives.UseVisualStyleBackColor = true;
@@ -741,9 +741,9 @@ namespace HWSEdit
 			// checkBoxNoHPPickups
 			// 
 			this.checkBoxNoHPPickups.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxNoHPPickups.Location = new System.Drawing.Point(3, 136);
+			this.checkBoxNoHPPickups.Location = new System.Drawing.Point(3, 131);
 			this.checkBoxNoHPPickups.Name = "checkBoxNoHPPickups";
-			this.checkBoxNoHPPickups.Size = new System.Drawing.Size(221, 16);
+			this.checkBoxNoHPPickups.Size = new System.Drawing.Size(242, 16);
 			this.checkBoxNoHPPickups.TabIndex = 3;
 			this.checkBoxNoHPPickups.Text = "No HP pickups";
 			this.checkBoxNoHPPickups.UseVisualStyleBackColor = true;
@@ -752,9 +752,9 @@ namespace HWSEdit
 			// checkBoxReverseHPRegen
 			// 
 			this.checkBoxReverseHPRegen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxReverseHPRegen.Location = new System.Drawing.Point(3, 200);
+			this.checkBoxReverseHPRegen.Location = new System.Drawing.Point(3, 194);
 			this.checkBoxReverseHPRegen.Name = "checkBoxReverseHPRegen";
-			this.checkBoxReverseHPRegen.Size = new System.Drawing.Size(221, 21);
+			this.checkBoxReverseHPRegen.Size = new System.Drawing.Size(242, 21);
 			this.checkBoxReverseHPRegen.TabIndex = 5;
 			this.checkBoxReverseHPRegen.Text = "Reverse HP regen";
 			this.checkBoxReverseHPRegen.UseVisualStyleBackColor = true;
@@ -763,9 +763,9 @@ namespace HWSEdit
 			// checkBoxNoManaRegen
 			// 
 			this.checkBoxNoManaRegen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxNoManaRegen.Location = new System.Drawing.Point(3, 168);
+			this.checkBoxNoManaRegen.Location = new System.Drawing.Point(3, 162);
 			this.checkBoxNoManaRegen.Name = "checkBoxNoManaRegen";
-			this.checkBoxNoManaRegen.Size = new System.Drawing.Size(221, 16);
+			this.checkBoxNoManaRegen.Size = new System.Drawing.Size(242, 16);
 			this.checkBoxNoManaRegen.TabIndex = 4;
 			this.checkBoxNoManaRegen.Text = "No Mana regen";
 			this.checkBoxNoManaRegen.UseVisualStyleBackColor = true;
@@ -883,7 +883,7 @@ namespace HWSEdit
 			this.tableLayoutPanel5.Controls.Add(this.label17, 0, 3);
 			this.tableLayoutPanel5.Controls.Add(this.InputPlayerMoney, 1, 5);
 			this.tableLayoutPanel5.Controls.Add(this.label11, 0, 5);
-			this.tableLayoutPanel5.Controls.Add(this.comboBox1, 1, 6);
+			this.tableLayoutPanel5.Controls.Add(this.InputPlayerPotion, 1, 6);
 			this.tableLayoutPanel5.Controls.Add(this.label14, 0, 6);
 			this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 16);
@@ -1282,12 +1282,12 @@ namespace HWSEdit
 			this.label14.Text = "Potion:";
 			this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// comboBox1
+			// InputPlayerPotion
 			// 
-			this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Items.AddRange(new object[] {
+			this.InputPlayerPotion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.InputPlayerPotion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.InputPlayerPotion.FormattingEnabled = true;
+			this.InputPlayerPotion.Items.AddRange(new object[] {
             "None",
             "Potion 1",
             "Potion 2",
@@ -1295,10 +1295,10 @@ namespace HWSEdit
             "Potion 4",
             "Potion 5",
             "Potion 6"});
-			this.comboBox1.Location = new System.Drawing.Point(53, 147);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(277, 21);
-			this.comboBox1.TabIndex = 25;
+			this.InputPlayerPotion.Location = new System.Drawing.Point(53, 147);
+			this.InputPlayerPotion.Name = "InputPlayerPotion";
+			this.InputPlayerPotion.Size = new System.Drawing.Size(277, 21);
+			this.InputPlayerPotion.TabIndex = 25;
 			// 
 			// button1
 			// 
@@ -1420,7 +1420,7 @@ namespace HWSEdit
 		private System.Windows.Forms.CheckBox checkBoxDoubleDamage;
 		private System.Windows.Forms.CheckBox checkBoxDoubleLives;
 		private System.Windows.Forms.CheckBox checkBox5XManaRegen;
-		private System.Windows.Forms.ComboBox dropdownDifficulty;
+		private System.Windows.Forms.ComboBox InputDifficulty;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TabPage tabPlayers;
 		private System.Windows.Forms.TabPage tabModifiers;
@@ -1479,7 +1479,7 @@ namespace HWSEdit
 		private System.Windows.Forms.GroupBox groupBox4;
 		private System.Windows.Forms.NumericUpDown InputPlayerMoney;
 		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.ComboBox InputPlayerPotion;
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;

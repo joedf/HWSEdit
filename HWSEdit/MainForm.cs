@@ -51,6 +51,7 @@ namespace HWSEdit
 		public SValue MAINBUFFER;
 
 		private string currentFile = "";
+		private List<SObject> players;
 		
 		public MainForm()
 		{
@@ -58,7 +59,7 @@ namespace HWSEdit
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			this.dropdownDifficulty.SelectedIndex=1;
+			this.InputDifficulty.SelectedIndex=1;
 			buttonSave.Enabled = false;
 			buttonClose.Enabled = false;
 			saveToolStripMenuItem.Enabled = false;
@@ -73,6 +74,8 @@ namespace HWSEdit
 			playerListView.Columns[0].Width = -2;
 		}
 
+
+		#region Event callbacks
 		private void AboutToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			MessageBox.Show(AppTitle+"\nBy "+ AppAuthors+ "\n" +
@@ -84,12 +87,10 @@ namespace HWSEdit
 							MessageBoxButtons.OK,
 							MessageBoxIcon.Information);
 		}
-
 		private void HelpTopicToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			System.Diagnostics.Process.Start(AppURL);
 		}
-
 		private void saveXMLBrowseButtonClick(object sender, EventArgs e)
 		{
 			DialogResult result = openHWSDialog.ShowDialog();
@@ -98,12 +99,10 @@ namespace HWSEdit
 				textBox1.Text = fn;
 			}
 		}
-
 		private void ButtonQuit(object sender, EventArgs e)
 		{
 			Application.Exit();
 		}
-
 		private void saveXMLButtonClick(object sender, EventArgs e)
 		{
 			string inFile = textBox1.Text;
@@ -123,7 +122,6 @@ namespace HWSEdit
 				MessageBox.Show("Converted from HWS to XML.\nSaved to:\n\""+outFile+"\"");
 			}
 		}
-
 		private void saveHWSBrowseButtonClick(object sender, EventArgs e)
 		{
 			DialogResult result = openXMLDialog.ShowDialog();
@@ -132,7 +130,6 @@ namespace HWSEdit
 				textBox2.Text = fn;
 			}
 		}
-
 		private void saveHWSButtonClick(object sender, EventArgs e)
 		{
 			string inFile = textBox2.Text;
@@ -152,7 +149,71 @@ namespace HWSEdit
 				MessageBox.Show("Converted from XML to HWS.\nSaved to:\n\""+outFile+"\"");
 			}
 		}
-		
+		private void playerListView_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (playerListView.SelectedItems.Count > 0 && playerListView.SelectedIndices.Count == 1)
+			{
+				SObject player = players[playerListView.SelectedIndices[0]];
+				InputPlayerName.Text = player.Get("name").GetString();
+				InputPlayerName.Enabled = true;
+				InputPlayerClass.SelectedIndex = player.Get("class").GetInteger();
+				InputPlayerClass.Enabled = true;
+				InputPlayerLives.Value = player.Get("lives").GetInteger();
+				InputPlayerLives.Enabled = true;
+				InputPlayerHealth.Value = player.Get("health").GetInteger();
+				InputPlayerHealth.Enabled = true;
+				InputPlayerMana.Value = player.Get("mana").GetInteger();
+				InputPlayerMana.Enabled = true;
+				InputPlayerMoney.Value = player.Get("money").GetInteger();
+				InputPlayerMoney.Enabled = true;
+				InputPlayerPotion.SelectedIndex = player.Get("potion").GetInteger();
+				InputPlayerPotion.Enabled = true;
+			}
+			else
+			{
+				InputPlayerName.Text = "";
+				InputPlayerName.Enabled = false;
+				InputPlayerClass.SelectedIndex = -1;
+				InputPlayerClass.Enabled = false;
+				InputPlayerLives.Value = 0;
+				InputPlayerLives.Enabled = false;
+				InputPlayerHealth.Value = 0;
+				InputPlayerHealth.Enabled = false;
+				InputPlayerMana.Value = 0;
+				InputPlayerMana.Enabled = false;
+				InputPlayerMoney.Value = 0;
+				InputPlayerMoney.Enabled = false;
+				InputPlayerPotion.SelectedIndex = -1;
+				InputPlayerPotion.Enabled = false;
+			}
+		}
+		private void playerListView_AfterLabelEdit(object sender, LabelEditEventArgs e)
+		{
+			InputPlayerName.Text = e.Label;
+		}
+		private void InputPlayerName_TextChanged(object sender, EventArgs e)
+		{
+			if (playerListView.SelectedItems.Count > 0) playerListView.SelectedItems[0].Text = InputPlayerName.Text;
+		}
+		private void playerContextMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+		{
+			if (e.ClickedItem == renameToolStripMenuItem)
+			{
+				if (playerListView.SelectedItems.Count > 0) playerListView.SelectedItems[0].BeginEdit();
+			}
+		}
+		private void InputPlayerClass_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (playerListView.SelectedItems.Count > 0) playerListView.SelectedItems[0].ImageIndex = InputPlayerClass.SelectedIndex;
+		}
+		private void OpenToolStripMenuItemClick(object sender, EventArgs e) { Open(); }
+		private void openToolStripButton_Click(object sender, EventArgs e) { Open(); }
+		private void buttonSave_Click(object sender, EventArgs e) { Save(currentFile); }
+		private void saveToolStripMenuItem_Click(object sender, EventArgs e) { Save(currentFile); }
+		private void ButtonSaveAsClick(object sender, EventArgs e) { SaveAs(); }
+		#endregion
+
+		#region Data management
 		void ValidifyModifiersCheckBoxes() {
 			//checkBoxNoExtraLives vs checkBoxInfiniteLives vs checkBoxDoubleLives
 			if (checkBoxInfiniteLives.Checked) {
@@ -230,12 +291,6 @@ namespace HWSEdit
 		{
 			ValidifyModifiersCheckBoxes();
 		}
-
-		private void OpenToolStripMenuItemClick(object sender, EventArgs e) { Open(); }
-		private void openToolStripButton_Click(object sender, EventArgs e) { Open(); }
-		private void buttonSave_Click(object sender, EventArgs e) { Save(currentFile); }
-		private void saveToolStripMenuItem_Click(object sender, EventArgs e) { Save(currentFile); }
-		private void ButtonSaveAsClick(object sender, EventArgs e) { SaveAs(); }
 		
 		bool MAINBUFFERtoFormData() {
 			//load values into form
@@ -247,7 +302,7 @@ namespace HWSEdit
 				InputSpawnX.Value = (decimal) root.Get("spawn-pos").GetObject().Get("x").GetFloat();
 				InputSpawnY.Value = (decimal) root.Get("spawn-pos").GetObject().Get("y").GetFloat();
 				InputLevelID.Text = root.Get("level-id").GetString();
-				dropdownDifficulty.SelectedIndex = root.Get("difficulty").GetInteger();
+				InputDifficulty.SelectedIndex = root.Get("difficulty").GetInteger();
 				checkboxNetworked.Checked = root.Get("networked").GetBoolean();
 				//+->modifiers
 				SObject modifiers = root.Get("modifiers").GetObject();
@@ -265,10 +320,12 @@ namespace HWSEdit
 				checkBoxDoubleLives.Checked = modifiers.Get("doublelife").GetBoolean();
 				checkBox5XManaRegen.Checked = modifiers.Get("quickmana").GetBoolean();
 				//+->players
+				players = new List<SObject>();
 				foreach (SValue player in root.Get("players").GetArray())
 				{
 					if (player.GetObject() != null)
 					{
+						players.Add(player.GetObject());
 						playerListView.Items.Add(player.GetObject().Get("name").GetString(), player.GetObject().Get("class").GetInteger());
 					}
 				}
@@ -294,7 +351,7 @@ namespace HWSEdit
 				Obj_spawnpos.Set("y", new SValue((float) InputSpawnY.Value));
 				MAINBUFFER.GetObject().Set("spawn-pos", new SValue(Obj_spawnpos));
 				MAINBUFFER.GetObject().Set("level-id", new SValue(InputLevelID.Text));
-				MAINBUFFER.GetObject().Set("difficulty", new SValue((int) dropdownDifficulty.SelectedIndex));
+				MAINBUFFER.GetObject().Set("difficulty", new SValue((int) InputDifficulty.SelectedIndex));
 				MAINBUFFER.GetObject().Set("networked", new SValue((bool) checkboxNetworked.Checked));
 				//+->modifiers
 				//  +->challenges
@@ -323,40 +380,9 @@ namespace HWSEdit
 			}
 			return true;
 		}
+		#endregion
 
-		private void playerListView_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			if (playerListView.SelectedItems.Count > 0) {
-				InputPlayerName.Text = playerListView.SelectedItems[0].Text;
-				InputPlayerName.Enabled = true;
-				InputPlayerClass.SelectedIndex = playerListView.SelectedItems[0].ImageIndex;
-				InputPlayerClass.Enabled = true;
-			}
-			else {
-				InputPlayerName.Text = "";
-				InputPlayerName.Enabled = false;
-				InputPlayerClass.SelectedIndex = -1;
-				InputPlayerClass.Enabled = false;
-			}
-		}
-
-		private void playerListView_AfterLabelEdit(object sender, LabelEditEventArgs e)
-		{
-			InputPlayerName.Text = e.Label;
-		}
-
-		private void InputPlayerName_TextChanged(object sender, EventArgs e)
-		{
-			if (playerListView.SelectedItems.Count > 0) playerListView.SelectedItems[0].Text = InputPlayerName.Text;
-		}
-
-		private void playerContextMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-		{
-			if (e.ClickedItem == renameToolStripMenuItem) {
-				if (playerListView.SelectedItems.Count > 0) playerListView.SelectedItems[0].BeginEdit();
-			}
-		}
-
+		#region Actions
 		public void Open()
 		{
 			openHWSDialog.InitialDirectory = GetDefaultFileDialogPath();
@@ -403,7 +429,6 @@ namespace HWSEdit
 				}
 			}
 		}
-
 		public void SaveAs()
 		{
 			saveHWSDialog.FileName = Path.GetFileName(currentFile);
@@ -413,7 +438,6 @@ namespace HWSEdit
 				Save(saveHWSDialog.FileName);
 			}
 		}
-
 		public void Save(string file)
 		{
 			//get data and update the MAINBUFFER
@@ -447,7 +471,9 @@ namespace HWSEdit
 				toolStripStatusLabel.ToolTipText = "Successfully saved data to: \"" + file + "\"";
 			}
 		}
+		#endregion
 
+		#region Util
 		public string GetDefaultFileDialogPath()
 		{
 			string pathAttempt = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "/Steam/steamapps/common/Hammerwatch/saves");
@@ -457,10 +483,6 @@ namespace HWSEdit
 
 			return "";
 		}
-
-		private void InputPlayerClass_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			if (playerListView.SelectedItems.Count > 0) playerListView.SelectedItems[0].ImageIndex = InputPlayerClass.SelectedIndex;
-		}
+		#endregion
 	}
 }
