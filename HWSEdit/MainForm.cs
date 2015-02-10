@@ -48,9 +48,9 @@ namespace HWSEdit
 		public static string AppAuthors = "Joe DF";
 		public static string RevisionDate = "15/10/2014";
 
-		private string currentFile = "";
-		
 		public SValue MAINBUFFER;
+
+		private string currentFile = "";
 		
 		public MainForm()
 		{
