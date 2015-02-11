@@ -99,10 +99,6 @@ namespace HWSEdit
 				textBox1.Text = fn;
 			}
 		}
-		private void ButtonQuit(object sender, EventArgs e)
-		{
-			Application.Exit();
-		}
 		private void saveXMLButtonClick(object sender, EventArgs e)
 		{
 			string inFile = textBox1.Text;
@@ -160,6 +156,8 @@ namespace HWSEdit
 				InputPlayerClass.Enabled = true;
 				InputPlayerLives.Value = player.Get("lives").GetInteger();
 				InputPlayerLives.Enabled = true;
+				InputPlayerDeaths.Value = player.Get("deaths").GetInteger();
+				InputPlayerDeaths.Enabled = true;
 				InputPlayerHealth.Value = player.Get("health").GetInteger();
 				InputPlayerHealth.Enabled = true;
 				InputPlayerMana.Value = player.Get("mana").GetInteger();
@@ -177,6 +175,8 @@ namespace HWSEdit
 				InputPlayerClass.Enabled = false;
 				InputPlayerLives.Value = 0;
 				InputPlayerLives.Enabled = false;
+				InputPlayerDeaths.Value = 0;
+				InputPlayerDeaths.Enabled = false;
 				InputPlayerHealth.Value = 0;
 				InputPlayerHealth.Enabled = false;
 				InputPlayerMana.Value = 0;
@@ -211,6 +211,9 @@ namespace HWSEdit
 		private void buttonSave_Click(object sender, EventArgs e) { Save(currentFile); }
 		private void saveToolStripMenuItem_Click(object sender, EventArgs e) { Save(currentFile); }
 		private void ButtonSaveAsClick(object sender, EventArgs e) { SaveAs(); }
+		private void buttonClose_Click(object sender, EventArgs e) { TryCloseFile(); }
+		private void closeToolStripMenuItem_Click(object sender, EventArgs e) { TryCloseFile(); }
+		private void ButtonQuit(object sender, EventArgs e) { TryCloseFile(); Application.Exit(); }
 		#endregion
 
 		#region Data management
@@ -323,7 +326,7 @@ namespace HWSEdit
 				players = new List<SObject>();
 				foreach (SValue player in root.Get("players").GetArray())
 				{
-					if (player.GetObject() != null)
+					if (!player.IsNull())
 					{
 						players.Add(player.GetObject());
 						playerListView.Items.Add(player.GetObject().Get("name").GetString(), player.GetObject().Get("class").GetInteger());
@@ -389,45 +392,125 @@ namespace HWSEdit
 			DialogResult result = openHWSDialog.ShowDialog();
 			if (result == DialogResult.OK)
 			{
-				currentFile = openHWSDialog.FileName;
-				textBoxCurrentFile.Text = Path.GetFileName(currentFile);
-
-				//load file to mainbuffer
-				string ext = Path.GetExtension(currentFile);
-				if (ext == ".xml")
+				// If the user has no file open; or, if the user has a file open, they actually decided to close it (rather than cancel)
+				if (TryCloseFile())
 				{
-					using (StreamReader SR = new StreamReader(File.Open(currentFile, FileMode.Open)))
+
+					currentFile = openHWSDialog.FileName;
+					textBoxCurrentFile.Text = Path.GetFileName(currentFile);
+
+					//load file to mainbuffer
+					string ext = Path.GetExtension(currentFile);
+					if (ext == ".xml")
 					{
-						MAINBUFFER = SValue.FromXMLFile(SR);
+						using (StreamReader SR = new StreamReader(File.Open(currentFile, FileMode.Open)))
+						{
+							MAINBUFFER = SValue.FromXMLFile(SR);
+						}
 					}
-				}
-				else if (ext == ".hws")
-				{
-					using (BinaryReader BR = new BinaryReader(File.Open(currentFile, FileMode.Open)))
+					else if (ext == ".hws")
 					{
-						MAINBUFFER = SValue.LoadStream(BR);
+						using (BinaryReader BR = new BinaryReader(File.Open(currentFile, FileMode.Open)))
+						{
+							MAINBUFFER = SValue.LoadStream(BR);
+						}
 					}
-				}
 
-				//load values into form
-				if (MAINBUFFERtoFormData())
-				{
-					buttonSave.Enabled = true;
-					buttonClose.Enabled = true;
-					saveToolStripMenuItem.Enabled = true;
-					saveAsToolStripMenuItem.Enabled = true;
-					closeToolStripMenuItem.Enabled = true;
-					tabGeneral.Enabled = true;
-					tabModifiers.Enabled = true;
-					tabPlayers.Enabled = true;
-					tabPageSelector.SelectedIndex = 0;
+					//load values into form
+					if (MAINBUFFERtoFormData())
+					{
+						buttonSave.Enabled = true;
+						buttonClose.Enabled = true;
+						saveToolStripMenuItem.Enabled = true;
+						saveAsToolStripMenuItem.Enabled = true;
+						closeToolStripMenuItem.Enabled = true;
+						tabGeneral.Enabled = true;
+						tabModifiers.Enabled = true;
+						tabPlayers.Enabled = true;
+						tabPageSelector.SelectedIndex = 0;
 
-					ValidifyModifiersCheckBoxes();
+						ValidifyModifiersCheckBoxes();
 
-					toolStripStatusLabel.Text = "Successfully loaded data.";
-					toolStripStatusLabel.ToolTipText = "Successfully loaded data from: \"" + currentFile + "\"";
+						toolStripStatusLabel.Text = "Successfully loaded data.";
+						toolStripStatusLabel.ToolTipText = "Successfully loaded data from: \"" + currentFile + "\"";
+					}
 				}
 			}
+		}
+		public bool TryCloseFile()
+		{
+			if (MAINBUFFER != null)
+			{
+				DialogResult result = MessageBox.Show("Do you want to save the currently opened file?", "Save current file", MessageBoxButtons.YesNoCancel);
+				if (result == DialogResult.Cancel) return false;
+				else if (result == DialogResult.Yes) SaveAs();
+				
+				CloseFile();
+			}
+			return true;
+		}
+		public void CloseFile()
+		{
+			MAINBUFFER = null;
+			currentFile = "";
+			if (players != null) players.Clear();
+			ResetForm();
+		}
+		public void ResetForm()
+		{
+			// general
+			textBoxCurrentFile.Text = "";
+			InputPlaytime.Value = 0;
+			InputSpawnX.Value = 0;
+			InputSpawnY.Value = 0;
+			InputLevelID.Text = "";
+			InputDifficulty.SelectedIndex = -1;
+
+			// modifiers
+			checkboxNetworked.Checked = false;
+			checkBoxNoExtraLives.Checked = false;
+			checkBox1HP.Checked = false;
+			checkBoxSharedHPPool.Checked = false;
+			checkBoxNoHPPickups.Checked = false;
+			checkBoxNoManaRegen.Checked = false;
+			checkBoxReverseHPRegen.Checked = false;
+			checkBoxInfiniteLives.Checked = false;
+			checkBoxHPRegen.Checked = false;
+			checkBoxDoubleDamage.Checked = false;
+			checkBoxDoubleLives.Checked = false;
+			checkBox5XManaRegen.Checked = false;
+
+			// players
+			playerListView.Items.Clear();
+			InputPlayerName.Text = "";
+			InputPlayerName.Enabled = false;
+			InputPlayerClass.SelectedIndex = -1;
+			InputPlayerClass.Enabled = false;
+			InputPlayerLives.Value = 0;
+			InputPlayerLives.Enabled = false;
+			InputPlayerDeaths.Value = 0;
+			InputPlayerDeaths.Enabled = false;
+			InputPlayerHealth.Value = 0;
+			InputPlayerHealth.Enabled = false;
+			InputPlayerMana.Value = 0;
+			InputPlayerMana.Enabled = false;
+			InputPlayerMoney.Value = 0;
+			InputPlayerMoney.Enabled = false;
+			InputPlayerPotion.SelectedIndex = -1;
+			InputPlayerPotion.Enabled = false;
+
+			// UI
+			buttonSave.Enabled = false;
+			buttonClose.Enabled = false;
+			saveToolStripMenuItem.Enabled = false;
+			saveAsToolStripMenuItem.Enabled = false;
+			closeToolStripMenuItem.Enabled = false;
+			tabGeneral.Enabled = false;
+			tabModifiers.Enabled = false;
+			tabPlayers.Enabled = false;
+			tabPageSelector.SelectedIndex = 0;
+			toolStripStatusLabel.Text = "Idle";
+			toolStripStatusLabel.ToolTipText = "";
 		}
 		public void SaveAs()
 		{

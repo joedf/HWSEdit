@@ -88,23 +88,16 @@ namespace HWSEdit
 			this.checkBoxNoManaRegen = new System.Windows.Forms.CheckBox();
 			this.tabPlayers = new System.Windows.Forms.TabPage();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.playerListView = new System.Windows.Forms.ListView();
 			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.playerContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.classImageList = new System.Windows.Forms.ImageList(this.components);
-			this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-			this.InputPlayerMana = new System.Windows.Forms.NumericUpDown();
-			this.label2 = new System.Windows.Forms.Label();
-			this.InputPlayerHealth = new System.Windows.Forms.NumericUpDown();
-			this.InputPlayerLives = new System.Windows.Forms.NumericUpDown();
-			this.label13 = new System.Windows.Forms.Label();
-			this.InputPlayerName = new System.Windows.Forms.TextBox();
-			this.InputPlayerClass = new System.Windows.Forms.ComboBox();
-			this.label15 = new System.Windows.Forms.Label();
-			this.label16 = new System.Windows.Forms.Label();
-			this.label17 = new System.Windows.Forms.Label();
+			this.button3 = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
 			this.tabhws2xml = new System.Windows.Forms.TabPage();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.saveHWSButton = new System.Windows.Forms.Button();
@@ -127,15 +120,27 @@ namespace HWSEdit
 			this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.groupBox4 = new System.Windows.Forms.GroupBox();
-			this.label11 = new System.Windows.Forms.Label();
-			this.InputPlayerMoney = new System.Windows.Forms.NumericUpDown();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
 			this.label14 = new System.Windows.Forms.Label();
 			this.InputPlayerPotion = new System.Windows.Forms.ComboBox();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
+			this.label11 = new System.Windows.Forms.Label();
+			this.InputPlayerMoney = new System.Windows.Forms.NumericUpDown();
+			this.label17 = new System.Windows.Forms.Label();
+			this.label16 = new System.Windows.Forms.Label();
+			this.label15 = new System.Windows.Forms.Label();
+			this.InputPlayerClass = new System.Windows.Forms.ComboBox();
+			this.InputPlayerName = new System.Windows.Forms.TextBox();
+			this.label13 = new System.Windows.Forms.Label();
+			this.InputPlayerLives = new System.Windows.Forms.NumericUpDown();
+			this.InputPlayerHealth = new System.Windows.Forms.NumericUpDown();
+			this.label2 = new System.Windows.Forms.Label();
+			this.InputPlayerMana = new System.Windows.Forms.NumericUpDown();
+			this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+			this.label18 = new System.Windows.Forms.Label();
+			this.InputPlayerDeaths = new System.Windows.Forms.NumericUpDown();
 			this.menuStrip1.SuspendLayout();
 			this.tabPageSelector.SuspendLayout();
 			this.tabGeneral.SuspendLayout();
@@ -151,19 +156,22 @@ namespace HWSEdit
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
+			this.groupBox4.SuspendLayout();
 			this.playerContextMenu.SuspendLayout();
-			this.tableLayoutPanel5.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.InputPlayerMana)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.InputPlayerHealth)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.InputPlayerLives)).BeginInit();
 			this.tabhws2xml.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
-			this.groupBox3.SuspendLayout();
-			this.groupBox4.SuspendLayout();
+			this.tabControl1.SuspendLayout();
+			this.tabPage2.SuspendLayout();
+			this.tabPage1.SuspendLayout();
+			this.tableLayoutPanel5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.InputPlayerMoney)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.InputPlayerLives)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.InputPlayerHealth)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.InputPlayerMana)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.InputPlayerDeaths)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
@@ -175,7 +183,7 @@ namespace HWSEdit
 			this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(528, 24);
+			this.menuStrip1.Size = new System.Drawing.Size(552, 24);
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -226,6 +234,7 @@ namespace HWSEdit
 			this.closeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
 			this.closeToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
 			this.closeToolStripMenuItem.Text = "Clos&e";
+			this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
 			// 
 			// exitCancelToolStripMenuItem
 			// 
@@ -304,7 +313,7 @@ namespace HWSEdit
 			this.tabPageSelector.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
 			this.tabPageSelector.Name = "tabPageSelector";
 			this.tabPageSelector.SelectedIndex = 0;
-			this.tabPageSelector.Size = new System.Drawing.Size(510, 255);
+			this.tabPageSelector.Size = new System.Drawing.Size(534, 273);
 			this.tabPageSelector.TabIndex = 1;
 			// 
 			// tabGeneral
@@ -367,7 +376,7 @@ namespace HWSEdit
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.label10.Location = new System.Drawing.Point(3, 0);
 			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(114, 26);
+			this.label10.Size = new System.Drawing.Size(114, 25);
 			this.label10.TabIndex = 12;
 			this.label10.Text = "Current file:";
 			this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -377,9 +386,9 @@ namespace HWSEdit
 			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.label1.Location = new System.Drawing.Point(3, 104);
+			this.label1.Location = new System.Drawing.Point(3, 100);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(114, 26);
+			this.label1.Size = new System.Drawing.Size(114, 25);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "Difficulty:";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -387,7 +396,7 @@ namespace HWSEdit
 			// InputPlaytime
 			// 
 			this.InputPlaytime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputPlaytime.Location = new System.Drawing.Point(123, 29);
+			this.InputPlaytime.Location = new System.Drawing.Point(123, 28);
 			this.InputPlaytime.Maximum = new decimal(new int[] {
             2147483647,
             0,
@@ -402,9 +411,9 @@ namespace HWSEdit
 			this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.label9.Location = new System.Drawing.Point(3, 26);
+			this.label9.Location = new System.Drawing.Point(3, 25);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(114, 26);
+			this.label9.Size = new System.Drawing.Size(114, 25);
 			this.label9.TabIndex = 10;
 			this.label9.Text = "Play time:";
 			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -414,9 +423,9 @@ namespace HWSEdit
 			this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.label8.Location = new System.Drawing.Point(3, 52);
+			this.label8.Location = new System.Drawing.Point(3, 50);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(114, 26);
+			this.label8.Size = new System.Drawing.Size(114, 25);
 			this.label8.TabIndex = 8;
 			this.label8.Text = "Level ID:";
 			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -426,9 +435,9 @@ namespace HWSEdit
 			this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.label5.Location = new System.Drawing.Point(3, 78);
+			this.label5.Location = new System.Drawing.Point(3, 75);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(114, 26);
+			this.label5.Size = new System.Drawing.Size(114, 25);
 			this.label5.TabIndex = 3;
 			this.label5.Text = "Spawn position:";
 			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -436,7 +445,7 @@ namespace HWSEdit
 			// InputLevelID
 			// 
 			this.InputLevelID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputLevelID.Location = new System.Drawing.Point(123, 55);
+			this.InputLevelID.Location = new System.Drawing.Point(123, 53);
 			this.InputLevelID.Name = "InputLevelID";
 			this.InputLevelID.Size = new System.Drawing.Size(370, 20);
 			this.InputLevelID.TabIndex = 14;
@@ -450,7 +459,7 @@ namespace HWSEdit
             "Easy",
             "Medium",
             "Hard"});
-			this.InputDifficulty.Location = new System.Drawing.Point(123, 107);
+			this.InputDifficulty.Location = new System.Drawing.Point(123, 103);
 			this.InputDifficulty.Name = "InputDifficulty";
 			this.InputDifficulty.Size = new System.Drawing.Size(370, 21);
 			this.InputDifficulty.TabIndex = 2;
@@ -459,7 +468,7 @@ namespace HWSEdit
 			// 
 			this.checkboxNetworked.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.checkboxNetworked.AutoSize = true;
-			this.checkboxNetworked.Location = new System.Drawing.Point(123, 136);
+			this.checkboxNetworked.Location = new System.Drawing.Point(123, 133);
 			this.checkboxNetworked.Name = "checkboxNetworked";
 			this.checkboxNetworked.Size = new System.Drawing.Size(370, 14);
 			this.checkboxNetworked.TabIndex = 16;
@@ -471,9 +480,9 @@ namespace HWSEdit
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(3, 130);
+			this.label12.Location = new System.Drawing.Point(3, 125);
 			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(114, 26);
+			this.label12.Size = new System.Drawing.Size(114, 31);
 			this.label12.TabIndex = 17;
 			this.label12.Text = "Networked multiplayer:";
 			this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -492,12 +501,12 @@ namespace HWSEdit
 			this.tableLayoutPanel2.Controls.Add(this.InputSpawnX, 1, 0);
 			this.tableLayoutPanel2.Controls.Add(this.InputSpawnY, 3, 0);
 			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel2.Location = new System.Drawing.Point(120, 78);
+			this.tableLayoutPanel2.Location = new System.Drawing.Point(120, 75);
 			this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
 			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
 			this.tableLayoutPanel2.RowCount = 1;
 			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel2.Size = new System.Drawing.Size(376, 26);
+			this.tableLayoutPanel2.Size = new System.Drawing.Size(376, 25);
 			this.tableLayoutPanel2.TabIndex = 15;
 			// 
 			// label7
@@ -509,7 +518,7 @@ namespace HWSEdit
 			this.label7.Location = new System.Drawing.Point(188, 0);
 			this.label7.Margin = new System.Windows.Forms.Padding(0);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(15, 26);
+			this.label7.Size = new System.Drawing.Size(15, 25);
 			this.label7.TabIndex = 7;
 			this.label7.Text = "Y";
 			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -523,7 +532,7 @@ namespace HWSEdit
 			this.label6.Location = new System.Drawing.Point(0, 0);
 			this.label6.Margin = new System.Windows.Forms.Padding(0);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(15, 26);
+			this.label6.Size = new System.Drawing.Size(15, 25);
 			this.label6.TabIndex = 4;
 			this.label6.Text = "X";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -777,7 +786,7 @@ namespace HWSEdit
 			this.tabPlayers.Location = new System.Drawing.Point(4, 22);
 			this.tabPlayers.Name = "tabPlayers";
 			this.tabPlayers.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPlayers.Size = new System.Drawing.Size(502, 229);
+			this.tabPlayers.Size = new System.Drawing.Size(526, 247);
 			this.tabPlayers.TabIndex = 2;
 			this.tabPlayers.Text = "Players";
 			this.tabPlayers.UseVisualStyleBackColor = true;
@@ -795,14 +804,25 @@ namespace HWSEdit
 			// 
 			// splitContainer1.Panel2
 			// 
+			this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
 			this.splitContainer1.Panel2.Controls.Add(this.button3);
 			this.splitContainer1.Panel2.Controls.Add(this.button2);
 			this.splitContainer1.Panel2.Controls.Add(this.button1);
-			this.splitContainer1.Panel2.Controls.Add(this.groupBox3);
 			this.splitContainer1.Panel2MinSize = 250;
-			this.splitContainer1.Size = new System.Drawing.Size(496, 223);
-			this.splitContainer1.SplitterDistance = 150;
+			this.splitContainer1.Size = new System.Drawing.Size(520, 241);
+			this.splitContainer1.SplitterDistance = 157;
 			this.splitContainer1.TabIndex = 21;
+			// 
+			// groupBox4
+			// 
+			this.groupBox4.Controls.Add(this.playerListView);
+			this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.groupBox4.Location = new System.Drawing.Point(0, 0);
+			this.groupBox4.Name = "groupBox4";
+			this.groupBox4.Size = new System.Drawing.Size(157, 241);
+			this.groupBox4.TabIndex = 22;
+			this.groupBox4.TabStop = false;
+			this.groupBox4.Text = "Player";
 			// 
 			// playerListView
 			// 
@@ -822,7 +842,7 @@ namespace HWSEdit
 			this.playerListView.MultiSelect = false;
 			this.playerListView.Name = "playerListView";
 			this.playerListView.ShowGroups = false;
-			this.playerListView.Size = new System.Drawing.Size(144, 204);
+			this.playerListView.Size = new System.Drawing.Size(151, 222);
 			this.playerListView.SmallImageList = this.classImageList;
 			this.playerListView.TabIndex = 19;
 			this.playerListView.UseCompatibleStateImageBehavior = false;
@@ -859,172 +879,42 @@ namespace HWSEdit
 			// 
 			this.classImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("classImageList.ImageStream")));
 			this.classImageList.TransparentColor = System.Drawing.Color.Transparent;
-			this.classImageList.Images.SetKeyName(0, "knight.png");
-			this.classImageList.Images.SetKeyName(1, "priest.png");
-			this.classImageList.Images.SetKeyName(2, "ranger.png");
-			this.classImageList.Images.SetKeyName(3, "warlock.png");
-			this.classImageList.Images.SetKeyName(4, "thief.png");
-			this.classImageList.Images.SetKeyName(5, "wizard.png");
+			this.classImageList.Images.SetKeyName(0, "paladin");
+			this.classImageList.Images.SetKeyName(1, "wizard");
+			this.classImageList.Images.SetKeyName(2, "ranger");
+			this.classImageList.Images.SetKeyName(3, "warlock");
+			this.classImageList.Images.SetKeyName(4, "thief");
+			this.classImageList.Images.SetKeyName(5, "priest");
 			// 
-			// tableLayoutPanel5
+			// button3
 			// 
-			this.tableLayoutPanel5.ColumnCount = 2;
-			this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-			this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel5.Controls.Add(this.InputPlayerMana, 1, 4);
-			this.tableLayoutPanel5.Controls.Add(this.label2, 0, 4);
-			this.tableLayoutPanel5.Controls.Add(this.InputPlayerHealth, 1, 3);
-			this.tableLayoutPanel5.Controls.Add(this.InputPlayerLives, 1, 2);
-			this.tableLayoutPanel5.Controls.Add(this.label13, 0, 0);
-			this.tableLayoutPanel5.Controls.Add(this.InputPlayerName, 1, 0);
-			this.tableLayoutPanel5.Controls.Add(this.InputPlayerClass, 1, 1);
-			this.tableLayoutPanel5.Controls.Add(this.label15, 0, 1);
-			this.tableLayoutPanel5.Controls.Add(this.label16, 0, 2);
-			this.tableLayoutPanel5.Controls.Add(this.label17, 0, 3);
-			this.tableLayoutPanel5.Controls.Add(this.InputPlayerMoney, 1, 5);
-			this.tableLayoutPanel5.Controls.Add(this.label11, 0, 5);
-			this.tableLayoutPanel5.Controls.Add(this.InputPlayerPotion, 1, 6);
-			this.tableLayoutPanel5.Controls.Add(this.label14, 0, 6);
-			this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 16);
-			this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-			this.tableLayoutPanel5.RowCount = 7;
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel5.Size = new System.Drawing.Size(333, 172);
-			this.tableLayoutPanel5.TabIndex = 21;
+			this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.button3.Location = new System.Drawing.Point(119, 213);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(75, 23);
+			this.button3.TabIndex = 25;
+			this.button3.Text = "&Copy to...";
+			this.button3.UseVisualStyleBackColor = true;
 			// 
-			// InputPlayerMana
+			// button2
 			// 
-			this.InputPlayerMana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputPlayerMana.Location = new System.Drawing.Point(53, 99);
-			this.InputPlayerMana.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-			this.InputPlayerMana.Name = "InputPlayerMana";
-			this.InputPlayerMana.Size = new System.Drawing.Size(277, 20);
-			this.InputPlayerMana.TabIndex = 21;
+			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.button2.Location = new System.Drawing.Point(200, 213);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(75, 23);
+			this.button2.TabIndex = 24;
+			this.button2.Text = "&Move to...";
+			this.button2.UseVisualStyleBackColor = true;
 			// 
-			// label2
+			// button1
 			// 
-			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label2.Location = new System.Drawing.Point(3, 96);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(44, 24);
-			this.label2.TabIndex = 20;
-			this.label2.Text = "Mana:";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// InputPlayerHealth
-			// 
-			this.InputPlayerHealth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputPlayerHealth.Location = new System.Drawing.Point(53, 75);
-			this.InputPlayerHealth.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-			this.InputPlayerHealth.Name = "InputPlayerHealth";
-			this.InputPlayerHealth.Size = new System.Drawing.Size(277, 20);
-			this.InputPlayerHealth.TabIndex = 19;
-			// 
-			// InputPlayerLives
-			// 
-			this.InputPlayerLives.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputPlayerLives.Location = new System.Drawing.Point(53, 51);
-			this.InputPlayerLives.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-			this.InputPlayerLives.Name = "InputPlayerLives";
-			this.InputPlayerLives.Size = new System.Drawing.Size(277, 20);
-			this.InputPlayerLives.TabIndex = 18;
-			// 
-			// label13
-			// 
-			this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label13.Location = new System.Drawing.Point(3, 0);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(44, 24);
-			this.label13.TabIndex = 12;
-			this.label13.Text = "Name:";
-			this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// InputPlayerName
-			// 
-			this.InputPlayerName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputPlayerName.Location = new System.Drawing.Point(53, 3);
-			this.InputPlayerName.Name = "InputPlayerName";
-			this.InputPlayerName.Size = new System.Drawing.Size(277, 20);
-			this.InputPlayerName.TabIndex = 16;
-			this.InputPlayerName.TextChanged += new System.EventHandler(this.InputPlayerName_TextChanged);
-			// 
-			// InputPlayerClass
-			// 
-			this.InputPlayerClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputPlayerClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.InputPlayerClass.FormattingEnabled = true;
-			this.InputPlayerClass.Items.AddRange(new object[] {
-            "Paladin",
-            "Priest",
-            "Ranger",
-            "Warlock",
-            "Thief",
-            "Wizard"});
-			this.InputPlayerClass.Location = new System.Drawing.Point(53, 27);
-			this.InputPlayerClass.Name = "InputPlayerClass";
-			this.InputPlayerClass.Size = new System.Drawing.Size(277, 21);
-			this.InputPlayerClass.TabIndex = 17;
-			this.InputPlayerClass.SelectedIndexChanged += new System.EventHandler(this.InputPlayerClass_SelectedIndexChanged);
-			// 
-			// label15
-			// 
-			this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label15.Location = new System.Drawing.Point(3, 24);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(44, 24);
-			this.label15.TabIndex = 10;
-			this.label15.Text = "Class:";
-			this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// label16
-			// 
-			this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label16.Location = new System.Drawing.Point(3, 48);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(44, 24);
-			this.label16.TabIndex = 8;
-			this.label16.Text = "Lives:";
-			this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-			// 
-			// label17
-			// 
-			this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label17.Location = new System.Drawing.Point(3, 72);
-			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(44, 24);
-			this.label17.TabIndex = 3;
-			this.label17.Text = "Health:";
-			this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.button1.Location = new System.Drawing.Point(281, 213);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 23;
+			this.button1.Text = "&Delete";
+			this.button1.UseVisualStyleBackColor = true;
 			// 
 			// tabhws2xml
 			// 
@@ -1033,7 +923,7 @@ namespace HWSEdit
 			this.tabhws2xml.Location = new System.Drawing.Point(4, 22);
 			this.tabhws2xml.Name = "tabhws2xml";
 			this.tabhws2xml.Padding = new System.Windows.Forms.Padding(3);
-			this.tabhws2xml.Size = new System.Drawing.Size(494, 234);
+			this.tabhws2xml.Size = new System.Drawing.Size(502, 229);
 			this.tabhws2xml.TabIndex = 3;
 			this.tabhws2xml.Text = "hws2xml";
 			this.tabhws2xml.UseVisualStyleBackColor = true;
@@ -1147,7 +1037,7 @@ namespace HWSEdit
             this.toolStripButton5});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 24);
 			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(528, 25);
+			this.toolStrip1.Size = new System.Drawing.Size(552, 25);
 			this.toolStrip1.TabIndex = 2;
 			this.toolStrip1.Text = "toolStrip1";
 			// 
@@ -1179,6 +1069,7 @@ namespace HWSEdit
 			this.buttonClose.Name = "buttonClose";
 			this.buttonClose.Size = new System.Drawing.Size(23, 22);
 			this.buttonClose.Text = "Close";
+			this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
 			// 
 			// toolStripButton4
 			// 
@@ -1207,10 +1098,10 @@ namespace HWSEdit
 			// 
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-			this.statusStrip1.Location = new System.Drawing.Point(0, 313);
+			this.statusStrip1.Location = new System.Drawing.Point(0, 331);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.ShowItemToolTips = true;
-			this.statusStrip1.Size = new System.Drawing.Size(528, 22);
+			this.statusStrip1.Size = new System.Drawing.Size(552, 22);
 			this.statusStrip1.SizingGrip = false;
 			this.statusStrip1.TabIndex = 3;
 			this.statusStrip1.Text = "statusStrip1";
@@ -1221,63 +1112,83 @@ namespace HWSEdit
 			this.toolStripStatusLabel.Size = new System.Drawing.Size(26, 17);
 			this.toolStripStatusLabel.Text = "Idle";
 			// 
-			// groupBox3
+			// tabControl1
 			// 
-			this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.groupBox3.Controls.Add(this.tableLayoutPanel5);
-			this.groupBox3.Location = new System.Drawing.Point(0, 0);
-			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(339, 191);
-			this.groupBox3.TabIndex = 22;
-			this.groupBox3.TabStop = false;
-			this.groupBox3.Text = "Stats";
+			this.tabControl1.Controls.Add(this.tabPage1);
+			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tabControl1.Location = new System.Drawing.Point(0, 0);
+			this.tabControl1.Name = "tabControl1";
+			this.tabControl1.SelectedIndex = 0;
+			this.tabControl1.Size = new System.Drawing.Size(359, 241);
+			this.tabControl1.TabIndex = 22;
 			// 
-			// groupBox4
+			// tabPage2
 			// 
-			this.groupBox4.Controls.Add(this.playerListView);
-			this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.groupBox4.Location = new System.Drawing.Point(0, 0);
-			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(150, 223);
-			this.groupBox4.TabIndex = 22;
-			this.groupBox4.TabStop = false;
-			this.groupBox4.Text = "Player";
+			this.tabPage2.Controls.Add(this.checkedListBox1);
+			this.tabPage2.Location = new System.Drawing.Point(4, 22);
+			this.tabPage2.Name = "tabPage2";
+			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage2.Size = new System.Drawing.Size(334, 197);
+			this.tabPage2.TabIndex = 1;
+			this.tabPage2.Text = "Upgrades";
+			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
-			// label11
+			// tabPage1
 			// 
-			this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label11.Location = new System.Drawing.Point(3, 120);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(44, 24);
-			this.label11.TabIndex = 22;
-			this.label11.Text = "Money:";
-			this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			this.tabPage1.Controls.Add(this.tableLayoutPanel5);
+			this.tabPage1.Location = new System.Drawing.Point(4, 22);
+			this.tabPage1.Name = "tabPage1";
+			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage1.Size = new System.Drawing.Size(351, 215);
+			this.tabPage1.TabIndex = 0;
+			this.tabPage1.Text = "General";
+			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
-			// InputPlayerMoney
+			// tableLayoutPanel5
 			// 
-			this.InputPlayerMoney.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputPlayerMoney.Location = new System.Drawing.Point(53, 123);
-			this.InputPlayerMoney.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-			this.InputPlayerMoney.Name = "InputPlayerMoney";
-			this.InputPlayerMoney.Size = new System.Drawing.Size(277, 20);
-			this.InputPlayerMoney.TabIndex = 23;
+			this.tableLayoutPanel5.ColumnCount = 2;
+			this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+			this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel5.Controls.Add(this.InputPlayerLives, 1, 2);
+			this.tableLayoutPanel5.Controls.Add(this.label13, 0, 0);
+			this.tableLayoutPanel5.Controls.Add(this.InputPlayerName, 1, 0);
+			this.tableLayoutPanel5.Controls.Add(this.InputPlayerClass, 1, 1);
+			this.tableLayoutPanel5.Controls.Add(this.label15, 0, 1);
+			this.tableLayoutPanel5.Controls.Add(this.label16, 0, 2);
+			this.tableLayoutPanel5.Controls.Add(this.label18, 0, 3);
+			this.tableLayoutPanel5.Controls.Add(this.InputPlayerDeaths, 1, 3);
+			this.tableLayoutPanel5.Controls.Add(this.label17, 0, 4);
+			this.tableLayoutPanel5.Controls.Add(this.InputPlayerHealth, 1, 4);
+			this.tableLayoutPanel5.Controls.Add(this.label2, 0, 5);
+			this.tableLayoutPanel5.Controls.Add(this.InputPlayerMana, 1, 5);
+			this.tableLayoutPanel5.Controls.Add(this.label14, 0, 7);
+			this.tableLayoutPanel5.Controls.Add(this.label11, 0, 6);
+			this.tableLayoutPanel5.Controls.Add(this.InputPlayerPotion, 1, 7);
+			this.tableLayoutPanel5.Controls.Add(this.InputPlayerMoney, 1, 6);
+			this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+			this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+			this.tableLayoutPanel5.RowCount = 8;
+			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+			this.tableLayoutPanel5.Size = new System.Drawing.Size(345, 209);
+			this.tableLayoutPanel5.TabIndex = 21;
 			// 
 			// label14
 			// 
 			this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.label14.Location = new System.Drawing.Point(3, 144);
+			this.label14.Location = new System.Drawing.Point(3, 182);
 			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(44, 28);
+			this.label14.Size = new System.Drawing.Size(44, 27);
 			this.label14.TabIndex = 24;
 			this.label14.Text = "Potion:";
 			this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1295,40 +1206,195 @@ namespace HWSEdit
             "Potion 4",
             "Potion 5",
             "Potion 6"});
-			this.InputPlayerPotion.Location = new System.Drawing.Point(53, 147);
+			this.InputPlayerPotion.Location = new System.Drawing.Point(53, 185);
 			this.InputPlayerPotion.Name = "InputPlayerPotion";
-			this.InputPlayerPotion.Size = new System.Drawing.Size(277, 21);
+			this.InputPlayerPotion.Size = new System.Drawing.Size(289, 21);
 			this.InputPlayerPotion.TabIndex = 25;
 			// 
-			// button1
+			// label11
 			// 
-			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.button1.Location = new System.Drawing.Point(264, 195);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 23;
-			this.button1.Text = "&Delete";
-			this.button1.UseVisualStyleBackColor = true;
+			this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label11.Location = new System.Drawing.Point(3, 156);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(44, 26);
+			this.label11.TabIndex = 22;
+			this.label11.Text = "Money:";
+			this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// button2
+			// InputPlayerMoney
 			// 
-			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.button2.Location = new System.Drawing.Point(183, 195);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 24;
-			this.button2.Text = "&Move to...";
-			this.button2.UseVisualStyleBackColor = true;
+			this.InputPlayerMoney.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.InputPlayerMoney.Location = new System.Drawing.Point(53, 159);
+			this.InputPlayerMoney.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+			this.InputPlayerMoney.Name = "InputPlayerMoney";
+			this.InputPlayerMoney.Size = new System.Drawing.Size(289, 20);
+			this.InputPlayerMoney.TabIndex = 23;
 			// 
-			// button3
+			// label17
 			// 
-			this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.button3.Location = new System.Drawing.Point(102, 195);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(75, 23);
-			this.button3.TabIndex = 25;
-			this.button3.Text = "&Copy to...";
-			this.button3.UseVisualStyleBackColor = true;
+			this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label17.Location = new System.Drawing.Point(3, 104);
+			this.label17.Name = "label17";
+			this.label17.Size = new System.Drawing.Size(44, 26);
+			this.label17.TabIndex = 3;
+			this.label17.Text = "Health:";
+			this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// label16
+			// 
+			this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label16.Location = new System.Drawing.Point(3, 52);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(44, 26);
+			this.label16.TabIndex = 8;
+			this.label16.Text = "Lives:";
+			this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// label15
+			// 
+			this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label15.Location = new System.Drawing.Point(3, 26);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(44, 26);
+			this.label15.TabIndex = 10;
+			this.label15.Text = "Class:";
+			this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// InputPlayerClass
+			// 
+			this.InputPlayerClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.InputPlayerClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.InputPlayerClass.FormattingEnabled = true;
+			this.InputPlayerClass.Items.AddRange(new object[] {
+            "Paladin",
+            "Wizard",
+            "Ranger",
+            "Warlock",
+            "Thief",
+            "Priest"});
+			this.InputPlayerClass.Location = new System.Drawing.Point(53, 29);
+			this.InputPlayerClass.Name = "InputPlayerClass";
+			this.InputPlayerClass.Size = new System.Drawing.Size(289, 21);
+			this.InputPlayerClass.TabIndex = 17;
+			this.InputPlayerClass.SelectedIndexChanged += new System.EventHandler(this.InputPlayerClass_SelectedIndexChanged);
+			// 
+			// InputPlayerName
+			// 
+			this.InputPlayerName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.InputPlayerName.Location = new System.Drawing.Point(53, 3);
+			this.InputPlayerName.Name = "InputPlayerName";
+			this.InputPlayerName.Size = new System.Drawing.Size(289, 20);
+			this.InputPlayerName.TabIndex = 16;
+			this.InputPlayerName.TextChanged += new System.EventHandler(this.InputPlayerName_TextChanged);
+			// 
+			// label13
+			// 
+			this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label13.Location = new System.Drawing.Point(3, 0);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(44, 26);
+			this.label13.TabIndex = 12;
+			this.label13.Text = "Name:";
+			this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// InputPlayerLives
+			// 
+			this.InputPlayerLives.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.InputPlayerLives.Location = new System.Drawing.Point(53, 55);
+			this.InputPlayerLives.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+			this.InputPlayerLives.Name = "InputPlayerLives";
+			this.InputPlayerLives.Size = new System.Drawing.Size(289, 20);
+			this.InputPlayerLives.TabIndex = 18;
+			// 
+			// InputPlayerHealth
+			// 
+			this.InputPlayerHealth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.InputPlayerHealth.Location = new System.Drawing.Point(53, 107);
+			this.InputPlayerHealth.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+			this.InputPlayerHealth.Name = "InputPlayerHealth";
+			this.InputPlayerHealth.Size = new System.Drawing.Size(289, 20);
+			this.InputPlayerHealth.TabIndex = 19;
+			// 
+			// label2
+			// 
+			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label2.Location = new System.Drawing.Point(3, 130);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(44, 26);
+			this.label2.TabIndex = 20;
+			this.label2.Text = "Mana:";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// InputPlayerMana
+			// 
+			this.InputPlayerMana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.InputPlayerMana.Location = new System.Drawing.Point(53, 133);
+			this.InputPlayerMana.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+			this.InputPlayerMana.Name = "InputPlayerMana";
+			this.InputPlayerMana.Size = new System.Drawing.Size(289, 20);
+			this.InputPlayerMana.TabIndex = 21;
+			// 
+			// checkedListBox1
+			// 
+			this.checkedListBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.checkedListBox1.FormattingEnabled = true;
+			this.checkedListBox1.Location = new System.Drawing.Point(3, 3);
+			this.checkedListBox1.Name = "checkedListBox1";
+			this.checkedListBox1.Size = new System.Drawing.Size(328, 191);
+			this.checkedListBox1.TabIndex = 0;
+			// 
+			// label18
+			// 
+			this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.label18.Location = new System.Drawing.Point(3, 78);
+			this.label18.Name = "label18";
+			this.label18.Size = new System.Drawing.Size(44, 26);
+			this.label18.TabIndex = 26;
+			this.label18.Text = "Deaths:";
+			this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// InputPlayerDeaths
+			// 
+			this.InputPlayerDeaths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.InputPlayerDeaths.Location = new System.Drawing.Point(53, 81);
+			this.InputPlayerDeaths.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+			this.InputPlayerDeaths.Name = "InputPlayerDeaths";
+			this.InputPlayerDeaths.Size = new System.Drawing.Size(289, 20);
+			this.InputPlayerDeaths.TabIndex = 27;
 			// 
 			// MainForm
 			// 
@@ -1336,7 +1402,7 @@ namespace HWSEdit
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Control;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.ClientSize = new System.Drawing.Size(528, 335);
+			this.ClientSize = new System.Drawing.Size(552, 353);
 			this.Controls.Add(this.statusStrip1);
 			this.Controls.Add(this.toolStrip1);
 			this.Controls.Add(this.tabPageSelector);
@@ -1364,12 +1430,8 @@ namespace HWSEdit
 			this.splitContainer1.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
+			this.groupBox4.ResumeLayout(false);
 			this.playerContextMenu.ResumeLayout(false);
-			this.tableLayoutPanel5.ResumeLayout(false);
-			this.tableLayoutPanel5.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.InputPlayerMana)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.InputPlayerHealth)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.InputPlayerLives)).EndInit();
 			this.tabhws2xml.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
@@ -1379,9 +1441,16 @@ namespace HWSEdit
 			this.toolStrip1.PerformLayout();
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
-			this.groupBox3.ResumeLayout(false);
-			this.groupBox4.ResumeLayout(false);
+			this.tabControl1.ResumeLayout(false);
+			this.tabPage2.ResumeLayout(false);
+			this.tabPage1.ResumeLayout(false);
+			this.tableLayoutPanel5.ResumeLayout(false);
+			this.tableLayoutPanel5.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.InputPlayerMoney)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.InputPlayerLives)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.InputPlayerHealth)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.InputPlayerMana)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.InputPlayerDeaths)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1435,12 +1504,10 @@ namespace HWSEdit
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.TextBox InputLevelID;
-		private System.Windows.Forms.TextBox InputPlayerName;
 		private System.Windows.Forms.ContextMenuStrip playerContextMenu;
 		private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
-		private System.Windows.Forms.ComboBox InputPlayerClass;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
 		private System.Windows.Forms.Label label7;
@@ -1466,23 +1533,30 @@ namespace HWSEdit
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
 		private System.Windows.Forms.SplitContainer splitContainer1;
+		private System.Windows.Forms.GroupBox groupBox4;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.TabControl tabControl1;
+		private System.Windows.Forms.TabPage tabPage1;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
 		private System.Windows.Forms.NumericUpDown InputPlayerMana;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.NumericUpDown InputPlayerHealth;
 		private System.Windows.Forms.NumericUpDown InputPlayerLives;
 		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.TextBox InputPlayerName;
+		private System.Windows.Forms.ComboBox InputPlayerClass;
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.Label label16;
 		private System.Windows.Forms.Label label17;
-		private System.Windows.Forms.GroupBox groupBox3;
-		private System.Windows.Forms.GroupBox groupBox4;
 		private System.Windows.Forms.NumericUpDown InputPlayerMoney;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.ComboBox InputPlayerPotion;
 		private System.Windows.Forms.Label label14;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.TabPage tabPage2;
+		private System.Windows.Forms.CheckedListBox checkedListBox1;
+		private System.Windows.Forms.Label label18;
+		private System.Windows.Forms.NumericUpDown InputPlayerDeaths;
 	}
 }
