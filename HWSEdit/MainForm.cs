@@ -51,7 +51,7 @@ namespace HWSEdit
 		public SValue MAINBUFFER;
 
 		private string currentFile = "";
-		private List<SObject> players;
+		private List<SValue> players;
 		
 		public MainForm()
 		{
@@ -149,23 +149,26 @@ namespace HWSEdit
 		{
 			if (playerListView.SelectedItems.Count > 0 && playerListView.SelectedIndices.Count == 1)
 			{
-				SObject player = players[playerListView.SelectedIndices[0]];
-				InputPlayerName.Text = player.Get("name").GetString();
-				InputPlayerName.Enabled = true;
-				InputPlayerClass.SelectedIndex = player.Get("class").GetInteger();
-				InputPlayerClass.Enabled = true;
-				InputPlayerLives.Value = player.Get("lives").GetInteger();
-				InputPlayerLives.Enabled = true;
-				InputPlayerDeaths.Value = player.Get("deaths").GetInteger();
-				InputPlayerDeaths.Enabled = true;
-				InputPlayerHealth.Value = player.Get("health").GetInteger();
-				InputPlayerHealth.Enabled = true;
-				InputPlayerMana.Value = player.Get("mana").GetInteger();
-				InputPlayerMana.Enabled = true;
-				InputPlayerMoney.Value = player.Get("money").GetInteger();
-				InputPlayerMoney.Enabled = true;
-				InputPlayerPotion.SelectedIndex = player.Get("potion").GetInteger();
-				InputPlayerPotion.Enabled = true;
+				SObject player = players[playerListView.SelectedIndices[0]].GetObject();
+				if (player != null)
+				{
+					InputPlayerName.Text = player.Get("name").GetString();
+					InputPlayerName.Enabled = true;
+					InputPlayerClass.SelectedIndex = player.Get("class").GetInteger();
+					InputPlayerClass.Enabled = true;
+					InputPlayerLives.Value = player.Get("lives").GetInteger();
+					InputPlayerLives.Enabled = true;
+					InputPlayerDeaths.Value = player.Get("deaths").GetInteger();
+					InputPlayerDeaths.Enabled = true;
+					InputPlayerHealth.Value = player.Get("health").GetInteger();
+					InputPlayerHealth.Enabled = true;
+					InputPlayerMana.Value = player.Get("mana").GetInteger();
+					InputPlayerMana.Enabled = true;
+					InputPlayerMoney.Value = player.Get("money").GetInteger();
+					InputPlayerMoney.Enabled = true;
+					InputPlayerPotion.SelectedIndex = player.Get("potion").GetInteger();
+					InputPlayerPotion.Enabled = true;
+				}
 			}
 			else
 			{
@@ -187,14 +190,6 @@ namespace HWSEdit
 				InputPlayerPotion.Enabled = false;
 			}
 		}
-		private void playerListView_AfterLabelEdit(object sender, LabelEditEventArgs e)
-		{
-			InputPlayerName.Text = e.Label;
-		}
-		private void InputPlayerName_TextChanged(object sender, EventArgs e)
-		{
-			if (playerListView.SelectedItems.Count > 0) playerListView.SelectedItems[0].Text = InputPlayerName.Text;
-		}
 		private void playerContextMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
 		{
 			if (e.ClickedItem == renameToolStripMenuItem)
@@ -202,10 +197,34 @@ namespace HWSEdit
 				if (playerListView.SelectedItems.Count > 0) playerListView.SelectedItems[0].BeginEdit();
 			}
 		}
+		private void playerListView_AfterLabelEdit(object sender, LabelEditEventArgs e)
+		{
+			InputPlayerName.Text = e.Label;
+			PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "name");
+		}
+		private void InputPlayerName_TextChanged(object sender, EventArgs e)
+		{
+			if (playerListView.SelectedItems.Count > 0)
+			{
+				playerListView.SelectedItems[0].Text = InputPlayerName.Text;
+				PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "name");
+			}
+		}
 		private void InputPlayerClass_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (playerListView.SelectedItems.Count > 0) playerListView.SelectedItems[0].ImageIndex = InputPlayerClass.SelectedIndex;
+			if (playerListView.SelectedItems.Count > 0)
+			{
+				playerListView.SelectedItems[0].ImageIndex = InputPlayerClass.SelectedIndex;
+				PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "class");
+			}
 		}
+		private void InputPlayerLives_ValueChanged(object sender, EventArgs e) { if (playerListView.SelectedItems.Count > 0) PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "lives"); }
+		private void InputPlayerDeaths_ValueChanged(object sender, EventArgs e) { if (playerListView.SelectedItems.Count > 0) PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "deaths"); }
+		private void InputPlayerHealth_ValueChanged(object sender, EventArgs e) { if (playerListView.SelectedItems.Count > 0) PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "health"); }
+		private void InputPlayerMana_ValueChanged(object sender, EventArgs e) { if (playerListView.SelectedItems.Count > 0) PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "mana"); }
+		private void InputPlayerMoney_ValueChanged(object sender, EventArgs e) { if (playerListView.SelectedItems.Count > 0) PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "money"); }
+		private void InputPlayerPotion_SelectedIndexChanged(object sender, EventArgs e) { if (playerListView.SelectedItems.Count > 0) PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "potion"); }
+		
 		private void OpenToolStripMenuItemClick(object sender, EventArgs e) { Open(); }
 		private void openToolStripButton_Click(object sender, EventArgs e) { Open(); }
 		private void buttonSave_Click(object sender, EventArgs e) { Save(currentFile); }
@@ -323,7 +342,7 @@ namespace HWSEdit
 				checkBoxDoubleLives.Checked = modifiers.Get("doublelife").GetBoolean();
 				checkBox5XManaRegen.Checked = modifiers.Get("quickmana").GetBoolean();
 				//+->players
-				players = new List<SObject>();
+				players = new List<SValue>();
 				foreach (SValue player in root.Get("players").GetArray())
 				{
 					if (!player.IsNull())
@@ -336,6 +355,7 @@ namespace HWSEdit
 			}
 			catch(Exception e)
 			{
+				ResetForm();
 				MessageBox.Show("Invalid save data. The data is either corrupted or did not adhere to a recognized format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				toolStripStatusLabel.Text = "Error encountered while loading.";
 				toolStripStatusLabel.ToolTipText = "Invalid save data. The file is either corrupted or not a valid save.";
@@ -372,10 +392,10 @@ namespace HWSEdit
 				Obj_modifiers.Set("doublelife", new SValue((bool) checkBoxDoubleLives.Checked));
 				Obj_modifiers.Set("quickmana", new SValue((bool) checkBox5XManaRegen.Checked));
 				MAINBUFFER.GetObject().Set("modifiers", new SValue(Obj_modifiers));
-				//+->players
 			}
 			catch (Exception e)
 			{
+				ResetForm();
 				MessageBox.Show("An error occurred while trying to prepare the data for saving:\n" + e.Message + "\n" + e.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				toolStripStatusLabel.Text = "Error encountered while saving.";
 				toolStripStatusLabel.ToolTipText = "An error occurred while trying to prepare the data for saving.";
@@ -383,58 +403,101 @@ namespace HWSEdit
 			}
 			return true;
 		}
+		bool PlayerFormDataToMAINBUFFER(int index, string key)
+		{
+			//load values into MAINBUFFER
+			try
+			{
+				SObject player = players[index].GetObject();
+				SValue value = null;
+				if (key == "name") value = new SValue(InputPlayerName.Text);
+				else if (key == "class") value = new SValue(InputPlayerClass.SelectedIndex);
+				else if (key == "health") value = new SValue((int) InputPlayerHealth.Value);
+				else if (key == "mana") value = new SValue((int) InputPlayerMana.Value);
+				else if (key == "lives") value = new SValue((int) InputPlayerLives.Value);
+				else if (key == "potion") value = new SValue(InputPlayerPotion.SelectedIndex);
+				else if (key == "money") value = new SValue((int) InputPlayerMoney.Value);
+				else if (key == "deaths") value = new SValue((int) InputPlayerDeaths.Value);
+				else return false;
+				player.Set(key, value);
+				MAINBUFFER.GetObject().Set("players", new SValue(players.ToArray()));
+			}
+			catch (Exception e)
+			{
+				ResetForm();
+				MessageBox.Show("An error occurred while trying to prepare the data for saving:\n" + e.Message + "\n" + e.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				toolStripStatusLabel.Text = "Error encountered while saving.";
+				toolStripStatusLabel.ToolTipText = "An error occurred while trying to prepare the data for saving.";
+				return false;
+			}
+
+			return true;
+		}
 		#endregion
 
 		#region Actions
-		public void Open()
+		public void Open(string filename = null)
 		{
-			openHWSDialog.InitialDirectory = GetDefaultFileDialogPath();
-			DialogResult result = openHWSDialog.ShowDialog();
-			if (result == DialogResult.OK)
+			try
 			{
-				// If the user has no file open; or, if the user has a file open, they actually decided to close it (rather than cancel)
-				if (TryCloseFile())
+				if (filename == null)
 				{
-
-					currentFile = openHWSDialog.FileName;
-					textBoxCurrentFile.Text = Path.GetFileName(currentFile);
-
-					//load file to mainbuffer
-					string ext = Path.GetExtension(currentFile);
-					if (ext == ".xml")
+					openHWSDialog.InitialDirectory = GetDefaultFileDialogPath();
+					DialogResult result = openHWSDialog.ShowDialog();
+					if (result == DialogResult.OK)
 					{
-						using (StreamReader SR = new StreamReader(File.Open(currentFile, FileMode.Open)))
-						{
-							MAINBUFFER = SValue.FromXMLFile(SR);
-						}
+						filename = openHWSDialog.FileName;
+						// If the user has no file open; or, if the user has a file open, they actually decided to close it (rather than cancel)
+						if (!TryCloseFile()) return;
 					}
-					else if (ext == ".hws")
+					else return;
+				}
+
+				currentFile = filename;
+				textBoxCurrentFile.Text = Path.GetFileName(currentFile);
+
+				//load file to mainbuffer
+				string ext = Path.GetExtension(currentFile);
+				if (ext == ".xml")
+				{
+					using (StreamReader SR = new StreamReader(File.Open(currentFile, FileMode.Open)))
 					{
-						using (BinaryReader BR = new BinaryReader(File.Open(currentFile, FileMode.Open)))
-						{
-							MAINBUFFER = SValue.LoadStream(BR);
-						}
-					}
-
-					//load values into form
-					if (MAINBUFFERtoFormData())
-					{
-						buttonSave.Enabled = true;
-						buttonClose.Enabled = true;
-						saveToolStripMenuItem.Enabled = true;
-						saveAsToolStripMenuItem.Enabled = true;
-						closeToolStripMenuItem.Enabled = true;
-						tabGeneral.Enabled = true;
-						tabModifiers.Enabled = true;
-						tabPlayers.Enabled = true;
-						tabPageSelector.SelectedIndex = 0;
-
-						ValidifyModifiersCheckBoxes();
-
-						toolStripStatusLabel.Text = "Successfully loaded data.";
-						toolStripStatusLabel.ToolTipText = "Successfully loaded data from: \"" + currentFile + "\"";
+						MAINBUFFER = SValue.FromXMLFile(SR);
 					}
 				}
+				else if (ext == ".hws")
+				{
+					using (BinaryReader BR = new BinaryReader(File.Open(currentFile, FileMode.Open)))
+					{
+						MAINBUFFER = SValue.LoadStream(BR);
+					}
+				}
+
+				//load values into form
+				if (MAINBUFFERtoFormData())
+				{
+					buttonSave.Enabled = true;
+					buttonClose.Enabled = true;
+					saveToolStripMenuItem.Enabled = true;
+					saveAsToolStripMenuItem.Enabled = true;
+					closeToolStripMenuItem.Enabled = true;
+					tabGeneral.Enabled = true;
+					tabModifiers.Enabled = true;
+					tabPlayers.Enabled = true;
+					tabPageSelector.SelectedIndex = 0;
+
+					ValidifyModifiersCheckBoxes();
+
+					toolStripStatusLabel.Text = "Successfully loaded data.";
+					toolStripStatusLabel.ToolTipText = "Successfully loaded data from: \"" + currentFile + "\"";
+				}
+			}
+			catch(Exception e)
+			{
+				ResetForm();
+				MessageBox.Show("An error occurred while trying to open the file:\n" + e.Message + "\n" + e.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				toolStripStatusLabel.Text = "Error encountered while loading.";
+				toolStripStatusLabel.ToolTipText = "An error occurred while trying to load the data for the save.";
 			}
 		}
 		public bool TryCloseFile()
@@ -519,6 +582,8 @@ namespace HWSEdit
 			DialogResult result = saveHWSDialog.ShowDialog();
 			if (result == DialogResult.OK) {
 				Save(saveHWSDialog.FileName);
+				CloseFile();
+				Open(saveHWSDialog.FileName);
 			}
 		}
 		public void Save(string file)
