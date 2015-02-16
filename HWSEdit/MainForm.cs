@@ -30,6 +30,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Linq;
 
 using OpenTK;
 using hwsFormat;
@@ -59,6 +60,27 @@ namespace HWSEdit
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
+
+			this.classImageList.Images.SetKeyName(System.Convert.ToInt16(Resources.ClassIds.class_paladin_id), Resources.Classes.class_paladin_uname);
+			this.classImageList.Images.SetKeyName(System.Convert.ToInt16(Resources.ClassIds.class_wizard_id), Resources.Classes.class_wizard_uname);
+			this.classImageList.Images.SetKeyName(System.Convert.ToInt16(Resources.ClassIds.class_ranger_id), Resources.Classes.class_ranger_uname);
+			this.classImageList.Images.SetKeyName(System.Convert.ToInt16(Resources.ClassIds.class_warlock_id), Resources.Classes.class_warlock_uname);
+			this.classImageList.Images.SetKeyName(System.Convert.ToInt16(Resources.ClassIds.class_thief_id), Resources.Classes.class_thief_uname);
+			this.classImageList.Images.SetKeyName(System.Convert.ToInt16(Resources.ClassIds.class_priest_id), Resources.Classes.class_priest_uname);
+
+			// Add classes
+			Dictionary<short, string> class_ids = new Dictionary<short, string>();
+			class_ids.Add(System.Convert.ToInt16(Resources.ClassIds.class_paladin_id), Resources.Classes.class_paladin_uname);
+			class_ids.Add(System.Convert.ToInt16(Resources.ClassIds.class_thief_id), Resources.Classes.class_thief_uname);
+			class_ids.Add(System.Convert.ToInt16(Resources.ClassIds.class_warlock_id), Resources.Classes.class_warlock_uname);
+			class_ids.Add(System.Convert.ToInt16(Resources.ClassIds.class_wizard_id), Resources.Classes.class_wizard_uname);
+			class_ids.Add(System.Convert.ToInt16(Resources.ClassIds.class_ranger_id), Resources.Classes.class_ranger_uname);
+			class_ids.Add(System.Convert.ToInt16(Resources.ClassIds.class_priest_id), Resources.Classes.class_priest_uname);
+			foreach (KeyValuePair<short, string> tuple in class_ids.OrderBy(id => id.Key))
+			{
+				this.InputPlayerClass.Items.Add(tuple.Value);
+			}
+
 			this.InputDifficulty.SelectedIndex=1;
 			buttonSave.Enabled = false;
 			buttonClose.Enabled = false;
@@ -73,7 +95,6 @@ namespace HWSEdit
 			InputPlayerName.Enabled = false;
 			playerListView.Columns[0].Width = -2;
 		}
-
 
 		#region Event callbacks
 		private void AboutToolStripMenuItemClick(object sender, EventArgs e)
@@ -145,6 +166,7 @@ namespace HWSEdit
 				MessageBox.Show("Converted from XML to HWS.\nSaved to:\n\""+outFile+"\"");
 			}
 		}
+		
 		private void playerListView_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (playerListView.SelectedItems.Count > 0 && playerListView.SelectedIndices.Count == 1)
@@ -199,8 +221,13 @@ namespace HWSEdit
 		}
 		private void playerListView_AfterLabelEdit(object sender, LabelEditEventArgs e)
 		{
-			InputPlayerName.Text = e.Label;
-			PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "name");
+			if (e.Label == null) e.CancelEdit = true;
+			else
+			{
+				playerListView.Items[e.Item].Text = e.Label;
+				InputPlayerName.Text = playerListView.Items[e.Item].Text;
+				PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "name");
+			}
 		}
 		private void InputPlayerName_TextChanged(object sender, EventArgs e)
 		{
@@ -217,6 +244,10 @@ namespace HWSEdit
 				playerListView.SelectedItems[0].ImageIndex = InputPlayerClass.SelectedIndex;
 				PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "class");
 			}
+		}
+		private void splitContainer1_Panel1_Resize(object sender, EventArgs e)
+		{
+			if (playerListView.Columns.Count > 0) playerListView.Columns[0].Width = -2;
 		}
 		private void InputPlayerLives_ValueChanged(object sender, EventArgs e) { if (playerListView.SelectedItems.Count > 0) PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "lives"); }
 		private void InputPlayerDeaths_ValueChanged(object sender, EventArgs e) { if (playerListView.SelectedItems.Count > 0) PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "deaths"); }

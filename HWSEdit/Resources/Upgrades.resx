@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="cat_active_uname" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="cat_combo_uname" xml:space="preserve">
+    <value>Combo</value>
+  </data>
+  <data name="cat_core_uname" xml:space="preserve">
+    <value>Core</value>
+  </data>
+  <data name="cat_passive_uname" xml:space="preserve">
+    <value>Passive</value>
+  </data>
+  <data name="combo_heal_uname" xml:space="preserve">
+    <value>Healing</value>
+  </data>
+  <data name="combo_nova_uname" xml:space="preserve">
+    <value>Nova</value>
+  </data>
+  <data name="combo_time_uname" xml:space="preserve">
+    <value>Timer</value>
+  </data>
+  <data name="core_armor_uname" xml:space="preserve">
+    <value>Armor</value>
+  </data>
+  <data name="core_hp_uname" xml:space="preserve">
+    <value>Health Pool</value>
+  </data>
+  <data name="core_mana_uname" xml:space="preserve">
+    <value>Mana Pool</value>
+  </data>
+  <data name="core_speed_uname" xml:space="preserve">
+    <value>Move Speed</value>
+  </data>
+  <data name="lvl1" xml:space="preserve">
+    <value>Level 1</value>
+  </data>
+  <data name="lvl2" xml:space="preserve">
+    <value>Level 2</value>
+  </data>
+  <data name="lvl3" xml:space="preserve">
+    <value>Level 3</value>
+  </data>
+  <data name="lvl4" xml:space="preserve">
+    <value>Level 4</value>
+  </data>
+  <data name="lvl5" xml:space="preserve">
+    <value>Level 5</value>
+  </data>
+  <data name="pal_bash_uname" xml:space="preserve">
+    <value>Bash</value>
+  </data>
+  <data name="pal_chrg_dmg_uname" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="pal_chrg_rng_uname" xml:space="preserve">
+    <value>Range</value>
+  </data>
+  <data name="pal_chrg_uname" xml:space="preserve">
+    <value>Charge</value>
+  </data>
+  <data name="pal_heal_uname" xml:space="preserve">
+    <value>Healing</value>
+  </data>
+  <data name="pal_shield_uname" xml:space="preserve">
+    <value>Shield</value>
+  </data>
+  <data name="pal_sword_arc_uname" xml:space="preserve">
+    <value>Arc</value>
+  </data>
+  <data name="pal_sword_dmg_uname" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="pal_sword_uname" xml:space="preserve">
+    <value>Sword</value>
+  </data>
+  <data name="pal_whirl_dmg_uname" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="pal_whirl_dur_uname" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="pal_whirl_uname" xml:space="preserve">
+    <value>Holy Storm</value>
+  </data>
+  <data name="pri_area_dmg_uname" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="pri_area_num_uname" xml:space="preserve">
+    <value>Number</value>
+  </data>
+  <data name="pri_area_uname" xml:space="preserve">
+    <value>Draining Field</value>
+  </data>
+  <data name="pri_aura_drain_uname" xml:space="preserve">
+    <value>Mana Drain</value>
+  </data>
+  <data name="pri_aura_slow_uname" xml:space="preserve">
+    <value>Slow</value>
+  </data>
+  <data name="pri_aura_uname" xml:space="preserve">
+    <value>Cripple Aura</value>
+  </data>
+  <data name="pri_beam_dmg_uname" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="pri_beam_rng_uname" xml:space="preserve">
+    <value>Range</value>
+  </data>
+  <data name="pri_beam_uname" xml:space="preserve">
+    <value>Holy Beam</value>
+  </data>
+  <data name="pri_hpregen_uname" xml:space="preserve">
+    <value>Health Regeneration</value>
+  </data>
+  <data name="pri_mshield_uname" xml:space="preserve">
+    <value>Mana Shield</value>
+  </data>
+  <data name="pri_smite_dmg_uname" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="pri_smite_spe_uname" xml:space="preserve">
+    <value>Speed Penalty Reduction</value>
+  </data>
+  <data name="pri_smite_uname" xml:space="preserve">
+    <value>Smite</value>
+  </data>
+  <data name="rng_bomb_dmg_uname" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="rng_bomb_uname" xml:space="preserve">
+    <value>Bomb</value>
+  </data>
+  <data name="rng_bow_dmg_uname" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="rng_bow_pen_uname" xml:space="preserve">
+    <value>Penetration</value>
+  </data>
+  <data name="rng_bow_uname" xml:space="preserve">
+    <value>Bow</value>
+  </data>
+  <data name="rng_crit_uname" xml:space="preserve">
+    <value>Marksmanship</value>
+  </data>
+  <data name="rng_growth_dur_uname" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="rng_growth_rng_uname" xml:space="preserve">
+    <value>Range</value>
+  </data>
+  <data name="rng_growth_uname" xml:space="preserve">
+    <value>Overgrowth</value>
+  </data>
+  <data name="rng_spread_shts_uname" xml:space="preserve">
+    <value>Arrows</value>
+  </data>
+  <data name="rng_spread_uname" xml:space="preserve">
+    <value>Flurry</value>
+  </data>
+  <data name="rng_spread_wvs_uname" xml:space="preserve">
+    <value>Waves</value>
+  </data>
+  <data name="rn_dodge_uname" xml:space="preserve">
+    <value>Dodge</value>
+  </data>
+  <data name="thi_chain_rng_uname" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="thi_chain_stn_uname" xml:space="preserve">
+    <value>Stun</value>
+  </data>
+  <data name="thi_chain_uname" xml:space="preserve">
+    <value>Chain</value>
+  </data>
+  <data name="thi_fervor_uname" xml:space="preserve">
+    <value>Fervor</value>
+  </data>
+  <data name="thi_kfan_dmg_uname" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="thi_kfan_projs_uname" xml:space="preserve">
+    <value>Knives</value>
+  </data>
+  <data name="thi_kfan_uname" xml:space="preserve">
+    <value>Knife Fan</value>
+  </data>
+  <data name="thi_knives_aspeed_uname" xml:space="preserve">
+    <value>Speed Penalty Reduction</value>
+  </data>
+  <data name="thi_knives_dmg_uname" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="thi_knives_uname" xml:space="preserve">
+    <value>Knives</value>
+  </data>
+  <data name="thi_mchance_uname" xml:space="preserve">
+    <value>Steal</value>
+  </data>
+  <data name="thi_smoke_rng_uname" xml:space="preserve">
+    <value>Range</value>
+  </data>
+  <data name="thi_smoke_uname" xml:space="preserve">
+    <value>Smoke Bomb</value>
+  </data>
+  <data name="war_dagger_dmg" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="war_dmg_uname" xml:space="preserve">
+    <value>Dagger</value>
+  </data>
+  <data name="war_kheal_uname" xml:space="preserve">
+    <value>Blood Sacrifice</value>
+  </data>
+  <data name="war_kmana_uname" xml:space="preserve">
+    <value>Soul Sacrifice</value>
+  </data>
+  <data name="war_lightning_dmg_uname" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="war_lightning_trg_uname" xml:space="preserve">
+    <value>Targets</value>
+  </data>
+  <data name="war_lightning_uname" xml:space="preserve">
+    <value>Lightning Strike</value>
+  </data>
+  <data name="war_steal" xml:space="preserve">
+    <value>Life Steal Nova</value>
+  </data>
+  <data name="war_steal_dmg_uname" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="war_steal_dur_uname" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="war_storm" xml:space="preserve">
+    <value>Electrical Storm</value>
+  </data>
+  <data name="war_storm_dmg_uname" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="war_storm_dur_uname" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="wiz_combust_dmg_uname" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="wiz_combust_dur_uname" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="wiz_combust_uname" xml:space="preserve">
+    <value>Combustion</value>
+  </data>
+  <data name="wiz_fireball_dmg_uname" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="wiz_fireball_rng_uname" xml:space="preserve">
+    <value>Range</value>
+  </data>
+  <data name="wiz_fireball_uname" xml:space="preserve">
+    <value>Fireball</value>
+  </data>
+  <data name="wiz_fshield_uname" xml:space="preserve">
+    <value>Frost Shield</value>
+  </data>
+  <data name="wiz_meteor_dmg_uname" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="wiz_meteor_num_uname" xml:space="preserve">
+    <value>Meteors</value>
+  </data>
+  <data name="wiz_meteor_uname" xml:space="preserve">
+    <value>Meteor Strike</value>
+  </data>
+  <data name="wiz_nova_num_uname" xml:space="preserve">
+    <value>Shards</value>
+  </data>
+  <data name="wiz_nova_rng_uname" xml:space="preserve">
+    <value>Range</value>
+  </data>
+  <data name="wiz_nova_uname" xml:space="preserve">
+    <value>Frost Nova</value>
+  </data>
+  <data name="wiz_spray_dmg_uname" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="wiz_spray_uname" xml:space="preserve">
+    <value>Fire Breath</value>
+  </data>
+  <data name="combo_udesc" xml:space="preserve">
+    <value>Killing 10 enemies in quick succession triggers a combo which increases move speed and damage for a short while.</value>
+  </data>
+  <data name="combo_uname" xml:space="preserve">
+    <value>Combo</value>
+  </data>
+</root>

@@ -38,46 +38,6 @@ namespace HWSEdit
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-			System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Level 1");
-			System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Level 2");
-			System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Combo", new System.Windows.Forms.TreeNode[] {
-            treeNode22,
-            treeNode23});
-			System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Level 1");
-			System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Nova", new System.Windows.Forms.TreeNode[] {
-            treeNode25});
-			System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Level 1");
-			System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Time", new System.Windows.Forms.TreeNode[] {
-            treeNode27});
-			System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Level 1");
-			System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Heal", new System.Windows.Forms.TreeNode[] {
-            treeNode29});
-			System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Combo", new System.Windows.Forms.TreeNode[] {
-            treeNode24,
-            treeNode26,
-            treeNode28,
-            treeNode30});
-			System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Level 1");
-			System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Level 2");
-			System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Level 3");
-			System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Health", new System.Windows.Forms.TreeNode[] {
-            treeNode32,
-            treeNode33,
-            treeNode34});
-			System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Level 1");
-			System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Level 2");
-			System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Level 3");
-			System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Mana", new System.Windows.Forms.TreeNode[] {
-            treeNode36,
-            treeNode37,
-            treeNode38});
-			System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Level 1");
-			System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Poison", new System.Windows.Forms.TreeNode[] {
-            treeNode40});
-			System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Combat", new System.Windows.Forms.TreeNode[] {
-            treeNode35,
-            treeNode39,
-            treeNode41});
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -129,12 +89,14 @@ namespace HWSEdit
 			this.tabPlayers = new System.Windows.Forms.TabPage();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.button5 = new System.Windows.Forms.Button();
 			this.playerListView = new System.Windows.Forms.ListView();
 			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.playerContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.classImageList = new System.Windows.Forms.ImageList(this.components);
+			this.button4 = new System.Windows.Forms.Button();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -180,7 +142,7 @@ namespace HWSEdit
 			this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-			this.treeView1 = new System.Windows.Forms.TreeView();
+			this.upgradeTree1 = new HWSEdit.UpgradeTree();
 			this.menuStrip1.SuspendLayout();
 			this.tabPageSelector.SuspendLayout();
 			this.tabGeneral.SuspendLayout();
@@ -221,11 +183,8 @@ namespace HWSEdit
             this.toolsToolStripMenuItem,
             this.helpToolStripMenuItem});
 			this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+			resources.ApplyResources(this.menuStrip1, "menuStrip1");
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(552, 24);
-			this.menuStrip1.TabIndex = 0;
-			this.menuStrip1.Text = "menuStrip1";
 			// 
 			// fileToolStripMenuItem
 			// 
@@ -236,52 +195,38 @@ namespace HWSEdit
             this.closeToolStripMenuItem,
             this.exitCancelToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-			this.fileToolStripMenuItem.Text = "&File";
+			resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
 			// 
 			// openToolStripMenuItem
 			// 
 			this.openToolStripMenuItem.Image = global::HWSEdit.Properties.Resources.folder_horizontal_open;
 			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-			this.openToolStripMenuItem.ShortcutKeyDisplayString = "";
-			this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-			this.openToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-			this.openToolStripMenuItem.Text = "&Open...";
+			resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
 			this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItemClick);
 			// 
 			// saveToolStripMenuItem
 			// 
-			this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
+			resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
 			this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-			this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-			this.saveToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-			this.saveToolStripMenuItem.Text = "&Save";
 			this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
 			// 
 			// saveAsToolStripMenuItem
 			// 
 			this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-			this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
-			this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-			this.saveAsToolStripMenuItem.Text = "Save &As...";
+			resources.ApplyResources(this.saveAsToolStripMenuItem, "saveAsToolStripMenuItem");
 			this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.ButtonSaveAsClick);
 			// 
 			// closeToolStripMenuItem
 			// 
 			this.closeToolStripMenuItem.Image = global::HWSEdit.Properties.Resources.cross_circle_frame;
 			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-			this.closeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-			this.closeToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-			this.closeToolStripMenuItem.Text = "Clos&e";
+			resources.ApplyResources(this.closeToolStripMenuItem, "closeToolStripMenuItem");
 			this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
 			// 
 			// exitCancelToolStripMenuItem
 			// 
 			this.exitCancelToolStripMenuItem.Name = "exitCancelToolStripMenuItem";
-			this.exitCancelToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-			this.exitCancelToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-			this.exitCancelToolStripMenuItem.Text = "E&xit";
+			resources.ApplyResources(this.exitCancelToolStripMenuItem, "exitCancelToolStripMenuItem");
 			this.exitCancelToolStripMenuItem.Click += new System.EventHandler(this.ButtonQuit);
 			// 
 			// toolsToolStripMenuItem
@@ -289,8 +234,7 @@ namespace HWSEdit
 			this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.convertToXMLToolStripMenuItem});
 			this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-			this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-			this.toolsToolStripMenuItem.Text = "Tools";
+			resources.ApplyResources(this.toolsToolStripMenuItem, "toolsToolStripMenuItem");
 			// 
 			// convertToXMLToolStripMenuItem
 			// 
@@ -298,20 +242,17 @@ namespace HWSEdit
             this.toXMLToolStripMenuItem,
             this.toHWSToolStripMenuItem});
 			this.convertToXMLToolStripMenuItem.Name = "convertToXMLToolStripMenuItem";
-			this.convertToXMLToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-			this.convertToXMLToolStripMenuItem.Text = "Convert";
+			resources.ApplyResources(this.convertToXMLToolStripMenuItem, "convertToXMLToolStripMenuItem");
 			// 
 			// toXMLToolStripMenuItem
 			// 
 			this.toXMLToolStripMenuItem.Name = "toXMLToolStripMenuItem";
-			this.toXMLToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-			this.toXMLToolStripMenuItem.Text = "To XML...";
+			resources.ApplyResources(this.toXMLToolStripMenuItem, "toXMLToolStripMenuItem");
 			// 
 			// toHWSToolStripMenuItem
 			// 
 			this.toHWSToolStripMenuItem.Name = "toHWSToolStripMenuItem";
-			this.toHWSToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-			this.toHWSToolStripMenuItem.Text = "To HWS...";
+			resources.ApplyResources(this.toHWSToolStripMenuItem, "toHWSToolStripMenuItem");
 			// 
 			// helpToolStripMenuItem
 			// 
@@ -319,62 +260,40 @@ namespace HWSEdit
             this.helpTopicToolStripMenuItem,
             this.aboutToolStripMenuItem});
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-			this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-			this.helpToolStripMenuItem.Text = "&Help";
+			resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
 			// 
 			// helpTopicToolStripMenuItem
 			// 
-			this.helpTopicToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("helpTopicToolStripMenuItem.Image")));
+			resources.ApplyResources(this.helpTopicToolStripMenuItem, "helpTopicToolStripMenuItem");
 			this.helpTopicToolStripMenuItem.Name = "helpTopicToolStripMenuItem";
-			this.helpTopicToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-			this.helpTopicToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-			this.helpTopicToolStripMenuItem.Text = "&Help";
 			this.helpTopicToolStripMenuItem.Click += new System.EventHandler(this.HelpTopicToolStripMenuItemClick);
 			// 
 			// aboutToolStripMenuItem
 			// 
-			this.aboutToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aboutToolStripMenuItem.Image")));
+			resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
 			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-			this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-			this.aboutToolStripMenuItem.Text = "&About";
 			this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItemClick);
 			// 
 			// tabPageSelector
 			// 
-			this.tabPageSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			resources.ApplyResources(this.tabPageSelector, "tabPageSelector");
 			this.tabPageSelector.Controls.Add(this.tabGeneral);
 			this.tabPageSelector.Controls.Add(this.tabModifiers);
 			this.tabPageSelector.Controls.Add(this.tabPlayers);
 			this.tabPageSelector.Controls.Add(this.tabhws2xml);
-			this.tabPageSelector.Location = new System.Drawing.Point(9, 52);
-			this.tabPageSelector.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
 			this.tabPageSelector.Name = "tabPageSelector";
 			this.tabPageSelector.SelectedIndex = 0;
-			this.tabPageSelector.Size = new System.Drawing.Size(534, 273);
-			this.tabPageSelector.TabIndex = 1;
 			// 
 			// tabGeneral
 			// 
 			this.tabGeneral.Controls.Add(this.tableLayoutPanel1);
-			this.tabGeneral.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabGeneral.Location = new System.Drawing.Point(4, 22);
+			resources.ApplyResources(this.tabGeneral, "tabGeneral");
 			this.tabGeneral.Name = "tabGeneral";
-			this.tabGeneral.Padding = new System.Windows.Forms.Padding(3);
-			this.tabGeneral.Size = new System.Drawing.Size(526, 247);
-			this.tabGeneral.TabIndex = 0;
-			this.tabGeneral.Text = "General";
 			this.tabGeneral.UseVisualStyleBackColor = true;
 			// 
 			// tableLayoutPanel1
 			// 
-			this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.tableLayoutPanel1.ColumnCount = 2;
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
 			this.tableLayoutPanel1.Controls.Add(this.textBoxCurrentFile, 1, 0);
 			this.tableLayoutPanel1.Controls.Add(this.label10, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 4);
@@ -387,206 +306,104 @@ namespace HWSEdit
 			this.tableLayoutPanel1.Controls.Add(this.checkboxNetworked, 1, 5);
 			this.tableLayoutPanel1.Controls.Add(this.label12, 0, 5);
 			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 3);
-			this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-			this.tableLayoutPanel1.RowCount = 6;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(496, 156);
-			this.tableLayoutPanel1.TabIndex = 16;
 			// 
 			// textBoxCurrentFile
 			// 
-			this.textBoxCurrentFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.textBoxCurrentFile.Location = new System.Drawing.Point(123, 3);
+			resources.ApplyResources(this.textBoxCurrentFile, "textBoxCurrentFile");
 			this.textBoxCurrentFile.Name = "textBoxCurrentFile";
 			this.textBoxCurrentFile.ReadOnly = true;
-			this.textBoxCurrentFile.Size = new System.Drawing.Size(370, 20);
-			this.textBoxCurrentFile.TabIndex = 13;
-			this.textBoxCurrentFile.WordWrap = false;
 			// 
 			// label10
 			// 
-			this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label10.Location = new System.Drawing.Point(3, 0);
+			resources.ApplyResources(this.label10, "label10");
 			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(114, 25);
-			this.label10.TabIndex = 12;
-			this.label10.Text = "Current file:";
-			this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// label1
 			// 
-			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label1.Location = new System.Drawing.Point(3, 100);
+			resources.ApplyResources(this.label1, "label1");
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(114, 25);
-			this.label1.TabIndex = 1;
-			this.label1.Text = "Difficulty:";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// InputPlaytime
 			// 
-			this.InputPlaytime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputPlaytime.Location = new System.Drawing.Point(123, 28);
+			resources.ApplyResources(this.InputPlaytime, "InputPlaytime");
 			this.InputPlaytime.Maximum = new decimal(new int[] {
             2147483647,
             0,
             0,
             0});
 			this.InputPlaytime.Name = "InputPlaytime";
-			this.InputPlaytime.Size = new System.Drawing.Size(370, 20);
-			this.InputPlaytime.TabIndex = 11;
 			// 
 			// label9
 			// 
-			this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label9.Location = new System.Drawing.Point(3, 25);
+			resources.ApplyResources(this.label9, "label9");
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(114, 25);
-			this.label9.TabIndex = 10;
-			this.label9.Text = "Play time:";
-			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// label8
 			// 
-			this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label8.Location = new System.Drawing.Point(3, 50);
+			resources.ApplyResources(this.label8, "label8");
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(114, 25);
-			this.label8.TabIndex = 8;
-			this.label8.Text = "Level ID:";
-			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// label5
 			// 
-			this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label5.Location = new System.Drawing.Point(3, 75);
+			resources.ApplyResources(this.label5, "label5");
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(114, 25);
-			this.label5.TabIndex = 3;
-			this.label5.Text = "Spawn position:";
-			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// InputLevelID
 			// 
-			this.InputLevelID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputLevelID.Location = new System.Drawing.Point(123, 53);
+			resources.ApplyResources(this.InputLevelID, "InputLevelID");
 			this.InputLevelID.Name = "InputLevelID";
-			this.InputLevelID.Size = new System.Drawing.Size(370, 20);
-			this.InputLevelID.TabIndex = 14;
 			// 
 			// InputDifficulty
 			// 
-			this.InputDifficulty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			resources.ApplyResources(this.InputDifficulty, "InputDifficulty");
 			this.InputDifficulty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.InputDifficulty.FormattingEnabled = true;
 			this.InputDifficulty.Items.AddRange(new object[] {
-            "Easy",
-            "Medium",
-            "Hard"});
-			this.InputDifficulty.Location = new System.Drawing.Point(123, 103);
+            resources.GetString("InputDifficulty.Items"),
+            resources.GetString("InputDifficulty.Items1"),
+            resources.GetString("InputDifficulty.Items2")});
 			this.InputDifficulty.Name = "InputDifficulty";
-			this.InputDifficulty.Size = new System.Drawing.Size(370, 21);
-			this.InputDifficulty.TabIndex = 2;
 			// 
 			// checkboxNetworked
 			// 
-			this.checkboxNetworked.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkboxNetworked.AutoSize = true;
-			this.checkboxNetworked.Location = new System.Drawing.Point(123, 133);
+			resources.ApplyResources(this.checkboxNetworked, "checkboxNetworked");
 			this.checkboxNetworked.Name = "checkboxNetworked";
-			this.checkboxNetworked.Size = new System.Drawing.Size(370, 14);
-			this.checkboxNetworked.TabIndex = 16;
 			this.checkboxNetworked.UseVisualStyleBackColor = true;
 			// 
 			// label12
 			// 
-			this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(3, 125);
+			resources.ApplyResources(this.label12, "label12");
 			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(114, 31);
-			this.label12.TabIndex = 17;
-			this.label12.Text = "Networked multiplayer:";
-			this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// tableLayoutPanel2
 			// 
-			this.tableLayoutPanel2.AutoSize = true;
-			this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.tableLayoutPanel2.ColumnCount = 4;
-			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-			this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
 			this.tableLayoutPanel2.Controls.Add(this.label7, 2, 0);
 			this.tableLayoutPanel2.Controls.Add(this.label6, 0, 0);
 			this.tableLayoutPanel2.Controls.Add(this.InputSpawnX, 1, 0);
 			this.tableLayoutPanel2.Controls.Add(this.InputSpawnY, 3, 0);
-			this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel2.Location = new System.Drawing.Point(120, 75);
-			this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
 			this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-			this.tableLayoutPanel2.RowCount = 1;
-			this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel2.Size = new System.Drawing.Size(376, 25);
-			this.tableLayoutPanel2.TabIndex = 15;
 			// 
 			// label7
 			// 
-			this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label7.Location = new System.Drawing.Point(188, 0);
-			this.label7.Margin = new System.Windows.Forms.Padding(0);
+			resources.ApplyResources(this.label7, "label7");
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(15, 25);
-			this.label7.TabIndex = 7;
-			this.label7.Text = "Y";
-			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// label6
 			// 
-			this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(0, 0);
-			this.label6.Margin = new System.Windows.Forms.Padding(0);
+			resources.ApplyResources(this.label6, "label6");
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(15, 25);
-			this.label6.TabIndex = 4;
-			this.label6.Text = "X";
-			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// InputSpawnX
 			// 
-			this.InputSpawnX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			resources.ApplyResources(this.InputSpawnX, "InputSpawnX");
 			this.InputSpawnX.DecimalPlaces = 1;
 			this.InputSpawnX.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-			this.InputSpawnX.Location = new System.Drawing.Point(18, 3);
 			this.InputSpawnX.Maximum = new decimal(new int[] {
             -2147483648,
             0,
@@ -597,21 +414,17 @@ namespace HWSEdit
             0,
             0,
             -2147483648});
-			this.InputSpawnX.MinimumSize = new System.Drawing.Size(1, 0);
 			this.InputSpawnX.Name = "InputSpawnX";
-			this.InputSpawnX.Size = new System.Drawing.Size(167, 20);
-			this.InputSpawnX.TabIndex = 5;
 			// 
 			// InputSpawnY
 			// 
-			this.InputSpawnY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			resources.ApplyResources(this.InputSpawnY, "InputSpawnY");
 			this.InputSpawnY.DecimalPlaces = 1;
 			this.InputSpawnY.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-			this.InputSpawnY.Location = new System.Drawing.Point(206, 3);
 			this.InputSpawnY.Maximum = new decimal(new int[] {
             -2147483648,
             0,
@@ -622,27 +435,18 @@ namespace HWSEdit
             0,
             0,
             -2147483648});
-			this.InputSpawnY.MinimumSize = new System.Drawing.Size(1, 0);
 			this.InputSpawnY.Name = "InputSpawnY";
-			this.InputSpawnY.Size = new System.Drawing.Size(167, 20);
-			this.InputSpawnY.TabIndex = 6;
 			// 
 			// tabModifiers
 			// 
 			this.tabModifiers.Controls.Add(this.tableLayoutPanel3);
-			this.tabModifiers.Location = new System.Drawing.Point(4, 22);
+			resources.ApplyResources(this.tabModifiers, "tabModifiers");
 			this.tabModifiers.Name = "tabModifiers";
-			this.tabModifiers.Padding = new System.Windows.Forms.Padding(3);
-			this.tabModifiers.Size = new System.Drawing.Size(526, 247);
-			this.tabModifiers.TabIndex = 1;
-			this.tabModifiers.Text = "Modifiers";
 			this.tabModifiers.UseVisualStyleBackColor = true;
 			// 
 			// tableLayoutPanel3
 			// 
-			this.tableLayoutPanel3.ColumnCount = 2;
-			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			resources.ApplyResources(this.tableLayoutPanel3, "tableLayoutPanel3");
 			this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
 			this.tableLayoutPanel3.Controls.Add(this.checkBox5XManaRegen, 1, 5);
 			this.tableLayoutPanel3.Controls.Add(this.label3, 1, 0);
@@ -656,191 +460,115 @@ namespace HWSEdit
 			this.tableLayoutPanel3.Controls.Add(this.checkBoxNoHPPickups, 0, 4);
 			this.tableLayoutPanel3.Controls.Add(this.checkBoxReverseHPRegen, 0, 6);
 			this.tableLayoutPanel3.Controls.Add(this.checkBoxNoManaRegen, 0, 5);
-			this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
 			this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-			this.tableLayoutPanel3.RowCount = 7;
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel3.Size = new System.Drawing.Size(520, 241);
-			this.tableLayoutPanel3.TabIndex = 13;
 			// 
 			// label4
 			// 
-			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			resources.ApplyResources(this.label4, "label4");
 			this.label4.BackColor = System.Drawing.Color.Transparent;
-			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label4.ForeColor = System.Drawing.Color.Red;
-			this.label4.Location = new System.Drawing.Point(3, 8);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(254, 17);
-			this.label4.TabIndex = 12;
-			this.label4.Text = "Challenges";
-			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// checkBox5XManaRegen
 			// 
-			this.checkBox5XManaRegen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBox5XManaRegen.Location = new System.Drawing.Point(263, 179);
+			resources.ApplyResources(this.checkBox5XManaRegen, "checkBox5XManaRegen");
 			this.checkBox5XManaRegen.Name = "checkBox5XManaRegen";
-			this.checkBox5XManaRegen.Size = new System.Drawing.Size(254, 16);
-			this.checkBox5XManaRegen.TabIndex = 10;
-			this.checkBox5XManaRegen.Text = "5x Mana regen";
 			this.checkBox5XManaRegen.UseVisualStyleBackColor = true;
 			this.checkBox5XManaRegen.CheckedChanged += new System.EventHandler(this.CheckboxModifiersChanged);
 			// 
 			// label3
 			// 
-			this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			resources.ApplyResources(this.label3, "label3");
 			this.label3.BackColor = System.Drawing.Color.Transparent;
-			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label3.ForeColor = System.Drawing.Color.Green;
-			this.label3.Location = new System.Drawing.Point(263, 8);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(254, 17);
-			this.label3.TabIndex = 11;
-			this.label3.Text = "Crutches";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// checkBoxDoubleLives
 			// 
-			this.checkBoxDoubleLives.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxDoubleLives.Location = new System.Drawing.Point(263, 145);
+			resources.ApplyResources(this.checkBoxDoubleLives, "checkBoxDoubleLives");
 			this.checkBoxDoubleLives.Name = "checkBoxDoubleLives";
-			this.checkBoxDoubleLives.Size = new System.Drawing.Size(254, 16);
-			this.checkBoxDoubleLives.TabIndex = 9;
-			this.checkBoxDoubleLives.Text = "Double lives";
 			this.checkBoxDoubleLives.UseVisualStyleBackColor = true;
 			this.checkBoxDoubleLives.CheckedChanged += new System.EventHandler(this.CheckboxModifiersChanged);
 			// 
 			// checkBoxNoExtraLives
 			// 
-			this.checkBoxNoExtraLives.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxNoExtraLives.Location = new System.Drawing.Point(3, 43);
+			resources.ApplyResources(this.checkBoxNoExtraLives, "checkBoxNoExtraLives");
 			this.checkBoxNoExtraLives.Name = "checkBoxNoExtraLives";
-			this.checkBoxNoExtraLives.Size = new System.Drawing.Size(254, 16);
-			this.checkBoxNoExtraLives.TabIndex = 0;
-			this.checkBoxNoExtraLives.Text = "No extra lives";
 			this.checkBoxNoExtraLives.UseVisualStyleBackColor = true;
 			this.checkBoxNoExtraLives.CheckedChanged += new System.EventHandler(this.CheckboxModifiersChanged);
 			// 
 			// checkBoxDoubleDamage
 			// 
-			this.checkBoxDoubleDamage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxDoubleDamage.Location = new System.Drawing.Point(263, 111);
+			resources.ApplyResources(this.checkBoxDoubleDamage, "checkBoxDoubleDamage");
 			this.checkBoxDoubleDamage.Name = "checkBoxDoubleDamage";
-			this.checkBoxDoubleDamage.Size = new System.Drawing.Size(254, 16);
-			this.checkBoxDoubleDamage.TabIndex = 8;
-			this.checkBoxDoubleDamage.Text = "Double damage";
 			this.checkBoxDoubleDamage.UseVisualStyleBackColor = true;
 			this.checkBoxDoubleDamage.CheckedChanged += new System.EventHandler(this.CheckboxModifiersChanged);
 			// 
 			// checkBox1HP
 			// 
-			this.checkBox1HP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBox1HP.Location = new System.Drawing.Point(3, 77);
+			resources.ApplyResources(this.checkBox1HP, "checkBox1HP");
 			this.checkBox1HP.Name = "checkBox1HP";
-			this.checkBox1HP.Size = new System.Drawing.Size(254, 16);
-			this.checkBox1HP.TabIndex = 1;
-			this.checkBox1HP.Text = "1 HP";
 			this.checkBox1HP.UseVisualStyleBackColor = true;
 			this.checkBox1HP.CheckedChanged += new System.EventHandler(this.CheckboxModifiersChanged);
 			// 
 			// checkBoxHPRegen
 			// 
-			this.checkBoxHPRegen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxHPRegen.Location = new System.Drawing.Point(263, 77);
+			resources.ApplyResources(this.checkBoxHPRegen, "checkBoxHPRegen");
 			this.checkBoxHPRegen.Name = "checkBoxHPRegen";
-			this.checkBoxHPRegen.Size = new System.Drawing.Size(254, 16);
-			this.checkBoxHPRegen.TabIndex = 7;
-			this.checkBoxHPRegen.Text = "HP regen";
 			this.checkBoxHPRegen.UseVisualStyleBackColor = true;
 			this.checkBoxHPRegen.CheckedChanged += new System.EventHandler(this.CheckboxModifiersChanged);
 			// 
 			// checkBoxSharedHPPool
 			// 
-			this.checkBoxSharedHPPool.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxSharedHPPool.Location = new System.Drawing.Point(3, 111);
+			resources.ApplyResources(this.checkBoxSharedHPPool, "checkBoxSharedHPPool");
 			this.checkBoxSharedHPPool.Name = "checkBoxSharedHPPool";
-			this.checkBoxSharedHPPool.Size = new System.Drawing.Size(254, 16);
-			this.checkBoxSharedHPPool.TabIndex = 2;
-			this.checkBoxSharedHPPool.Text = "Shared HP pool";
 			this.checkBoxSharedHPPool.UseVisualStyleBackColor = true;
 			this.checkBoxSharedHPPool.CheckedChanged += new System.EventHandler(this.CheckboxModifiersChanged);
 			// 
 			// checkBoxInfiniteLives
 			// 
-			this.checkBoxInfiniteLives.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxInfiniteLives.Location = new System.Drawing.Point(263, 43);
+			resources.ApplyResources(this.checkBoxInfiniteLives, "checkBoxInfiniteLives");
 			this.checkBoxInfiniteLives.Name = "checkBoxInfiniteLives";
-			this.checkBoxInfiniteLives.Size = new System.Drawing.Size(254, 16);
-			this.checkBoxInfiniteLives.TabIndex = 6;
-			this.checkBoxInfiniteLives.Text = "Infinite Lives";
 			this.checkBoxInfiniteLives.UseVisualStyleBackColor = true;
 			this.checkBoxInfiniteLives.CheckedChanged += new System.EventHandler(this.CheckboxModifiersChanged);
 			// 
 			// checkBoxNoHPPickups
 			// 
-			this.checkBoxNoHPPickups.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxNoHPPickups.Location = new System.Drawing.Point(3, 145);
+			resources.ApplyResources(this.checkBoxNoHPPickups, "checkBoxNoHPPickups");
 			this.checkBoxNoHPPickups.Name = "checkBoxNoHPPickups";
-			this.checkBoxNoHPPickups.Size = new System.Drawing.Size(254, 16);
-			this.checkBoxNoHPPickups.TabIndex = 3;
-			this.checkBoxNoHPPickups.Text = "No HP pickups";
 			this.checkBoxNoHPPickups.UseVisualStyleBackColor = true;
 			this.checkBoxNoHPPickups.CheckedChanged += new System.EventHandler(this.CheckboxModifiersChanged);
 			// 
 			// checkBoxReverseHPRegen
 			// 
-			this.checkBoxReverseHPRegen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxReverseHPRegen.Location = new System.Drawing.Point(3, 212);
+			resources.ApplyResources(this.checkBoxReverseHPRegen, "checkBoxReverseHPRegen");
 			this.checkBoxReverseHPRegen.Name = "checkBoxReverseHPRegen";
-			this.checkBoxReverseHPRegen.Size = new System.Drawing.Size(254, 21);
-			this.checkBoxReverseHPRegen.TabIndex = 5;
-			this.checkBoxReverseHPRegen.Text = "Reverse HP regen";
 			this.checkBoxReverseHPRegen.UseVisualStyleBackColor = true;
 			this.checkBoxReverseHPRegen.CheckedChanged += new System.EventHandler(this.CheckboxModifiersChanged);
 			// 
 			// checkBoxNoManaRegen
 			// 
-			this.checkBoxNoManaRegen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.checkBoxNoManaRegen.Location = new System.Drawing.Point(3, 179);
+			resources.ApplyResources(this.checkBoxNoManaRegen, "checkBoxNoManaRegen");
 			this.checkBoxNoManaRegen.Name = "checkBoxNoManaRegen";
-			this.checkBoxNoManaRegen.Size = new System.Drawing.Size(254, 16);
-			this.checkBoxNoManaRegen.TabIndex = 4;
-			this.checkBoxNoManaRegen.Text = "No Mana regen";
 			this.checkBoxNoManaRegen.UseVisualStyleBackColor = true;
 			this.checkBoxNoManaRegen.CheckedChanged += new System.EventHandler(this.CheckboxModifiersChanged);
 			// 
 			// tabPlayers
 			// 
 			this.tabPlayers.Controls.Add(this.splitContainer1);
-			this.tabPlayers.Location = new System.Drawing.Point(4, 22);
+			resources.ApplyResources(this.tabPlayers, "tabPlayers");
 			this.tabPlayers.Name = "tabPlayers";
-			this.tabPlayers.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPlayers.Size = new System.Drawing.Size(526, 247);
-			this.tabPlayers.TabIndex = 2;
-			this.tabPlayers.Text = "Players";
 			this.tabPlayers.UseVisualStyleBackColor = true;
 			// 
 			// splitContainer1
 			// 
-			this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+			resources.ApplyResources(this.splitContainer1, "splitContainer1");
 			this.splitContainer1.Name = "splitContainer1";
 			// 
 			// splitContainer1.Panel1
 			// 
 			this.splitContainer1.Panel1.Controls.Add(this.groupBox4);
-			this.splitContainer1.Panel1MinSize = 75;
+			this.splitContainer1.Panel1.Resize += new System.EventHandler(this.splitContainer1_Panel1_Resize);
 			// 
 			// splitContainer1.Panel2
 			// 
@@ -848,43 +576,38 @@ namespace HWSEdit
 			this.splitContainer1.Panel2.Controls.Add(this.button3);
 			this.splitContainer1.Panel2.Controls.Add(this.button2);
 			this.splitContainer1.Panel2.Controls.Add(this.button1);
-			this.splitContainer1.Panel2MinSize = 250;
-			this.splitContainer1.Size = new System.Drawing.Size(520, 241);
-			this.splitContainer1.SplitterDistance = 157;
-			this.splitContainer1.TabIndex = 21;
 			// 
 			// groupBox4
 			// 
+			this.groupBox4.Controls.Add(this.button5);
 			this.groupBox4.Controls.Add(this.playerListView);
-			this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.groupBox4.Location = new System.Drawing.Point(0, 0);
+			this.groupBox4.Controls.Add(this.button4);
+			resources.ApplyResources(this.groupBox4, "groupBox4");
 			this.groupBox4.Name = "groupBox4";
-			this.groupBox4.Size = new System.Drawing.Size(157, 241);
-			this.groupBox4.TabIndex = 22;
 			this.groupBox4.TabStop = false;
-			this.groupBox4.Text = "Player";
+			// 
+			// button5
+			// 
+			resources.ApplyResources(this.button5, "button5");
+			this.button5.Name = "button5";
+			this.button5.UseVisualStyleBackColor = true;
 			// 
 			// playerListView
 			// 
-			this.playerListView.Alignment = System.Windows.Forms.ListViewAlignment.Default;
+			resources.ApplyResources(this.playerListView, "playerListView");
 			this.playerListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.playerListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1});
 			this.playerListView.ContextMenuStrip = this.playerContextMenu;
-			this.playerListView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.playerListView.FullRowSelect = true;
 			this.playerListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
 			this.playerListView.HideSelection = false;
 			this.playerListView.LabelEdit = true;
-			this.playerListView.LabelWrap = false;
 			this.playerListView.LargeImageList = this.classImageList;
-			this.playerListView.Location = new System.Drawing.Point(3, 16);
 			this.playerListView.MultiSelect = false;
 			this.playerListView.Name = "playerListView";
 			this.playerListView.ShowGroups = false;
-			this.playerListView.Size = new System.Drawing.Size(151, 222);
 			this.playerListView.SmallImageList = this.classImageList;
-			this.playerListView.TabIndex = 19;
 			this.playerListView.UseCompatibleStateImageBehavior = false;
 			this.playerListView.View = System.Windows.Forms.View.Details;
 			this.playerListView.AfterLabelEdit += new System.Windows.Forms.LabelEditEventHandler(this.playerListView_AfterLabelEdit);
@@ -892,7 +615,7 @@ namespace HWSEdit
 			// 
 			// columnHeader1
 			// 
-			this.columnHeader1.Width = 121;
+			resources.ApplyResources(this.columnHeader1, "columnHeader1");
 			// 
 			// playerContextMenu
 			// 
@@ -900,59 +623,54 @@ namespace HWSEdit
             this.renameToolStripMenuItem,
             this.deleteToolStripMenuItem});
 			this.playerContextMenu.Name = "playerContextMenu";
-			this.playerContextMenu.Size = new System.Drawing.Size(118, 48);
+			resources.ApplyResources(this.playerContextMenu, "playerContextMenu");
 			this.playerContextMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.playerContextMenu_ItemClicked);
 			// 
 			// renameToolStripMenuItem
 			// 
 			this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
-			this.renameToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-			this.renameToolStripMenuItem.Text = "&Rename";
+			resources.ApplyResources(this.renameToolStripMenuItem, "renameToolStripMenuItem");
 			// 
 			// deleteToolStripMenuItem
 			// 
 			this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-			this.deleteToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-			this.deleteToolStripMenuItem.Text = "&Delete";
+			resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
 			// 
 			// classImageList
 			// 
 			this.classImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("classImageList.ImageStream")));
 			this.classImageList.TransparentColor = System.Drawing.Color.Transparent;
-			this.classImageList.Images.SetKeyName(0, "paladin");
-			this.classImageList.Images.SetKeyName(1, "wizard");
-			this.classImageList.Images.SetKeyName(2, "ranger");
-			this.classImageList.Images.SetKeyName(3, "warlock");
-			this.classImageList.Images.SetKeyName(4, "thief");
-			this.classImageList.Images.SetKeyName(5, "priest");
+			this.classImageList.Images.SetKeyName(0, "");
+			this.classImageList.Images.SetKeyName(1, "");
+			this.classImageList.Images.SetKeyName(2, "");
+			this.classImageList.Images.SetKeyName(3, "");
+			this.classImageList.Images.SetKeyName(4, "");
+			this.classImageList.Images.SetKeyName(5, "");
+			// 
+			// button4
+			// 
+			resources.ApplyResources(this.button4, "button4");
+			this.button4.Name = "button4";
+			this.button4.UseVisualStyleBackColor = true;
 			// 
 			// tabControl1
 			// 
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
-			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabControl1.Location = new System.Drawing.Point(0, 0);
+			resources.ApplyResources(this.tabControl1, "tabControl1");
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(359, 241);
-			this.tabControl1.TabIndex = 22;
 			// 
 			// tabPage1
 			// 
 			this.tabPage1.Controls.Add(this.tableLayoutPanel5);
-			this.tabPage1.Location = new System.Drawing.Point(4, 22);
+			resources.ApplyResources(this.tabPage1, "tabPage1");
 			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(351, 215);
-			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "General";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
 			// tableLayoutPanel5
 			// 
-			this.tableLayoutPanel5.ColumnCount = 2;
-			this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-			this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			resources.ApplyResources(this.tableLayoutPanel5, "tableLayoutPanel5");
 			this.tableLayoutPanel5.Controls.Add(this.InputPlayerLives, 1, 2);
 			this.tableLayoutPanel5.Controls.Add(this.label13, 0, 0);
 			this.tableLayoutPanel5.Controls.Add(this.InputPlayerName, 1, 0);
@@ -969,284 +687,164 @@ namespace HWSEdit
 			this.tableLayoutPanel5.Controls.Add(this.label11, 0, 6);
 			this.tableLayoutPanel5.Controls.Add(this.InputPlayerPotion, 1, 7);
 			this.tableLayoutPanel5.Controls.Add(this.InputPlayerMoney, 1, 6);
-			this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
 			this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-			this.tableLayoutPanel5.RowCount = 8;
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-			this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-			this.tableLayoutPanel5.Size = new System.Drawing.Size(345, 209);
-			this.tableLayoutPanel5.TabIndex = 21;
 			// 
 			// InputPlayerLives
 			// 
-			this.InputPlayerLives.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputPlayerLives.Location = new System.Drawing.Point(53, 55);
+			resources.ApplyResources(this.InputPlayerLives, "InputPlayerLives");
 			this.InputPlayerLives.Maximum = new decimal(new int[] {
             2147483647,
             0,
             0,
             0});
 			this.InputPlayerLives.Name = "InputPlayerLives";
-			this.InputPlayerLives.Size = new System.Drawing.Size(289, 20);
-			this.InputPlayerLives.TabIndex = 18;
 			this.InputPlayerLives.ValueChanged += new System.EventHandler(this.InputPlayerLives_ValueChanged);
 			// 
 			// label13
 			// 
-			this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label13.Location = new System.Drawing.Point(3, 0);
+			resources.ApplyResources(this.label13, "label13");
 			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(44, 26);
-			this.label13.TabIndex = 12;
-			this.label13.Text = "Name:";
-			this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// InputPlayerName
 			// 
-			this.InputPlayerName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputPlayerName.Location = new System.Drawing.Point(53, 3);
+			resources.ApplyResources(this.InputPlayerName, "InputPlayerName");
 			this.InputPlayerName.Name = "InputPlayerName";
-			this.InputPlayerName.Size = new System.Drawing.Size(289, 20);
-			this.InputPlayerName.TabIndex = 16;
 			this.InputPlayerName.TextChanged += new System.EventHandler(this.InputPlayerName_TextChanged);
 			// 
 			// InputPlayerClass
 			// 
-			this.InputPlayerClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			resources.ApplyResources(this.InputPlayerClass, "InputPlayerClass");
 			this.InputPlayerClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.InputPlayerClass.FormattingEnabled = true;
-			this.InputPlayerClass.Items.AddRange(new object[] {
-            "Paladin",
-            "Wizard",
-            "Ranger",
-            "Warlock",
-            "Thief",
-            "Priest"});
-			this.InputPlayerClass.Location = new System.Drawing.Point(53, 29);
 			this.InputPlayerClass.Name = "InputPlayerClass";
-			this.InputPlayerClass.Size = new System.Drawing.Size(289, 21);
-			this.InputPlayerClass.TabIndex = 17;
 			this.InputPlayerClass.SelectedIndexChanged += new System.EventHandler(this.InputPlayerClass_SelectedIndexChanged);
 			// 
 			// label15
 			// 
-			this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label15.Location = new System.Drawing.Point(3, 26);
+			resources.ApplyResources(this.label15, "label15");
 			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(44, 26);
-			this.label15.TabIndex = 10;
-			this.label15.Text = "Class:";
-			this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// label16
 			// 
-			this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label16.Location = new System.Drawing.Point(3, 52);
+			resources.ApplyResources(this.label16, "label16");
 			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(44, 26);
-			this.label16.TabIndex = 8;
-			this.label16.Text = "Lives:";
-			this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// label18
 			// 
-			this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label18.Location = new System.Drawing.Point(3, 78);
+			resources.ApplyResources(this.label18, "label18");
 			this.label18.Name = "label18";
-			this.label18.Size = new System.Drawing.Size(44, 26);
-			this.label18.TabIndex = 26;
-			this.label18.Text = "Deaths:";
-			this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// InputPlayerDeaths
 			// 
-			this.InputPlayerDeaths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputPlayerDeaths.Location = new System.Drawing.Point(53, 81);
+			resources.ApplyResources(this.InputPlayerDeaths, "InputPlayerDeaths");
 			this.InputPlayerDeaths.Maximum = new decimal(new int[] {
             2147483647,
             0,
             0,
             0});
 			this.InputPlayerDeaths.Name = "InputPlayerDeaths";
-			this.InputPlayerDeaths.Size = new System.Drawing.Size(289, 20);
-			this.InputPlayerDeaths.TabIndex = 27;
 			this.InputPlayerDeaths.ValueChanged += new System.EventHandler(this.InputPlayerDeaths_ValueChanged);
 			// 
 			// label17
 			// 
-			this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label17.Location = new System.Drawing.Point(3, 104);
+			resources.ApplyResources(this.label17, "label17");
 			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(44, 26);
-			this.label17.TabIndex = 3;
-			this.label17.Text = "Health:";
-			this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// InputPlayerHealth
 			// 
-			this.InputPlayerHealth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputPlayerHealth.Location = new System.Drawing.Point(53, 107);
+			resources.ApplyResources(this.InputPlayerHealth, "InputPlayerHealth");
 			this.InputPlayerHealth.Maximum = new decimal(new int[] {
             2147483647,
             0,
             0,
             0});
 			this.InputPlayerHealth.Name = "InputPlayerHealth";
-			this.InputPlayerHealth.Size = new System.Drawing.Size(289, 20);
-			this.InputPlayerHealth.TabIndex = 19;
 			this.InputPlayerHealth.ValueChanged += new System.EventHandler(this.InputPlayerHealth_ValueChanged);
 			// 
 			// label2
 			// 
-			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label2.Location = new System.Drawing.Point(3, 130);
+			resources.ApplyResources(this.label2, "label2");
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(44, 26);
-			this.label2.TabIndex = 20;
-			this.label2.Text = "Mana:";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// InputPlayerMana
 			// 
-			this.InputPlayerMana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputPlayerMana.Location = new System.Drawing.Point(53, 133);
+			resources.ApplyResources(this.InputPlayerMana, "InputPlayerMana");
 			this.InputPlayerMana.Maximum = new decimal(new int[] {
             2147483647,
             0,
             0,
             0});
 			this.InputPlayerMana.Name = "InputPlayerMana";
-			this.InputPlayerMana.Size = new System.Drawing.Size(289, 20);
-			this.InputPlayerMana.TabIndex = 21;
 			this.InputPlayerMana.ValueChanged += new System.EventHandler(this.InputPlayerMana_ValueChanged);
 			// 
 			// label14
 			// 
-			this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label14.Location = new System.Drawing.Point(3, 182);
+			resources.ApplyResources(this.label14, "label14");
 			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(44, 27);
-			this.label14.TabIndex = 24;
-			this.label14.Text = "Potion:";
-			this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// label11
 			// 
-			this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.label11.Location = new System.Drawing.Point(3, 156);
+			resources.ApplyResources(this.label11, "label11");
 			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(44, 26);
-			this.label11.TabIndex = 22;
-			this.label11.Text = "Money:";
-			this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// InputPlayerPotion
 			// 
-			this.InputPlayerPotion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			resources.ApplyResources(this.InputPlayerPotion, "InputPlayerPotion");
 			this.InputPlayerPotion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.InputPlayerPotion.FormattingEnabled = true;
 			this.InputPlayerPotion.Items.AddRange(new object[] {
-            "None",
-            "Potion 1",
-            "Potion 2",
-            "Potion 3",
-            "Potion 4",
-            "Potion 5",
-            "Potion 6"});
-			this.InputPlayerPotion.Location = new System.Drawing.Point(53, 185);
+            resources.GetString("InputPlayerPotion.Items"),
+            resources.GetString("InputPlayerPotion.Items1"),
+            resources.GetString("InputPlayerPotion.Items2"),
+            resources.GetString("InputPlayerPotion.Items3"),
+            resources.GetString("InputPlayerPotion.Items4"),
+            resources.GetString("InputPlayerPotion.Items5"),
+            resources.GetString("InputPlayerPotion.Items6")});
 			this.InputPlayerPotion.Name = "InputPlayerPotion";
-			this.InputPlayerPotion.Size = new System.Drawing.Size(289, 21);
-			this.InputPlayerPotion.TabIndex = 25;
 			this.InputPlayerPotion.SelectedIndexChanged += new System.EventHandler(this.InputPlayerPotion_SelectedIndexChanged);
 			// 
 			// InputPlayerMoney
 			// 
-			this.InputPlayerMoney.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.InputPlayerMoney.Location = new System.Drawing.Point(53, 159);
+			resources.ApplyResources(this.InputPlayerMoney, "InputPlayerMoney");
 			this.InputPlayerMoney.Maximum = new decimal(new int[] {
             2147483647,
             0,
             0,
             0});
 			this.InputPlayerMoney.Name = "InputPlayerMoney";
-			this.InputPlayerMoney.Size = new System.Drawing.Size(289, 20);
-			this.InputPlayerMoney.TabIndex = 23;
 			this.InputPlayerMoney.ValueChanged += new System.EventHandler(this.InputPlayerMoney_ValueChanged);
 			// 
 			// tabPage2
 			// 
-			this.tabPage2.Controls.Add(this.treeView1);
-			this.tabPage2.Location = new System.Drawing.Point(4, 22);
+			this.tabPage2.Controls.Add(this.upgradeTree1);
+			resources.ApplyResources(this.tabPage2, "tabPage2");
 			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(351, 215);
-			this.tabPage2.TabIndex = 1;
-			this.tabPage2.Text = "Upgrades";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
 			// button3
 			// 
-			this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.button3.Location = new System.Drawing.Point(119, 213);
+			resources.ApplyResources(this.button3, "button3");
 			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(75, 23);
-			this.button3.TabIndex = 25;
-			this.button3.Text = "&Copy to...";
 			this.button3.UseVisualStyleBackColor = true;
 			// 
 			// button2
 			// 
-			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.button2.Location = new System.Drawing.Point(200, 213);
+			resources.ApplyResources(this.button2, "button2");
 			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 24;
-			this.button2.Text = "&Move to...";
 			this.button2.UseVisualStyleBackColor = true;
 			// 
 			// button1
 			// 
-			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.button1.Location = new System.Drawing.Point(281, 213);
+			resources.ApplyResources(this.button1, "button1");
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 23;
-			this.button1.Text = "&Delete";
 			this.button1.UseVisualStyleBackColor = true;
 			// 
 			// tabhws2xml
 			// 
 			this.tabhws2xml.Controls.Add(this.groupBox2);
 			this.tabhws2xml.Controls.Add(this.groupBox1);
-			this.tabhws2xml.Location = new System.Drawing.Point(4, 22);
+			resources.ApplyResources(this.tabhws2xml, "tabhws2xml");
 			this.tabhws2xml.Name = "tabhws2xml";
-			this.tabhws2xml.Padding = new System.Windows.Forms.Padding(3);
-			this.tabhws2xml.Size = new System.Drawing.Size(526, 247);
-			this.tabhws2xml.TabIndex = 3;
-			this.tabhws2xml.Text = "hws2xml";
 			this.tabhws2xml.UseVisualStyleBackColor = true;
 			// 
 			// groupBox2
@@ -1254,100 +852,76 @@ namespace HWSEdit
 			this.groupBox2.Controls.Add(this.saveHWSButton);
 			this.groupBox2.Controls.Add(this.saveHWSBrowseButton);
 			this.groupBox2.Controls.Add(this.textBox2);
-			this.groupBox2.Location = new System.Drawing.Point(6, 88);
+			resources.ApplyResources(this.groupBox2, "groupBox2");
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(248, 76);
-			this.groupBox2.TabIndex = 1;
 			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Convert to HWS";
 			// 
 			// saveHWSButton
 			// 
-			this.saveHWSButton.Location = new System.Drawing.Point(6, 45);
+			resources.ApplyResources(this.saveHWSButton, "saveHWSButton");
 			this.saveHWSButton.Name = "saveHWSButton";
-			this.saveHWSButton.Size = new System.Drawing.Size(236, 23);
-			this.saveHWSButton.TabIndex = 2;
-			this.saveHWSButton.Text = "Save As HWS";
 			this.saveHWSButton.UseVisualStyleBackColor = true;
 			this.saveHWSButton.Click += new System.EventHandler(this.saveHWSButtonClick);
 			// 
 			// saveHWSBrowseButton
 			// 
-			this.saveHWSBrowseButton.Location = new System.Drawing.Point(167, 17);
+			resources.ApplyResources(this.saveHWSBrowseButton, "saveHWSBrowseButton");
 			this.saveHWSBrowseButton.Name = "saveHWSBrowseButton";
-			this.saveHWSBrowseButton.Size = new System.Drawing.Size(75, 23);
-			this.saveHWSBrowseButton.TabIndex = 1;
-			this.saveHWSBrowseButton.Text = "Browse...";
 			this.saveHWSBrowseButton.UseVisualStyleBackColor = true;
 			this.saveHWSBrowseButton.Click += new System.EventHandler(this.saveHWSBrowseButtonClick);
 			// 
 			// textBox2
 			// 
-			this.textBox2.Location = new System.Drawing.Point(6, 19);
+			resources.ApplyResources(this.textBox2, "textBox2");
 			this.textBox2.Name = "textBox2";
 			this.textBox2.ReadOnly = true;
-			this.textBox2.Size = new System.Drawing.Size(155, 20);
-			this.textBox2.TabIndex = 0;
 			// 
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.saveXMLButton);
 			this.groupBox1.Controls.Add(this.saveXMLBrowseButton);
 			this.groupBox1.Controls.Add(this.textBox1);
-			this.groupBox1.Location = new System.Drawing.Point(6, 6);
+			resources.ApplyResources(this.groupBox1, "groupBox1");
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(248, 76);
-			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Convert to XML";
 			// 
 			// saveXMLButton
 			// 
-			this.saveXMLButton.Location = new System.Drawing.Point(6, 45);
+			resources.ApplyResources(this.saveXMLButton, "saveXMLButton");
 			this.saveXMLButton.Name = "saveXMLButton";
-			this.saveXMLButton.Size = new System.Drawing.Size(236, 23);
-			this.saveXMLButton.TabIndex = 2;
-			this.saveXMLButton.Text = "Save As XML";
 			this.saveXMLButton.UseVisualStyleBackColor = true;
 			this.saveXMLButton.Click += new System.EventHandler(this.saveXMLButtonClick);
 			// 
 			// saveXMLBrowseButton
 			// 
-			this.saveXMLBrowseButton.Location = new System.Drawing.Point(167, 17);
+			resources.ApplyResources(this.saveXMLBrowseButton, "saveXMLBrowseButton");
 			this.saveXMLBrowseButton.Name = "saveXMLBrowseButton";
-			this.saveXMLBrowseButton.Size = new System.Drawing.Size(75, 23);
-			this.saveXMLBrowseButton.TabIndex = 1;
-			this.saveXMLBrowseButton.Text = "Browse...";
 			this.saveXMLBrowseButton.UseVisualStyleBackColor = true;
 			this.saveXMLBrowseButton.Click += new System.EventHandler(this.saveXMLBrowseButtonClick);
 			// 
 			// textBox1
 			// 
-			this.textBox1.Location = new System.Drawing.Point(6, 19);
+			resources.ApplyResources(this.textBox1, "textBox1");
 			this.textBox1.Name = "textBox1";
 			this.textBox1.ReadOnly = true;
-			this.textBox1.Size = new System.Drawing.Size(155, 20);
-			this.textBox1.TabIndex = 0;
 			// 
 			// openHWSDialog
 			// 
-			this.openHWSDialog.Filter = "Save file (*.hws), (*.xml)|*.hws;*.xml|Hammerwatch Save file (*.hws)|*.hws|XML Fi" +
-    "le (*.xml)|*.xml";
+			resources.ApplyResources(this.openHWSDialog, "openHWSDialog");
 			// 
 			// saveXMLDialog
 			// 
 			this.saveXMLDialog.DefaultExt = "*.xml";
-			this.saveXMLDialog.Filter = "XML file|*.xml";
+			resources.ApplyResources(this.saveXMLDialog, "saveXMLDialog");
 			// 
 			// openXMLDialog
 			// 
-			this.openXMLDialog.Filter = "XML file|*.xml";
+			resources.ApplyResources(this.openXMLDialog, "openXMLDialog");
 			// 
 			// saveHWSDialog
 			// 
 			this.saveHWSDialog.DefaultExt = "*.hws;*.xml";
-			this.saveHWSDialog.Filter = "Save file (*.hws), (*.xml)|*.hws;*.xml|Hammerwatch Save file (*.hws)|*.hws|XML Fi" +
-    "le (*.xml)|*.xml";
+			resources.ApplyResources(this.saveHWSDialog, "saveHWSDialog");
 			// 
 			// toolStrip1
 			// 
@@ -1358,154 +932,82 @@ namespace HWSEdit
             this.toolStripButton4,
             this.toolStripButton6,
             this.toolStripButton5});
-			this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+			resources.ApplyResources(this.toolStrip1, "toolStrip1");
 			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(552, 25);
-			this.toolStrip1.TabIndex = 2;
-			this.toolStrip1.Text = "toolStrip1";
 			// 
 			// openToolStripButton
 			// 
 			this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			this.openToolStripButton.Image = global::HWSEdit.Properties.Resources.folder_horizontal_open;
-			this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+			resources.ApplyResources(this.openToolStripButton, "openToolStripButton");
 			this.openToolStripButton.Name = "openToolStripButton";
-			this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
-			this.openToolStripButton.Text = "Open";
 			this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
 			// 
 			// buttonSave
 			// 
 			this.buttonSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.buttonSave.Image = ((System.Drawing.Image)(resources.GetObject("buttonSave.Image")));
-			this.buttonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+			resources.ApplyResources(this.buttonSave, "buttonSave");
 			this.buttonSave.Name = "buttonSave";
-			this.buttonSave.Size = new System.Drawing.Size(23, 22);
-			this.buttonSave.Text = "Save";
 			this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
 			// 
 			// buttonClose
 			// 
 			this.buttonClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			this.buttonClose.Image = global::HWSEdit.Properties.Resources.cross_circle_frame;
-			this.buttonClose.ImageTransparentColor = System.Drawing.Color.Magenta;
+			resources.ApplyResources(this.buttonClose, "buttonClose");
 			this.buttonClose.Name = "buttonClose";
-			this.buttonClose.Size = new System.Drawing.Size(23, 22);
-			this.buttonClose.Text = "Close";
 			this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
 			// 
 			// toolStripButton4
 			// 
 			this.toolStripButton4.Name = "toolStripButton4";
-			this.toolStripButton4.Size = new System.Drawing.Size(6, 25);
+			resources.ApplyResources(this.toolStripButton4, "toolStripButton4");
 			// 
 			// toolStripButton6
 			// 
 			this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			this.toolStripButton6.Image = global::HWSEdit.Properties.Resources.question_frame;
-			this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+			resources.ApplyResources(this.toolStripButton6, "toolStripButton6");
 			this.toolStripButton6.Name = "toolStripButton6";
-			this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
-			this.toolStripButton6.Text = "Help";
 			// 
 			// toolStripButton5
 			// 
 			this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			this.toolStripButton5.Image = global::HWSEdit.Properties.Resources.information_balloon;
-			this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+			resources.ApplyResources(this.toolStripButton5, "toolStripButton5");
 			this.toolStripButton5.Name = "toolStripButton5";
-			this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
-			this.toolStripButton5.Text = "About";
 			// 
 			// statusStrip1
 			// 
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-			this.statusStrip1.Location = new System.Drawing.Point(0, 331);
+			resources.ApplyResources(this.statusStrip1, "statusStrip1");
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.ShowItemToolTips = true;
-			this.statusStrip1.Size = new System.Drawing.Size(552, 22);
 			this.statusStrip1.SizingGrip = false;
-			this.statusStrip1.TabIndex = 3;
-			this.statusStrip1.Text = "statusStrip1";
 			// 
 			// toolStripStatusLabel
 			// 
 			this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-			this.toolStripStatusLabel.Size = new System.Drawing.Size(26, 17);
-			this.toolStripStatusLabel.Text = "Idle";
+			resources.ApplyResources(this.toolStripStatusLabel, "toolStripStatusLabel");
 			// 
-			// treeView1
+			// upgradeTree1
 			// 
-			this.treeView1.CheckBoxes = true;
-			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.treeView1.Location = new System.Drawing.Point(3, 3);
-			this.treeView1.Name = "treeView1";
-			treeNode22.Name = "Node10";
-			treeNode22.Text = "Level 1";
-			treeNode23.Name = "Node11";
-			treeNode23.Text = "Level 2";
-			treeNode24.Name = "Node1";
-			treeNode24.Text = "Combo";
-			treeNode25.Name = "Node12";
-			treeNode25.Text = "Level 1";
-			treeNode26.Name = "Node3";
-			treeNode26.Text = "Nova";
-			treeNode27.Name = "Node13";
-			treeNode27.Text = "Level 1";
-			treeNode28.Name = "Node4";
-			treeNode28.Text = "Time";
-			treeNode29.Name = "Node14";
-			treeNode29.Text = "Level 1";
-			treeNode30.Name = "Node5";
-			treeNode30.Text = "Heal";
-			treeNode31.Name = "Node0";
-			treeNode31.Text = "Combo";
-			treeNode32.Name = "Node15";
-			treeNode32.Text = "Level 1";
-			treeNode33.Name = "Node16";
-			treeNode33.Text = "Level 2";
-			treeNode34.Name = "Node17";
-			treeNode34.Text = "Level 3";
-			treeNode35.Name = "Node7";
-			treeNode35.Text = "Health";
-			treeNode36.Name = "Node18";
-			treeNode36.Text = "Level 1";
-			treeNode37.Name = "Node19";
-			treeNode37.Text = "Level 2";
-			treeNode38.Name = "Node20";
-			treeNode38.Text = "Level 3";
-			treeNode39.Name = "Node8";
-			treeNode39.Text = "Mana";
-			treeNode40.Name = "Node21";
-			treeNode40.Text = "Level 1";
-			treeNode41.Name = "Node9";
-			treeNode41.Text = "Poison";
-			treeNode42.Name = "Node6";
-			treeNode42.Text = "Combat";
-			this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode31,
-            treeNode42});
-			this.treeView1.Size = new System.Drawing.Size(345, 209);
-			this.treeView1.TabIndex = 0;
+			resources.ApplyResources(this.upgradeTree1, "upgradeTree1");
+			this.upgradeTree1.Name = "upgradeTree1";
 			// 
 			// MainForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Control;
-			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.ClientSize = new System.Drawing.Size(552, 353);
 			this.Controls.Add(this.statusStrip1);
 			this.Controls.Add(this.toolStrip1);
 			this.Controls.Add(this.tabPageSelector);
 			this.Controls.Add(this.menuStrip1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.menuStrip1;
-			this.MinimumSize = new System.Drawing.Size(365, 310);
 			this.Name = "MainForm";
-			this.Text = "HWSEdit - Hammerwatch Save Editor";
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.tabPageSelector.ResumeLayout(false);
@@ -1650,6 +1152,8 @@ namespace HWSEdit
 		private System.Windows.Forms.TabPage tabPage2;
 		private System.Windows.Forms.Label label18;
 		private System.Windows.Forms.NumericUpDown InputPlayerDeaths;
-		private System.Windows.Forms.TreeView treeView1;
+		private System.Windows.Forms.Button button5;
+		private System.Windows.Forms.Button button4;
+		private UpgradeTree upgradeTree1;
 	}
 }
