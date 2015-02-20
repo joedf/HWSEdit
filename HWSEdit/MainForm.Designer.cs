@@ -38,46 +38,46 @@ namespace HWSEdit
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-			System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Level 1");
-			System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Level 2");
-			System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Combo", new System.Windows.Forms.TreeNode[] {
-            treeNode22,
-            treeNode23});
-			System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Level 1");
-			System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Nova", new System.Windows.Forms.TreeNode[] {
-            treeNode25});
-			System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Level 1");
-			System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Time", new System.Windows.Forms.TreeNode[] {
-            treeNode27});
-			System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Level 1");
-			System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Heal", new System.Windows.Forms.TreeNode[] {
-            treeNode29});
-			System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Combo", new System.Windows.Forms.TreeNode[] {
-            treeNode24,
-            treeNode26,
-            treeNode28,
-            treeNode30});
-			System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Level 1");
-			System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Level 2");
-			System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Level 3");
-			System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("Health", new System.Windows.Forms.TreeNode[] {
-            treeNode32,
-            treeNode33,
-            treeNode34});
-			System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("Level 1");
-			System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("Level 2");
-			System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("Level 3");
-			System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("Mana", new System.Windows.Forms.TreeNode[] {
-            treeNode36,
-            treeNode37,
-            treeNode38});
-			System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("Level 1");
-			System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("Poison", new System.Windows.Forms.TreeNode[] {
-            treeNode40});
-			System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("Combat", new System.Windows.Forms.TreeNode[] {
-            treeNode35,
-            treeNode39,
-            treeNode41});
+			System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Level 1");
+			System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Level 2");
+			System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Combo", new System.Windows.Forms.TreeNode[] {
+			treeNode1,
+			treeNode2});
+			System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Level 1");
+			System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Nova", new System.Windows.Forms.TreeNode[] {
+			treeNode4});
+			System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Level 1");
+			System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Time", new System.Windows.Forms.TreeNode[] {
+			treeNode6});
+			System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Level 1");
+			System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Heal", new System.Windows.Forms.TreeNode[] {
+			treeNode8});
+			System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Combo", new System.Windows.Forms.TreeNode[] {
+			treeNode3,
+			treeNode5,
+			treeNode7,
+			treeNode9});
+			System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Level 1");
+			System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Level 2");
+			System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Level 3");
+			System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Health", new System.Windows.Forms.TreeNode[] {
+			treeNode11,
+			treeNode12,
+			treeNode13});
+			System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Level 1");
+			System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Level 2");
+			System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Level 3");
+			System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Mana", new System.Windows.Forms.TreeNode[] {
+			treeNode15,
+			treeNode16,
+			treeNode17});
+			System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Level 1");
+			System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Poison", new System.Windows.Forms.TreeNode[] {
+			treeNode19});
+			System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Combat", new System.Windows.Forms.TreeNode[] {
+			treeNode14,
+			treeNode18,
+			treeNode20});
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -130,7 +130,7 @@ namespace HWSEdit
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
 			this.playerListView = new System.Windows.Forms.ListView();
-			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
 			this.playerContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -155,6 +155,7 @@ namespace HWSEdit
 			this.InputPlayerPotion = new System.Windows.Forms.ComboBox();
 			this.InputPlayerMoney = new System.Windows.Forms.NumericUpDown();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.treeView1 = new System.Windows.Forms.TreeView();
 			this.button3 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
@@ -162,11 +163,11 @@ namespace HWSEdit
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.saveHWSButton = new System.Windows.Forms.Button();
 			this.saveHWSBrowseButton = new System.Windows.Forms.Button();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.textBoxFile2hws = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.saveXMLButton = new System.Windows.Forms.Button();
 			this.saveXMLBrowseButton = new System.Windows.Forms.Button();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.textBoxFile2xml = new System.Windows.Forms.TextBox();
 			this.openHWSDialog = new System.Windows.Forms.OpenFileDialog();
 			this.saveXMLDialog = new System.Windows.Forms.SaveFileDialog();
 			this.openXMLDialog = new System.Windows.Forms.OpenFileDialog();
@@ -180,7 +181,6 @@ namespace HWSEdit
 			this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-			this.treeView1 = new System.Windows.Forms.TreeView();
 			this.menuStrip1.SuspendLayout();
 			this.tabPageSelector.SuspendLayout();
 			this.tabGeneral.SuspendLayout();
@@ -217,9 +217,9 @@ namespace HWSEdit
 			// menuStrip1
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.toolsToolStripMenuItem,
-            this.helpToolStripMenuItem});
+			this.fileToolStripMenuItem,
+			this.toolsToolStripMenuItem,
+			this.helpToolStripMenuItem});
 			this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
@@ -230,18 +230,18 @@ namespace HWSEdit
 			// fileToolStripMenuItem
 			// 
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
-            this.closeToolStripMenuItem,
-            this.exitCancelToolStripMenuItem});
+			this.openToolStripMenuItem,
+			this.saveToolStripMenuItem,
+			this.saveAsToolStripMenuItem,
+			this.closeToolStripMenuItem,
+			this.exitCancelToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
 			this.fileToolStripMenuItem.Text = "&File";
 			// 
 			// openToolStripMenuItem
 			// 
-			this.openToolStripMenuItem.Image = global::HWSEdit.Properties.Resources.folder_horizontal_open;
+			this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
 			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
 			this.openToolStripMenuItem.ShortcutKeyDisplayString = "";
 			this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
@@ -262,14 +262,14 @@ namespace HWSEdit
 			// 
 			this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
 			this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
-            | System.Windows.Forms.Keys.S)));
+			| System.Windows.Forms.Keys.S)));
 			this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
 			this.saveAsToolStripMenuItem.Text = "Save &As...";
 			this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.ButtonSaveAsClick);
 			// 
 			// closeToolStripMenuItem
 			// 
-			this.closeToolStripMenuItem.Image = global::HWSEdit.Properties.Resources.cross_circle_frame;
+			this.closeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("closeToolStripMenuItem.Image")));
 			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
 			this.closeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
 			this.closeToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
@@ -287,7 +287,7 @@ namespace HWSEdit
 			// toolsToolStripMenuItem
 			// 
 			this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.convertToXMLToolStripMenuItem});
+			this.convertToXMLToolStripMenuItem});
 			this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
 			this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
 			this.toolsToolStripMenuItem.Text = "Tools";
@@ -295,8 +295,8 @@ namespace HWSEdit
 			// convertToXMLToolStripMenuItem
 			// 
 			this.convertToXMLToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toXMLToolStripMenuItem,
-            this.toHWSToolStripMenuItem});
+			this.toXMLToolStripMenuItem,
+			this.toHWSToolStripMenuItem});
 			this.convertToXMLToolStripMenuItem.Name = "convertToXMLToolStripMenuItem";
 			this.convertToXMLToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
 			this.convertToXMLToolStripMenuItem.Text = "Convert";
@@ -316,8 +316,8 @@ namespace HWSEdit
 			// helpToolStripMenuItem
 			// 
 			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.helpTopicToolStripMenuItem,
-            this.aboutToolStripMenuItem});
+			this.helpTopicToolStripMenuItem,
+			this.aboutToolStripMenuItem});
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
 			this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
 			this.helpToolStripMenuItem.Text = "&Help";
@@ -343,8 +343,8 @@ namespace HWSEdit
 			// tabPageSelector
 			// 
 			this.tabPageSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.tabPageSelector.Controls.Add(this.tabGeneral);
 			this.tabPageSelector.Controls.Add(this.tabModifiers);
 			this.tabPageSelector.Controls.Add(this.tabPlayers);
@@ -371,7 +371,7 @@ namespace HWSEdit
 			// tableLayoutPanel1
 			// 
 			this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.tableLayoutPanel1.ColumnCount = 2;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -412,8 +412,8 @@ namespace HWSEdit
 			// label10
 			// 
 			this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label10.Location = new System.Drawing.Point(3, 0);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(114, 25);
@@ -424,8 +424,8 @@ namespace HWSEdit
 			// label1
 			// 
 			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label1.Location = new System.Drawing.Point(3, 100);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(114, 25);
@@ -438,10 +438,10 @@ namespace HWSEdit
 			this.InputPlaytime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.InputPlaytime.Location = new System.Drawing.Point(123, 28);
 			this.InputPlaytime.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
+			2147483647,
+			0,
+			0,
+			0});
 			this.InputPlaytime.Name = "InputPlaytime";
 			this.InputPlaytime.Size = new System.Drawing.Size(370, 20);
 			this.InputPlaytime.TabIndex = 11;
@@ -449,8 +449,8 @@ namespace HWSEdit
 			// label9
 			// 
 			this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label9.Location = new System.Drawing.Point(3, 25);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(114, 25);
@@ -461,8 +461,8 @@ namespace HWSEdit
 			// label8
 			// 
 			this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label8.Location = new System.Drawing.Point(3, 50);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(114, 25);
@@ -473,8 +473,8 @@ namespace HWSEdit
 			// label5
 			// 
 			this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label5.Location = new System.Drawing.Point(3, 75);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(114, 25);
@@ -496,9 +496,9 @@ namespace HWSEdit
 			this.InputDifficulty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.InputDifficulty.FormattingEnabled = true;
 			this.InputDifficulty.Items.AddRange(new object[] {
-            "Easy",
-            "Medium",
-            "Hard"});
+			"Easy",
+			"Medium",
+			"Hard"});
 			this.InputDifficulty.Location = new System.Drawing.Point(123, 103);
 			this.InputDifficulty.Name = "InputDifficulty";
 			this.InputDifficulty.Size = new System.Drawing.Size(370, 21);
@@ -517,8 +517,8 @@ namespace HWSEdit
 			// label12
 			// 
 			this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label12.AutoSize = true;
 			this.label12.Location = new System.Drawing.Point(3, 125);
 			this.label12.Name = "label12";
@@ -552,8 +552,8 @@ namespace HWSEdit
 			// label7
 			// 
 			this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label7.Location = new System.Drawing.Point(188, 0);
 			this.label7.Margin = new System.Windows.Forms.Padding(0);
@@ -566,8 +566,8 @@ namespace HWSEdit
 			// label6
 			// 
 			this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label6.Location = new System.Drawing.Point(0, 0);
 			this.label6.Margin = new System.Windows.Forms.Padding(0);
@@ -582,50 +582,60 @@ namespace HWSEdit
 			this.InputSpawnX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.InputSpawnX.DecimalPlaces = 1;
 			this.InputSpawnX.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
+			1,
+			0,
+			0,
+			65536});
 			this.InputSpawnX.Location = new System.Drawing.Point(18, 3);
 			this.InputSpawnX.Maximum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            0});
+			2147483647,
+			0,
+			0,
+			0});
 			this.InputSpawnX.Minimum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            -2147483648});
+			2147483647,
+			0,
+			0,
+			0});
 			this.InputSpawnX.MinimumSize = new System.Drawing.Size(1, 0);
 			this.InputSpawnX.Name = "InputSpawnX";
 			this.InputSpawnX.Size = new System.Drawing.Size(167, 20);
 			this.InputSpawnX.TabIndex = 5;
+			this.InputSpawnX.Value = new decimal(new int[] {
+			2147483647,
+			0,
+			0,
+			0});
 			// 
 			// InputSpawnY
 			// 
 			this.InputSpawnY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.InputSpawnY.DecimalPlaces = 1;
 			this.InputSpawnY.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
+			1,
+			0,
+			0,
+			65536});
 			this.InputSpawnY.Location = new System.Drawing.Point(206, 3);
 			this.InputSpawnY.Maximum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            0});
+			2147483647,
+			0,
+			0,
+			0});
 			this.InputSpawnY.Minimum = new decimal(new int[] {
-            -2147483648,
-            0,
-            0,
-            -2147483648});
+			2147483647,
+			0,
+			0,
+			0});
 			this.InputSpawnY.MinimumSize = new System.Drawing.Size(1, 0);
 			this.InputSpawnY.Name = "InputSpawnY";
 			this.InputSpawnY.Size = new System.Drawing.Size(167, 20);
 			this.InputSpawnY.TabIndex = 6;
+			this.InputSpawnY.Value = new decimal(new int[] {
+			2147483647,
+			0,
+			0,
+			0});
 			// 
 			// tabModifiers
 			// 
@@ -869,7 +879,7 @@ namespace HWSEdit
 			this.playerListView.Alignment = System.Windows.Forms.ListViewAlignment.Default;
 			this.playerListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.playerListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
+			this.columnHeader1});
 			this.playerListView.ContextMenuStrip = this.playerContextMenu;
 			this.playerListView.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.playerListView.FullRowSelect = true;
@@ -897,8 +907,8 @@ namespace HWSEdit
 			// playerContextMenu
 			// 
 			this.playerContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.renameToolStripMenuItem,
-            this.deleteToolStripMenuItem});
+			this.renameToolStripMenuItem,
+			this.deleteToolStripMenuItem});
 			this.playerContextMenu.Name = "playerContextMenu";
 			this.playerContextMenu.Size = new System.Drawing.Size(118, 48);
 			this.playerContextMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.playerContextMenu_ItemClicked);
@@ -989,10 +999,10 @@ namespace HWSEdit
 			this.InputPlayerLives.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.InputPlayerLives.Location = new System.Drawing.Point(53, 55);
 			this.InputPlayerLives.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
+			2147483647,
+			0,
+			0,
+			0});
 			this.InputPlayerLives.Name = "InputPlayerLives";
 			this.InputPlayerLives.Size = new System.Drawing.Size(289, 20);
 			this.InputPlayerLives.TabIndex = 18;
@@ -1001,8 +1011,8 @@ namespace HWSEdit
 			// label13
 			// 
 			this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label13.Location = new System.Drawing.Point(3, 0);
 			this.label13.Name = "label13";
 			this.label13.Size = new System.Drawing.Size(44, 26);
@@ -1025,12 +1035,12 @@ namespace HWSEdit
 			this.InputPlayerClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.InputPlayerClass.FormattingEnabled = true;
 			this.InputPlayerClass.Items.AddRange(new object[] {
-            "Paladin",
-            "Wizard",
-            "Ranger",
-            "Warlock",
-            "Thief",
-            "Priest"});
+			"Paladin",
+			"Wizard",
+			"Ranger",
+			"Warlock",
+			"Thief",
+			"Priest"});
 			this.InputPlayerClass.Location = new System.Drawing.Point(53, 29);
 			this.InputPlayerClass.Name = "InputPlayerClass";
 			this.InputPlayerClass.Size = new System.Drawing.Size(289, 21);
@@ -1040,8 +1050,8 @@ namespace HWSEdit
 			// label15
 			// 
 			this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label15.Location = new System.Drawing.Point(3, 26);
 			this.label15.Name = "label15";
 			this.label15.Size = new System.Drawing.Size(44, 26);
@@ -1052,8 +1062,8 @@ namespace HWSEdit
 			// label16
 			// 
 			this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label16.Location = new System.Drawing.Point(3, 52);
 			this.label16.Name = "label16";
 			this.label16.Size = new System.Drawing.Size(44, 26);
@@ -1064,8 +1074,8 @@ namespace HWSEdit
 			// label18
 			// 
 			this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label18.Location = new System.Drawing.Point(3, 78);
 			this.label18.Name = "label18";
 			this.label18.Size = new System.Drawing.Size(44, 26);
@@ -1078,10 +1088,10 @@ namespace HWSEdit
 			this.InputPlayerDeaths.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.InputPlayerDeaths.Location = new System.Drawing.Point(53, 81);
 			this.InputPlayerDeaths.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
+			2147483647,
+			0,
+			0,
+			0});
 			this.InputPlayerDeaths.Name = "InputPlayerDeaths";
 			this.InputPlayerDeaths.Size = new System.Drawing.Size(289, 20);
 			this.InputPlayerDeaths.TabIndex = 27;
@@ -1090,8 +1100,8 @@ namespace HWSEdit
 			// label17
 			// 
 			this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label17.Location = new System.Drawing.Point(3, 104);
 			this.label17.Name = "label17";
 			this.label17.Size = new System.Drawing.Size(44, 26);
@@ -1104,10 +1114,10 @@ namespace HWSEdit
 			this.InputPlayerHealth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.InputPlayerHealth.Location = new System.Drawing.Point(53, 107);
 			this.InputPlayerHealth.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
+			2147483647,
+			0,
+			0,
+			0});
 			this.InputPlayerHealth.Name = "InputPlayerHealth";
 			this.InputPlayerHealth.Size = new System.Drawing.Size(289, 20);
 			this.InputPlayerHealth.TabIndex = 19;
@@ -1116,8 +1126,8 @@ namespace HWSEdit
 			// label2
 			// 
 			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label2.Location = new System.Drawing.Point(3, 130);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(44, 26);
@@ -1130,10 +1140,10 @@ namespace HWSEdit
 			this.InputPlayerMana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.InputPlayerMana.Location = new System.Drawing.Point(53, 133);
 			this.InputPlayerMana.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
+			2147483647,
+			0,
+			0,
+			0});
 			this.InputPlayerMana.Name = "InputPlayerMana";
 			this.InputPlayerMana.Size = new System.Drawing.Size(289, 20);
 			this.InputPlayerMana.TabIndex = 21;
@@ -1142,8 +1152,8 @@ namespace HWSEdit
 			// label14
 			// 
 			this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label14.Location = new System.Drawing.Point(3, 182);
 			this.label14.Name = "label14";
 			this.label14.Size = new System.Drawing.Size(44, 27);
@@ -1154,8 +1164,8 @@ namespace HWSEdit
 			// label11
 			// 
 			this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			| System.Windows.Forms.AnchorStyles.Left) 
+			| System.Windows.Forms.AnchorStyles.Right)));
 			this.label11.Location = new System.Drawing.Point(3, 156);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(44, 26);
@@ -1169,13 +1179,13 @@ namespace HWSEdit
 			this.InputPlayerPotion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.InputPlayerPotion.FormattingEnabled = true;
 			this.InputPlayerPotion.Items.AddRange(new object[] {
-            "None",
-            "Potion 1",
-            "Potion 2",
-            "Potion 3",
-            "Potion 4",
-            "Potion 5",
-            "Potion 6"});
+			"None",
+			"Potion 1",
+			"Potion 2",
+			"Potion 3",
+			"Potion 4",
+			"Potion 5",
+			"Potion 6"});
 			this.InputPlayerPotion.Location = new System.Drawing.Point(53, 185);
 			this.InputPlayerPotion.Name = "InputPlayerPotion";
 			this.InputPlayerPotion.Size = new System.Drawing.Size(289, 21);
@@ -1187,10 +1197,10 @@ namespace HWSEdit
 			this.InputPlayerMoney.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.InputPlayerMoney.Location = new System.Drawing.Point(53, 159);
 			this.InputPlayerMoney.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
+			2147483647,
+			0,
+			0,
+			0});
 			this.InputPlayerMoney.Name = "InputPlayerMoney";
 			this.InputPlayerMoney.Size = new System.Drawing.Size(289, 20);
 			this.InputPlayerMoney.TabIndex = 23;
@@ -1206,6 +1216,60 @@ namespace HWSEdit
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Upgrades";
 			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// treeView1
+			// 
+			this.treeView1.CheckBoxes = true;
+			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.treeView1.Location = new System.Drawing.Point(3, 3);
+			this.treeView1.Name = "treeView1";
+			treeNode1.Name = "Node10";
+			treeNode1.Text = "Level 1";
+			treeNode2.Name = "Node11";
+			treeNode2.Text = "Level 2";
+			treeNode3.Name = "Node1";
+			treeNode3.Text = "Combo";
+			treeNode4.Name = "Node12";
+			treeNode4.Text = "Level 1";
+			treeNode5.Name = "Node3";
+			treeNode5.Text = "Nova";
+			treeNode6.Name = "Node13";
+			treeNode6.Text = "Level 1";
+			treeNode7.Name = "Node4";
+			treeNode7.Text = "Time";
+			treeNode8.Name = "Node14";
+			treeNode8.Text = "Level 1";
+			treeNode9.Name = "Node5";
+			treeNode9.Text = "Heal";
+			treeNode10.Name = "Node0";
+			treeNode10.Text = "Combo";
+			treeNode11.Name = "Node15";
+			treeNode11.Text = "Level 1";
+			treeNode12.Name = "Node16";
+			treeNode12.Text = "Level 2";
+			treeNode13.Name = "Node17";
+			treeNode13.Text = "Level 3";
+			treeNode14.Name = "Node7";
+			treeNode14.Text = "Health";
+			treeNode15.Name = "Node18";
+			treeNode15.Text = "Level 1";
+			treeNode16.Name = "Node19";
+			treeNode16.Text = "Level 2";
+			treeNode17.Name = "Node20";
+			treeNode17.Text = "Level 3";
+			treeNode18.Name = "Node8";
+			treeNode18.Text = "Mana";
+			treeNode19.Name = "Node21";
+			treeNode19.Text = "Level 1";
+			treeNode20.Name = "Node9";
+			treeNode20.Text = "Poison";
+			treeNode21.Name = "Node6";
+			treeNode21.Text = "Combat";
+			this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+			treeNode10,
+			treeNode21});
+			this.treeView1.Size = new System.Drawing.Size(345, 209);
+			this.treeView1.TabIndex = 0;
 			// 
 			// button3
 			// 
@@ -1253,7 +1317,7 @@ namespace HWSEdit
 			// 
 			this.groupBox2.Controls.Add(this.saveHWSButton);
 			this.groupBox2.Controls.Add(this.saveHWSBrowseButton);
-			this.groupBox2.Controls.Add(this.textBox2);
+			this.groupBox2.Controls.Add(this.textBoxFile2hws);
 			this.groupBox2.Location = new System.Drawing.Point(6, 88);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(248, 76);
@@ -1281,19 +1345,19 @@ namespace HWSEdit
 			this.saveHWSBrowseButton.UseVisualStyleBackColor = true;
 			this.saveHWSBrowseButton.Click += new System.EventHandler(this.saveHWSBrowseButtonClick);
 			// 
-			// textBox2
+			// textBoxFile2hws
 			// 
-			this.textBox2.Location = new System.Drawing.Point(6, 19);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.ReadOnly = true;
-			this.textBox2.Size = new System.Drawing.Size(155, 20);
-			this.textBox2.TabIndex = 0;
+			this.textBoxFile2hws.Location = new System.Drawing.Point(6, 19);
+			this.textBoxFile2hws.Name = "textBoxFile2hws";
+			this.textBoxFile2hws.ReadOnly = true;
+			this.textBoxFile2hws.Size = new System.Drawing.Size(155, 20);
+			this.textBoxFile2hws.TabIndex = 0;
 			// 
 			// groupBox1
 			// 
 			this.groupBox1.Controls.Add(this.saveXMLButton);
 			this.groupBox1.Controls.Add(this.saveXMLBrowseButton);
-			this.groupBox1.Controls.Add(this.textBox1);
+			this.groupBox1.Controls.Add(this.textBoxFile2xml);
 			this.groupBox1.Location = new System.Drawing.Point(6, 6);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(248, 76);
@@ -1321,18 +1385,18 @@ namespace HWSEdit
 			this.saveXMLBrowseButton.UseVisualStyleBackColor = true;
 			this.saveXMLBrowseButton.Click += new System.EventHandler(this.saveXMLBrowseButtonClick);
 			// 
-			// textBox1
+			// textBoxFile2xml
 			// 
-			this.textBox1.Location = new System.Drawing.Point(6, 19);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.ReadOnly = true;
-			this.textBox1.Size = new System.Drawing.Size(155, 20);
-			this.textBox1.TabIndex = 0;
+			this.textBoxFile2xml.Location = new System.Drawing.Point(6, 19);
+			this.textBoxFile2xml.Name = "textBoxFile2xml";
+			this.textBoxFile2xml.ReadOnly = true;
+			this.textBoxFile2xml.Size = new System.Drawing.Size(155, 20);
+			this.textBoxFile2xml.TabIndex = 0;
 			// 
 			// openHWSDialog
 			// 
 			this.openHWSDialog.Filter = "Save file (*.hws), (*.xml)|*.hws;*.xml|Hammerwatch Save file (*.hws)|*.hws|XML Fi" +
-    "le (*.xml)|*.xml";
+	"le (*.xml)|*.xml";
 			// 
 			// saveXMLDialog
 			// 
@@ -1347,17 +1411,17 @@ namespace HWSEdit
 			// 
 			this.saveHWSDialog.DefaultExt = "*.hws;*.xml";
 			this.saveHWSDialog.Filter = "Save file (*.hws), (*.xml)|*.hws;*.xml|Hammerwatch Save file (*.hws)|*.hws|XML Fi" +
-    "le (*.xml)|*.xml";
+	"le (*.xml)|*.xml";
 			// 
 			// toolStrip1
 			// 
 			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripButton,
-            this.buttonSave,
-            this.buttonClose,
-            this.toolStripButton4,
-            this.toolStripButton6,
-            this.toolStripButton5});
+			this.openToolStripButton,
+			this.buttonSave,
+			this.buttonClose,
+			this.toolStripButton4,
+			this.toolStripButton6,
+			this.toolStripButton5});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 24);
 			this.toolStrip1.Name = "toolStrip1";
 			this.toolStrip1.Size = new System.Drawing.Size(552, 25);
@@ -1367,7 +1431,7 @@ namespace HWSEdit
 			// openToolStripButton
 			// 
 			this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.openToolStripButton.Image = global::HWSEdit.Properties.Resources.folder_horizontal_open;
+			this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
 			this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.openToolStripButton.Name = "openToolStripButton";
 			this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -1387,7 +1451,7 @@ namespace HWSEdit
 			// buttonClose
 			// 
 			this.buttonClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.buttonClose.Image = global::HWSEdit.Properties.Resources.cross_circle_frame;
+			this.buttonClose.Image = ((System.Drawing.Image)(resources.GetObject("buttonClose.Image")));
 			this.buttonClose.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.buttonClose.Name = "buttonClose";
 			this.buttonClose.Size = new System.Drawing.Size(23, 22);
@@ -1402,25 +1466,27 @@ namespace HWSEdit
 			// toolStripButton6
 			// 
 			this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton6.Image = global::HWSEdit.Properties.Resources.question_frame;
+			this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
 			this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripButton6.Name = "toolStripButton6";
 			this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
 			this.toolStripButton6.Text = "Help";
+			this.toolStripButton6.Click += new System.EventHandler(this.HelpTopicToolStripMenuItemClick);
 			// 
 			// toolStripButton5
 			// 
 			this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton5.Image = global::HWSEdit.Properties.Resources.information_balloon;
+			this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
 			this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripButton5.Name = "toolStripButton5";
 			this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
 			this.toolStripButton5.Text = "About";
+			this.toolStripButton5.Click += new System.EventHandler(this.AboutToolStripMenuItemClick);
 			// 
 			// statusStrip1
 			// 
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel});
+			this.toolStripStatusLabel});
 			this.statusStrip1.Location = new System.Drawing.Point(0, 331);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.ShowItemToolTips = true;
@@ -1434,60 +1500,6 @@ namespace HWSEdit
 			this.toolStripStatusLabel.Name = "toolStripStatusLabel";
 			this.toolStripStatusLabel.Size = new System.Drawing.Size(26, 17);
 			this.toolStripStatusLabel.Text = "Idle";
-			// 
-			// treeView1
-			// 
-			this.treeView1.CheckBoxes = true;
-			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.treeView1.Location = new System.Drawing.Point(3, 3);
-			this.treeView1.Name = "treeView1";
-			treeNode22.Name = "Node10";
-			treeNode22.Text = "Level 1";
-			treeNode23.Name = "Node11";
-			treeNode23.Text = "Level 2";
-			treeNode24.Name = "Node1";
-			treeNode24.Text = "Combo";
-			treeNode25.Name = "Node12";
-			treeNode25.Text = "Level 1";
-			treeNode26.Name = "Node3";
-			treeNode26.Text = "Nova";
-			treeNode27.Name = "Node13";
-			treeNode27.Text = "Level 1";
-			treeNode28.Name = "Node4";
-			treeNode28.Text = "Time";
-			treeNode29.Name = "Node14";
-			treeNode29.Text = "Level 1";
-			treeNode30.Name = "Node5";
-			treeNode30.Text = "Heal";
-			treeNode31.Name = "Node0";
-			treeNode31.Text = "Combo";
-			treeNode32.Name = "Node15";
-			treeNode32.Text = "Level 1";
-			treeNode33.Name = "Node16";
-			treeNode33.Text = "Level 2";
-			treeNode34.Name = "Node17";
-			treeNode34.Text = "Level 3";
-			treeNode35.Name = "Node7";
-			treeNode35.Text = "Health";
-			treeNode36.Name = "Node18";
-			treeNode36.Text = "Level 1";
-			treeNode37.Name = "Node19";
-			treeNode37.Text = "Level 2";
-			treeNode38.Name = "Node20";
-			treeNode38.Text = "Level 3";
-			treeNode39.Name = "Node8";
-			treeNode39.Text = "Mana";
-			treeNode40.Name = "Node21";
-			treeNode40.Text = "Level 1";
-			treeNode41.Name = "Node9";
-			treeNode41.Text = "Poison";
-			treeNode42.Name = "Node6";
-			treeNode42.Text = "Combat";
-			this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode31,
-            treeNode42});
-			this.treeView1.Size = new System.Drawing.Size(345, 209);
-			this.treeView1.TabIndex = 0;
 			// 
 			// MainForm
 			// 
@@ -1553,11 +1565,11 @@ namespace HWSEdit
 		private System.Windows.Forms.SaveFileDialog saveHWSDialog;
 		private System.Windows.Forms.OpenFileDialog openXMLDialog;
 		private System.Windows.Forms.SaveFileDialog saveXMLDialog;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox textBoxFile2xml;
 		private System.Windows.Forms.Button saveXMLBrowseButton;
 		private System.Windows.Forms.Button saveXMLButton;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox textBoxFile2hws;
 		private System.Windows.Forms.Button saveHWSBrowseButton;
 		private System.Windows.Forms.Button saveHWSButton;
 		private System.Windows.Forms.GroupBox groupBox2;

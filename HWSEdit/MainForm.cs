@@ -45,8 +45,8 @@ namespace HWSEdit
 		public static string AppName = "HWSEdit";
 		public static string AppTitle = AppName + " - Hammerwatch Save Editor";
 		public static string AppURL = "http://hammerwatch.com/forum/index.php?topic=2197.0";
-		public static string AppAuthors = "Joe DF";
-		public static string RevisionDate = "15/10/2014";
+		public static string AppAuthors = "Joe DF & Drew Burden";
+		public static string RevisionDate = "19/02/2015";
 
 		public SValue MAINBUFFER;
 
@@ -72,13 +72,21 @@ namespace HWSEdit
 			InputPlayerClass.Enabled = false;
 			InputPlayerName.Enabled = false;
 			playerListView.Columns[0].Width = -2;
+			
+			//explicitly set the following...
+			InputSpawnX.Maximum = Int32.MaxValue;
+			InputSpawnX.Minimum = Int32.MinValue;
+			InputSpawnX.Value = 0;
+			InputSpawnY.Maximum = Int32.MaxValue;
+			InputSpawnY.Minimum = Int32.MinValue;
+			InputSpawnY.Value = 0;
 		}
 
 
 		#region Event callbacks
 		private void AboutToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			MessageBox.Show(AppTitle+"\nBy "+ AppAuthors+ "\n" +
+			MessageBox.Show(AppTitle+"\nBy "+ AppAuthors+ "\n\n" +
 			                "A grand thanks to Myran (for the core of this application)\n"+
 			                "Fugue Icons - (C) 2012 Yusuke Kamiyamane"+
 							"\n\nReleased under the MIT License\n"+
@@ -96,12 +104,12 @@ namespace HWSEdit
 			DialogResult result = openHWSDialog.ShowDialog();
 			if (result == DialogResult.OK) {
 				string fn = openHWSDialog.FileName;
-				textBox1.Text = fn;
+				textBoxFile2xml.Text = fn;
 			}
 		}
 		private void saveXMLButtonClick(object sender, EventArgs e)
 		{
-			string inFile = textBox1.Text;
+			string inFile = textBoxFile2xml.Text;
 			saveXMLDialog.FileName = Path.GetFileNameWithoutExtension(inFile) + ".xml";
 			
 			DialogResult result = saveXMLDialog.ShowDialog();
@@ -123,12 +131,12 @@ namespace HWSEdit
 			DialogResult result = openXMLDialog.ShowDialog();
 			if (result == DialogResult.OK) {
 				string fn = openXMLDialog.FileName;
-				textBox2.Text = fn;
+				textBoxFile2hws.Text = fn;
 			}
 		}
 		private void saveHWSButtonClick(object sender, EventArgs e)
 		{
-			string inFile = textBox2.Text;
+			string inFile = textBoxFile2hws.Text;
 			saveHWSDialog.FileName = Path.GetFileNameWithoutExtension(inFile) + ".hws";
 			
 			DialogResult result = saveHWSDialog.ShowDialog();
@@ -353,7 +361,7 @@ namespace HWSEdit
 				}
 				return true;
 			}
-			catch(Exception e)
+			catch(Exception)
 			{
 				ResetForm();
 				MessageBox.Show("Invalid save data. The data is either corrupted or did not adhere to a recognized format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
