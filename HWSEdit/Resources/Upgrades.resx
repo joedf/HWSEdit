@@ -411,4 +411,10 @@
   <data name="combo_uname" xml:space="preserve">
     <value>Combo</value>
   </data>
+  <data name="combo_nova_udesc_1" xml:space="preserve">
+    <value>Continuously shoots a multi-part nova that does damage while a combo is active.</value>
+  </data>
+  <data name="combo_nova_udesc_2" xml:space="preserve">
+    <value>Increases the nova parts and damage.</value>
+  </data>
 </root>

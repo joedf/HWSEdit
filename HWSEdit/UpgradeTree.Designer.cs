@@ -28,14 +28,15 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpgradeTree));
 			this.splitContainer = new System.Windows.Forms.SplitContainer();
+			this.button2 = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
+			this.tree = new HWSEdit.UpgradeTreeView();
 			this.panel = new System.Windows.Forms.Panel();
+			this.button3 = new System.Windows.Forms.Button();
 			this.upgradeDescription = new System.Windows.Forms.Label();
 			this.upgradeName = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
-			this.tree = new HWSEdit.UpgradeTreeView();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
 			this.splitContainer.Panel1.SuspendLayout();
 			this.splitContainer.Panel2.SuspendLayout();
@@ -45,124 +46,77 @@
 			// 
 			// splitContainer
 			// 
-			this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.splitContainer.Location = new System.Drawing.Point(0, 0);
+			resources.ApplyResources(this.splitContainer, "splitContainer");
 			this.splitContainer.Name = "splitContainer";
-			this.splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
 			// 
 			// splitContainer.Panel1
 			// 
 			this.splitContainer.Panel1.Controls.Add(this.button2);
 			this.splitContainer.Panel1.Controls.Add(this.button1);
 			this.splitContainer.Panel1.Controls.Add(this.tree);
-			this.splitContainer.Panel1MinSize = 50;
 			// 
 			// splitContainer.Panel2
 			// 
 			this.splitContainer.Panel2.BackColor = System.Drawing.Color.Transparent;
 			this.splitContainer.Panel2.Controls.Add(this.panel);
-			this.splitContainer.Panel2MinSize = 1;
-			this.splitContainer.Size = new System.Drawing.Size(444, 234);
-			this.splitContainer.SplitterDistance = 137;
-			this.splitContainer.TabIndex = 2;
+			// 
+			// button2
+			// 
+			resources.ApplyResources(this.button2, "button2");
+			this.button2.Name = "button2";
+			this.button2.UseVisualStyleBackColor = true;
+			// 
+			// button1
+			// 
+			resources.ApplyResources(this.button1, "button1");
+			this.button1.Name = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			// 
+			// tree
+			// 
+			resources.ApplyResources(this.tree, "tree");
+			this.tree.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.tree.CheckBoxes = true;
+			this.tree.Class = -1;
+			this.tree.HideSelection = false;
+			this.tree.Name = "tree";
+			this.tree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.upgradeTreeView1_AfterSelect);
+			this.tree.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tree_MouseUp);
 			// 
 			// panel
 			// 
-			this.panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			resources.ApplyResources(this.panel, "panel");
 			this.panel.BackColor = System.Drawing.SystemColors.Control;
 			this.panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.panel.Controls.Add(this.button3);
 			this.panel.Controls.Add(this.upgradeDescription);
 			this.panel.Controls.Add(this.upgradeName);
-			this.panel.Location = new System.Drawing.Point(-3, 0);
 			this.panel.Name = "panel";
-			this.panel.Size = new System.Drawing.Size(452, 144);
-			this.panel.TabIndex = 0;
-			// 
-			// upgradeDescription
-			// 
-			this.upgradeDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.upgradeDescription.Location = new System.Drawing.Point(11, 29);
-			this.upgradeDescription.Margin = new System.Windows.Forms.Padding(0, 0, 8, 3);
-			this.upgradeDescription.Name = "upgradeDescription";
-			this.upgradeDescription.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
-			this.upgradeDescription.Size = new System.Drawing.Size(431, 60);
-			this.upgradeDescription.TabIndex = 1;
-			this.upgradeDescription.Text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut efficitur, ante et ma" +
-    "ttis consectetur, purus nisi accumsan lorem, id euismod.";
-			// 
-			// upgradeName
-			// 
-			this.upgradeName.AutoSize = true;
-			this.upgradeName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.upgradeName.Location = new System.Drawing.Point(8, 8);
-			this.upgradeName.Margin = new System.Windows.Forms.Padding(8);
-			this.upgradeName.Name = "upgradeName";
-			this.upgradeName.Size = new System.Drawing.Size(93, 13);
-			this.upgradeName.TabIndex = 0;
-			this.upgradeName.Text = "Upgrade name:";
-			// 
-			// button1
-			// 
-			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button1.Location = new System.Drawing.Point(288, 0);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 1;
-			this.button1.Text = "Expand All";
-			this.button1.UseVisualStyleBackColor = true;
-			// 
-			// button2
-			// 
-			this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button2.Location = new System.Drawing.Point(369, 0);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 2;
-			this.button2.Text = "Collapse All";
-			this.button2.UseVisualStyleBackColor = true;
 			// 
 			// button3
 			// 
-			this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			resources.ApplyResources(this.button3, "button3");
 			this.button3.FlatAppearance.BorderSize = 0;
-			this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button3.Location = new System.Drawing.Point(426, -1);
 			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(21, 22);
-			this.button3.TabIndex = 2;
-			this.button3.Text = "▼";
 			this.button3.UseVisualStyleBackColor = true;
 			this.button3.Click += new System.EventHandler(this.button3_Click);
 			// 
-			// tree
+			// upgradeDescription
 			// 
-			this.tree.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.tree.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.tree.CheckBoxes = true;
-			this.tree.Class = -1;
-			this.tree.HideSelection = false;
-			this.tree.Location = new System.Drawing.Point(0, 29);
-			this.tree.Name = "tree";
-			this.tree.Size = new System.Drawing.Size(444, 106);
-			this.tree.TabIndex = 0;
-			this.tree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.upgradeTreeView1_AfterSelect);
-			this.tree.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tree_MouseUp);
+			resources.ApplyResources(this.upgradeDescription, "upgradeDescription");
+			this.upgradeDescription.Name = "upgradeDescription";
+			// 
+			// upgradeName
+			// 
+			resources.ApplyResources(this.upgradeName, "upgradeName");
+			this.upgradeName.Name = "upgradeName";
 			// 
 			// UpgradeTree
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.splitContainer);
 			this.Name = "UpgradeTree";
-			this.Size = new System.Drawing.Size(444, 234);
 			this.splitContainer.Panel1.ResumeLayout(false);
 			this.splitContainer.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();

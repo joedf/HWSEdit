@@ -43,12 +43,6 @@ namespace HWSEdit
 	/// </summary>
 	public partial class MainForm : Form
 	{
-		public static string AppName = "HWSEdit";
-		public static string AppTitle = AppName + " - Hammerwatch Save Editor";
-		public static string AppURL = "http://hammerwatch.com/forum/index.php?topic=2197.0";
-		public static string AppAuthors = "Joe DF";
-		public static string RevisionDate = "15/10/2014";
-
 		public SValue MAINBUFFER;
 
 		private string currentFile = "";
@@ -90,83 +84,12 @@ namespace HWSEdit
 			tabGeneral.Enabled = false;
 			tabModifiers.Enabled = false;
 			tabPlayers.Enabled = false;
-			tabhws2xml.Enabled = true;
 			InputPlayerClass.Enabled = false;
 			InputPlayerName.Enabled = false;
 			playerListView.Columns[0].Width = -2;
 		}
 
 		#region Event callbacks
-		private void AboutToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			MessageBox.Show(AppTitle+"\nBy "+ AppAuthors+ "\n" +
-			                "A grand thanks to Myran (for the core of this application)\n"+
-			                "Fugue Icons - (C) 2012 Yusuke Kamiyamane"+
-							"\n\nReleased under the MIT License\n"+
-							"Revision Date: "+RevisionDate,
-							AppTitle,
-							MessageBoxButtons.OK,
-							MessageBoxIcon.Information);
-		}
-		private void HelpTopicToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			System.Diagnostics.Process.Start(AppURL);
-		}
-		private void saveXMLBrowseButtonClick(object sender, EventArgs e)
-		{
-			DialogResult result = openHWSDialog.ShowDialog();
-			if (result == DialogResult.OK) {
-				string fn = openHWSDialog.FileName;
-				textBox1.Text = fn;
-			}
-		}
-		private void saveXMLButtonClick(object sender, EventArgs e)
-		{
-			string inFile = textBox1.Text;
-			saveXMLDialog.FileName = Path.GetFileNameWithoutExtension(inFile) + ".xml";
-			
-			DialogResult result = saveXMLDialog.ShowDialog();
-			if (result == DialogResult.OK) {
-				
-				string outFile = saveXMLDialog.FileName;
-				
-				BinaryReader BR = new BinaryReader(File.Open(inFile,FileMode.Open));
-				SValue OBJ = SValue.LoadStream(BR);
-				TextWriter TW = new StreamWriter(outFile);
-				SValue.SaveXML(OBJ,TW);
-				TW.Close();
-				
-				MessageBox.Show("Converted from HWS to XML.\nSaved to:\n\""+outFile+"\"");
-			}
-		}
-		private void saveHWSBrowseButtonClick(object sender, EventArgs e)
-		{
-			DialogResult result = openXMLDialog.ShowDialog();
-			if (result == DialogResult.OK) {
-				string fn = openXMLDialog.FileName;
-				textBox2.Text = fn;
-			}
-		}
-		private void saveHWSButtonClick(object sender, EventArgs e)
-		{
-			string inFile = textBox2.Text;
-			saveHWSDialog.FileName = Path.GetFileNameWithoutExtension(inFile) + ".hws";
-			
-			DialogResult result = saveHWSDialog.ShowDialog();
-			if (result == DialogResult.OK) {
-				
-				string outFile = saveHWSDialog.FileName;
-				
-				TextReader TR = new StreamReader(inFile);
-				SValue OBJ = SValue.FromXMLFile(TR);
-				BinaryWriter BW = new BinaryWriter(File.Open(outFile,FileMode.Create));
-				SValue.SaveStream(OBJ,BW);
-				BW.Close();
-				
-				MessageBox.Show("Converted from XML to HWS.\nSaved to:\n\""+outFile+"\"");
-			}
-		}
-		
 		private void playerListView_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (playerListView.SelectedItems.Count > 0 && playerListView.SelectedIndices.Count == 1)
@@ -245,6 +168,71 @@ namespace HWSEdit
 				PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "class");
 			}
 		}
+		private void toXMLToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			// Ask for input file
+			DialogResult result = openHWSConvertDialog.ShowDialog();
+			if (result == DialogResult.OK)
+			{
+				string inFile = openHWSConvertDialog.FileName;
+
+				// Ask where to save converted file
+				saveXMLConvertDialog.FileName = Path.GetFileNameWithoutExtension(inFile) + ".xml";
+				result = saveXMLConvertDialog.ShowDialog();
+				if (result == DialogResult.OK)
+				{
+
+					string outFile = saveXMLConvertDialog.FileName;
+
+					BinaryReader BR = new BinaryReader(File.Open(inFile, FileMode.Open));
+					SValue OBJ = SValue.LoadStream(BR);
+					TextWriter TW = new StreamWriter(outFile);
+					SValue.SaveXML(OBJ, TW);
+					TW.Close();
+
+					toolStripStatusLabel.Text = "Successfully converted file.";
+					toolStripStatusLabel.ToolTipText = "Successfully converted \"" + inFile + "\" to \"" + outFile + "\"";
+
+					return;
+				}
+			}
+
+			toolStripStatusLabel.Text = "Conversion canceled.";
+			toolStripStatusLabel.ToolTipText = "Conversion canceled.";
+		}
+
+		private void toHWSToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			// Ask for input file
+			DialogResult result = openXMLConvertDialog.ShowDialog();
+			if (result == DialogResult.OK)
+			{
+				string inFile = openXMLConvertDialog.FileName;
+
+				// Ask where to save converted file
+				saveHWSConvertDialog.FileName = Path.GetFileNameWithoutExtension(inFile) + ".hws";
+				result = saveHWSConvertDialog.ShowDialog();
+				if (result == DialogResult.OK)
+				{
+
+					string outFile = saveHWSConvertDialog.FileName;
+
+					TextReader TR = new StreamReader(inFile);
+					SValue OBJ = SValue.FromXMLFile(TR);
+					BinaryWriter BW = new BinaryWriter(File.Open(outFile, FileMode.Create));
+					SValue.SaveStream(OBJ, BW);
+					BW.Close();
+
+					toolStripStatusLabel.Text = "Successfully converted file.";
+					toolStripStatusLabel.ToolTipText = "Successfully converted \"" + inFile + "\" to \"" + outFile + "\"";
+
+					return;
+				}
+			}
+
+			toolStripStatusLabel.Text = "Conversion canceled.";
+			toolStripStatusLabel.ToolTipText = "Conversion canceled.";
+		}
 		private void splitContainer1_Panel1_Resize(object sender, EventArgs e)
 		{
 			if (playerListView.Columns.Count > 0) playerListView.Columns[0].Width = -2;
@@ -255,7 +243,11 @@ namespace HWSEdit
 		private void InputPlayerMana_ValueChanged(object sender, EventArgs e) { if (playerListView.SelectedItems.Count > 0) PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "mana"); }
 		private void InputPlayerMoney_ValueChanged(object sender, EventArgs e) { if (playerListView.SelectedItems.Count > 0) PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "money"); }
 		private void InputPlayerPotion_SelectedIndexChanged(object sender, EventArgs e) { if (playerListView.SelectedItems.Count > 0) PlayerFormDataToMAINBUFFER(playerListView.SelectedIndices[0], "potion"); }
-		
+
+		private void AboutToolStripMenuItemClick(object sender, EventArgs e) { ShowAbout(); }
+		private void HelpTopicToolStripMenuItemClick(object sender, EventArgs e) { ShowHelp(); }
+		private void toolStripButtonHelp_Click(object sender, EventArgs e) { ShowHelp(); }
+		private void toolStripButtonAbout_Click(object sender, EventArgs e) { ShowAbout(); }
 		private void OpenToolStripMenuItemClick(object sender, EventArgs e) { Open(); }
 		private void openToolStripButton_Click(object sender, EventArgs e) { Open(); }
 		private void buttonSave_Click(object sender, EventArgs e) { Save(currentFile); }
@@ -473,11 +465,11 @@ namespace HWSEdit
 			{
 				if (filename == null)
 				{
-					openHWSDialog.InitialDirectory = GetDefaultFileDialogPath();
-					DialogResult result = openHWSDialog.ShowDialog();
+					openDialog.InitialDirectory = GetDefaultFileDialogPath();
+					DialogResult result = openDialog.ShowDialog();
 					if (result == DialogResult.OK)
 					{
-						filename = openHWSDialog.FileName;
+						filename = openDialog.FileName;
 						// If the user has no file open; or, if the user has a file open, they actually decided to close it (rather than cancel)
 						if (!TryCloseFile()) return;
 					}
@@ -608,13 +600,13 @@ namespace HWSEdit
 		}
 		public void SaveAs()
 		{
-			saveHWSDialog.FileName = Path.GetFileName(currentFile);
+			saveDialog.FileName = Path.GetFileName(currentFile);
 				
-			DialogResult result = saveHWSDialog.ShowDialog();
+			DialogResult result = saveDialog.ShowDialog();
 			if (result == DialogResult.OK) {
-				Save(saveHWSDialog.FileName);
+				Save(saveDialog.FileName);
 				CloseFile();
-				Open(saveHWSDialog.FileName);
+				Open(saveDialog.FileName);
 			}
 		}
 		public void Save(string file)
@@ -649,6 +641,22 @@ namespace HWSEdit
 				toolStripStatusLabel.Text = "Successfully saved data.";
 				toolStripStatusLabel.ToolTipText = "Successfully saved data to: \"" + file + "\"";
 			}
+		}
+		public void ShowHelp()
+		{
+			System.Diagnostics.Process.Start(Program.AppURL);
+		}
+		public void ShowAbout()
+		{
+			/*MessageBox.Show(Program.AppTitle + "\nBy " + Program.AppAuthors + "\n" +
+							"A grand thanks to Myran (for the core of this application)\n" +
+							"Fugue Icons - (C) 2012 Yusuke Kamiyamane" +
+							"\n\nReleased under the MIT License\n" +
+							"Revision Date: " + Program.RevisionDate,
+							Program.AppTitle,
+							MessageBoxButtons.OK,
+							MessageBoxIcon.Information);*/
+			new AboutBox().ShowDialog();
 		}
 		#endregion
 

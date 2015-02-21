@@ -106,6 +106,24 @@ namespace HWSEdit.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Continuously shoots a multi-part nova that does damage while a combo is active..
+        /// </summary>
+        internal static string combo_nova_udesc_1 {
+            get {
+                return ResourceManager.GetString("combo_nova_udesc_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Increases the nova parts and damage..
+        /// </summary>
+        internal static string combo_nova_udesc_2 {
+            get {
+                return ResourceManager.GetString("combo_nova_udesc_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nova.
         /// </summary>
         internal static string combo_nova_uname {

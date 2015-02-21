@@ -44,9 +44,10 @@ namespace HWSEdit
 			combo.Tag = "";
 			UpgradeTreeNode combo_nova = new UpgradeTreeNode(
 				Resources.Upgrades.combo_nova_uname,
-				Resources.Upgrades.combo_uname + " " + Resources.Upgrades.combo_nova_uname);
+				Resources.Upgrades.combo_uname + " " + Resources.Upgrades.combo_nova_uname,
+				Resources.Upgrades.combo_nova_udesc_1);
 			combo_nova.Tag = "-nova";
-			combo_nova.AddLevels(5);
+			combo_nova.AddLevels(5, Resources.Upgrades.combo_nova_udesc_2);
 			combo_nova.Requirements.Add(combo);
 			UpgradeTreeNode combo_heal = new UpgradeTreeNode(
 				Resources.Upgrades.combo_heal_uname, 

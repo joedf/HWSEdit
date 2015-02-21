@@ -11,12 +11,12 @@ using System.Resources;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("HWSEdit")]
-[assembly: AssemblyDescription("Hammerwatch Save Editor")]
+[assembly: AssemblyDescription("A grand thanks to Myran (for the core of this application)\r\n\r\nFugue Icons - (C) 2012 Yusuke Kamiyamane\r\n\r\nReleased under the MIT License")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Joe DF")]
-[assembly: AssemblyProduct("HWSEdit")]
+[assembly: AssemblyCompany("Joe DF, Drew Burden")]
+[assembly: AssemblyProduct("HWSEdit - Hammerwatch Save Editor")]
 [assembly: AssemblyCopyright("Copyright 2014")]
-[assembly: AssemblyTrademark("Joe DF")]
+[assembly: AssemblyTrademark("Joe DF, Drew Burden")]
 [assembly: AssemblyCulture("")]
 
 // This sets the default COM visibility of types in the assembly to invisible.

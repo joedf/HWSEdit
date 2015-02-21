@@ -117,32 +117,25 @@ namespace HWSEdit
 			this.InputPlayerPotion = new System.Windows.Forms.ComboBox();
 			this.InputPlayerMoney = new System.Windows.Forms.NumericUpDown();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.upgradeTree1 = new HWSEdit.UpgradeTree();
 			this.button3 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
-			this.tabhws2xml = new System.Windows.Forms.TabPage();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.saveHWSButton = new System.Windows.Forms.Button();
-			this.saveHWSBrowseButton = new System.Windows.Forms.Button();
-			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.saveXMLButton = new System.Windows.Forms.Button();
-			this.saveXMLBrowseButton = new System.Windows.Forms.Button();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.openHWSDialog = new System.Windows.Forms.OpenFileDialog();
-			this.saveXMLDialog = new System.Windows.Forms.SaveFileDialog();
-			this.openXMLDialog = new System.Windows.Forms.OpenFileDialog();
-			this.saveHWSDialog = new System.Windows.Forms.SaveFileDialog();
+			this.openDialog = new System.Windows.Forms.OpenFileDialog();
+			this.saveDialog = new System.Windows.Forms.SaveFileDialog();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 			this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.buttonSave = new System.Windows.Forms.ToolStripButton();
 			this.buttonClose = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton4 = new System.Windows.Forms.ToolStripSeparator();
-			this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-			this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButtonHelp = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButtonAbout = new System.Windows.Forms.ToolStripButton();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-			this.upgradeTree1 = new HWSEdit.UpgradeTree();
+			this.openXMLConvertDialog = new System.Windows.Forms.OpenFileDialog();
+			this.openHWSConvertDialog = new System.Windows.Forms.OpenFileDialog();
+			this.saveHWSConvertDialog = new System.Windows.Forms.SaveFileDialog();
+			this.saveXMLConvertDialog = new System.Windows.Forms.SaveFileDialog();
 			this.menuStrip1.SuspendLayout();
 			this.tabPageSelector.SuspendLayout();
 			this.tabGeneral.SuspendLayout();
@@ -169,9 +162,6 @@ namespace HWSEdit
 			((System.ComponentModel.ISupportInitialize)(this.InputPlayerMana)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.InputPlayerMoney)).BeginInit();
 			this.tabPage2.SuspendLayout();
-			this.tabhws2xml.SuspendLayout();
-			this.groupBox2.SuspendLayout();
-			this.groupBox1.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -248,11 +238,13 @@ namespace HWSEdit
 			// 
 			this.toXMLToolStripMenuItem.Name = "toXMLToolStripMenuItem";
 			resources.ApplyResources(this.toXMLToolStripMenuItem, "toXMLToolStripMenuItem");
+			this.toXMLToolStripMenuItem.Click += new System.EventHandler(this.toXMLToolStripMenuItem_Click);
 			// 
 			// toHWSToolStripMenuItem
 			// 
 			this.toHWSToolStripMenuItem.Name = "toHWSToolStripMenuItem";
 			resources.ApplyResources(this.toHWSToolStripMenuItem, "toHWSToolStripMenuItem");
+			this.toHWSToolStripMenuItem.Click += new System.EventHandler(this.toHWSToolStripMenuItem_Click);
 			// 
 			// helpToolStripMenuItem
 			// 
@@ -280,7 +272,6 @@ namespace HWSEdit
 			this.tabPageSelector.Controls.Add(this.tabGeneral);
 			this.tabPageSelector.Controls.Add(this.tabModifiers);
 			this.tabPageSelector.Controls.Add(this.tabPlayers);
-			this.tabPageSelector.Controls.Add(this.tabhws2xml);
 			this.tabPageSelector.Name = "tabPageSelector";
 			this.tabPageSelector.SelectedIndex = 0;
 			// 
@@ -821,6 +812,11 @@ namespace HWSEdit
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
+			// upgradeTree1
+			// 
+			resources.ApplyResources(this.upgradeTree1, "upgradeTree1");
+			this.upgradeTree1.Name = "upgradeTree1";
+			// 
 			// button3
 			// 
 			resources.ApplyResources(this.button3, "button3");
@@ -839,89 +835,14 @@ namespace HWSEdit
 			this.button1.Name = "button1";
 			this.button1.UseVisualStyleBackColor = true;
 			// 
-			// tabhws2xml
+			// openDialog
 			// 
-			this.tabhws2xml.Controls.Add(this.groupBox2);
-			this.tabhws2xml.Controls.Add(this.groupBox1);
-			resources.ApplyResources(this.tabhws2xml, "tabhws2xml");
-			this.tabhws2xml.Name = "tabhws2xml";
-			this.tabhws2xml.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.openDialog, "openDialog");
 			// 
-			// groupBox2
+			// saveDialog
 			// 
-			this.groupBox2.Controls.Add(this.saveHWSButton);
-			this.groupBox2.Controls.Add(this.saveHWSBrowseButton);
-			this.groupBox2.Controls.Add(this.textBox2);
-			resources.ApplyResources(this.groupBox2, "groupBox2");
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.TabStop = false;
-			// 
-			// saveHWSButton
-			// 
-			resources.ApplyResources(this.saveHWSButton, "saveHWSButton");
-			this.saveHWSButton.Name = "saveHWSButton";
-			this.saveHWSButton.UseVisualStyleBackColor = true;
-			this.saveHWSButton.Click += new System.EventHandler(this.saveHWSButtonClick);
-			// 
-			// saveHWSBrowseButton
-			// 
-			resources.ApplyResources(this.saveHWSBrowseButton, "saveHWSBrowseButton");
-			this.saveHWSBrowseButton.Name = "saveHWSBrowseButton";
-			this.saveHWSBrowseButton.UseVisualStyleBackColor = true;
-			this.saveHWSBrowseButton.Click += new System.EventHandler(this.saveHWSBrowseButtonClick);
-			// 
-			// textBox2
-			// 
-			resources.ApplyResources(this.textBox2, "textBox2");
-			this.textBox2.Name = "textBox2";
-			this.textBox2.ReadOnly = true;
-			// 
-			// groupBox1
-			// 
-			this.groupBox1.Controls.Add(this.saveXMLButton);
-			this.groupBox1.Controls.Add(this.saveXMLBrowseButton);
-			this.groupBox1.Controls.Add(this.textBox1);
-			resources.ApplyResources(this.groupBox1, "groupBox1");
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.TabStop = false;
-			// 
-			// saveXMLButton
-			// 
-			resources.ApplyResources(this.saveXMLButton, "saveXMLButton");
-			this.saveXMLButton.Name = "saveXMLButton";
-			this.saveXMLButton.UseVisualStyleBackColor = true;
-			this.saveXMLButton.Click += new System.EventHandler(this.saveXMLButtonClick);
-			// 
-			// saveXMLBrowseButton
-			// 
-			resources.ApplyResources(this.saveXMLBrowseButton, "saveXMLBrowseButton");
-			this.saveXMLBrowseButton.Name = "saveXMLBrowseButton";
-			this.saveXMLBrowseButton.UseVisualStyleBackColor = true;
-			this.saveXMLBrowseButton.Click += new System.EventHandler(this.saveXMLBrowseButtonClick);
-			// 
-			// textBox1
-			// 
-			resources.ApplyResources(this.textBox1, "textBox1");
-			this.textBox1.Name = "textBox1";
-			this.textBox1.ReadOnly = true;
-			// 
-			// openHWSDialog
-			// 
-			resources.ApplyResources(this.openHWSDialog, "openHWSDialog");
-			// 
-			// saveXMLDialog
-			// 
-			this.saveXMLDialog.DefaultExt = "*.xml";
-			resources.ApplyResources(this.saveXMLDialog, "saveXMLDialog");
-			// 
-			// openXMLDialog
-			// 
-			resources.ApplyResources(this.openXMLDialog, "openXMLDialog");
-			// 
-			// saveHWSDialog
-			// 
-			this.saveHWSDialog.DefaultExt = "*.hws;*.xml";
-			resources.ApplyResources(this.saveHWSDialog, "saveHWSDialog");
+			this.saveDialog.DefaultExt = "*.hws;*.xml";
+			resources.ApplyResources(this.saveDialog, "saveDialog");
 			// 
 			// toolStrip1
 			// 
@@ -930,8 +851,8 @@ namespace HWSEdit
             this.buttonSave,
             this.buttonClose,
             this.toolStripButton4,
-            this.toolStripButton6,
-            this.toolStripButton5});
+            this.toolStripButtonHelp,
+            this.toolStripButtonAbout});
 			resources.ApplyResources(this.toolStrip1, "toolStrip1");
 			this.toolStrip1.Name = "toolStrip1";
 			// 
@@ -963,19 +884,21 @@ namespace HWSEdit
 			this.toolStripButton4.Name = "toolStripButton4";
 			resources.ApplyResources(this.toolStripButton4, "toolStripButton4");
 			// 
-			// toolStripButton6
+			// toolStripButtonHelp
 			// 
-			this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton6.Image = global::HWSEdit.Properties.Resources.question_frame;
-			resources.ApplyResources(this.toolStripButton6, "toolStripButton6");
-			this.toolStripButton6.Name = "toolStripButton6";
+			this.toolStripButtonHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButtonHelp.Image = global::HWSEdit.Properties.Resources.question_frame;
+			resources.ApplyResources(this.toolStripButtonHelp, "toolStripButtonHelp");
+			this.toolStripButtonHelp.Name = "toolStripButtonHelp";
+			this.toolStripButtonHelp.Click += new System.EventHandler(this.toolStripButtonHelp_Click);
 			// 
-			// toolStripButton5
+			// toolStripButtonAbout
 			// 
-			this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton5.Image = global::HWSEdit.Properties.Resources.information_balloon;
-			resources.ApplyResources(this.toolStripButton5, "toolStripButton5");
-			this.toolStripButton5.Name = "toolStripButton5";
+			this.toolStripButtonAbout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButtonAbout.Image = global::HWSEdit.Properties.Resources.information_balloon;
+			resources.ApplyResources(this.toolStripButtonAbout, "toolStripButtonAbout");
+			this.toolStripButtonAbout.Name = "toolStripButtonAbout";
+			this.toolStripButtonAbout.Click += new System.EventHandler(this.toolStripButtonAbout_Click);
 			// 
 			// statusStrip1
 			// 
@@ -991,10 +914,24 @@ namespace HWSEdit
 			this.toolStripStatusLabel.Name = "toolStripStatusLabel";
 			resources.ApplyResources(this.toolStripStatusLabel, "toolStripStatusLabel");
 			// 
-			// upgradeTree1
+			// openXMLConvertDialog
 			// 
-			resources.ApplyResources(this.upgradeTree1, "upgradeTree1");
-			this.upgradeTree1.Name = "upgradeTree1";
+			this.openXMLConvertDialog.DefaultExt = "xml";
+			resources.ApplyResources(this.openXMLConvertDialog, "openXMLConvertDialog");
+			// 
+			// openHWSConvertDialog
+			// 
+			resources.ApplyResources(this.openHWSConvertDialog, "openHWSConvertDialog");
+			// 
+			// saveHWSConvertDialog
+			// 
+			this.saveHWSConvertDialog.DefaultExt = "*.hws;*.xml";
+			resources.ApplyResources(this.saveHWSConvertDialog, "saveHWSConvertDialog");
+			// 
+			// saveXMLConvertDialog
+			// 
+			this.saveXMLConvertDialog.DefaultExt = "*.xml";
+			resources.ApplyResources(this.saveXMLConvertDialog, "saveXMLConvertDialog");
 			// 
 			// MainForm
 			// 
@@ -1037,11 +974,6 @@ namespace HWSEdit
 			((System.ComponentModel.ISupportInitialize)(this.InputPlayerMana)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.InputPlayerMoney)).EndInit();
 			this.tabPage2.ResumeLayout(false);
-			this.tabhws2xml.ResumeLayout(false);
-			this.groupBox2.ResumeLayout(false);
-			this.groupBox2.PerformLayout();
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
 			this.statusStrip1.ResumeLayout(false);
@@ -1052,19 +984,8 @@ namespace HWSEdit
 		}
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.TextBox textBoxCurrentFile;
-		private System.Windows.Forms.SaveFileDialog saveHWSDialog;
-		private System.Windows.Forms.OpenFileDialog openXMLDialog;
-		private System.Windows.Forms.SaveFileDialog saveXMLDialog;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.Button saveXMLBrowseButton;
-		private System.Windows.Forms.Button saveXMLButton;
-		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.Button saveHWSBrowseButton;
-		private System.Windows.Forms.Button saveHWSButton;
-		private System.Windows.Forms.GroupBox groupBox2;
-		private System.Windows.Forms.OpenFileDialog openHWSDialog;
-		private System.Windows.Forms.TabPage tabhws2xml;
+		private System.Windows.Forms.SaveFileDialog saveDialog;
+		private System.Windows.Forms.OpenFileDialog openDialog;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.NumericUpDown InputPlaytime;
@@ -1114,8 +1035,8 @@ namespace HWSEdit
 		private System.Windows.Forms.ToolStripButton buttonSave;
 		private System.Windows.Forms.ToolStripButton buttonClose;
 		private System.Windows.Forms.ToolStripSeparator toolStripButton4;
-		private System.Windows.Forms.ToolStripButton toolStripButton6;
-		private System.Windows.Forms.ToolStripButton toolStripButton5;
+		private System.Windows.Forms.ToolStripButton toolStripButtonHelp;
+		private System.Windows.Forms.ToolStripButton toolStripButtonAbout;
 		private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem convertToXMLToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem toXMLToolStripMenuItem;
@@ -1155,5 +1076,9 @@ namespace HWSEdit
 		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.Button button4;
 		private UpgradeTree upgradeTree1;
+		private System.Windows.Forms.OpenFileDialog openXMLConvertDialog;
+		private System.Windows.Forms.OpenFileDialog openHWSConvertDialog;
+		private System.Windows.Forms.SaveFileDialog saveHWSConvertDialog;
+		private System.Windows.Forms.SaveFileDialog saveXMLConvertDialog;
 	}
 }

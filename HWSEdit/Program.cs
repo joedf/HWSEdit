@@ -16,6 +16,12 @@ namespace HWSEdit
 	/// </summary>
 	internal sealed class Program
 	{
+		public static string AppName = "HWSEdit";
+		public static string AppTitle = AppName + " - Hammerwatch Save Editor";
+		public static string AppURL = "http://hammerwatch.com/forum/index.php?topic=2197.0";
+		public static string AppAuthors = "Joe DF, Drew Burden";
+		public static string RevisionDate = "15/10/2014";
+
 		/// <summary>
 		/// Program entry point.
 		/// </summary>
@@ -25,7 +31,7 @@ namespace HWSEdit
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Form MainInstance = new MainForm();
-			MainInstance.Text = MainForm.AppTitle;
+			MainInstance.Text = Program.AppTitle;
 			Application.Run(MainInstance);
 		}
 		

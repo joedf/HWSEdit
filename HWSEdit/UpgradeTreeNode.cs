@@ -72,7 +72,7 @@ namespace HWSEdit
 			}
 		}
 
-		public void AddLevels(uint levels)
+		public void AddLevels(uint levels, string Description = "")
 		{
 			if (levels == 0) return;
 			if (levels > 5) throw new IndexOutOfRangeException("The maximum number of levels for an upgrade is 5.");
@@ -80,35 +80,35 @@ namespace HWSEdit
 			UpgradeTreeNode[] nodes = new UpgradeTreeNode[levels];
 			if (levels >= 1)
 			{
-				UpgradeTreeNode lvl = new UpgradeTreeNode(Resources.Upgrades.lvl1, UpgradeName + " " + Resources.Upgrades.lvl1);
+				UpgradeTreeNode lvl = new UpgradeTreeNode(Resources.Upgrades.lvl1, UpgradeName + " " + Resources.Upgrades.lvl1, Description);
 				lvl.Tag = "-1";
 				nodes[0] = lvl;
 
 			}
 			if (levels >= 2)
 			{
-				UpgradeTreeNode lvl = new UpgradeTreeNode(Resources.Upgrades.lvl2, UpgradeName + " " + Resources.Upgrades.lvl2);
+				UpgradeTreeNode lvl = new UpgradeTreeNode(Resources.Upgrades.lvl2, UpgradeName + " " + Resources.Upgrades.lvl2, Description);
 				lvl.Tag = "-2";
 				nodes[1] = lvl;
 				nodes[1].Requirements.Add(nodes[0]);
 			}
 			if (levels >= 3)
 			{
-				UpgradeTreeNode lvl = new UpgradeTreeNode(Resources.Upgrades.lvl3, UpgradeName + " " + Resources.Upgrades.lvl3);
+				UpgradeTreeNode lvl = new UpgradeTreeNode(Resources.Upgrades.lvl3, UpgradeName + " " + Resources.Upgrades.lvl3, Description);
 				lvl.Tag = "-3";
 				nodes[2] = lvl;
 				nodes[2].Requirements.Add(nodes[1]);
 			}
 			if (levels >= 4)
 			{
-				UpgradeTreeNode lvl = new UpgradeTreeNode(Resources.Upgrades.lvl4, UpgradeName + " " + Resources.Upgrades.lvl4);
+				UpgradeTreeNode lvl = new UpgradeTreeNode(Resources.Upgrades.lvl4, UpgradeName + " " + Resources.Upgrades.lvl4, Description);
 				lvl.Tag = "-4";
 				nodes[3] = lvl;
 				nodes[3].Requirements.Add(nodes[2]);
 			}
 			if (levels == 5)
 			{
-				UpgradeTreeNode lvl = new UpgradeTreeNode(Resources.Upgrades.lvl5, UpgradeName + " " + Resources.Upgrades.lvl5);
+				UpgradeTreeNode lvl = new UpgradeTreeNode(Resources.Upgrades.lvl5, UpgradeName + " " + Resources.Upgrades.lvl5, Description);
 				lvl.Tag = "-5";
 				nodes[4] = lvl;
 				nodes[4].Requirements.Add(nodes[3]);
