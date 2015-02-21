@@ -16,7 +16,7 @@ using System.Resources;
 [assembly: AssemblyCompany("Joe DF, Drew Burden")]
 [assembly: AssemblyProduct("HWSEdit - Hammerwatch Save Editor")]
 [assembly: AssemblyCopyright("Copyright 2014")]
-[assembly: AssemblyTrademark("Joe DF, Drew Burden")]
+[assembly: AssemblyTrademark("Joe DF & Drew Burden")]
 [assembly: AssemblyCulture("")]
 
 // This sets the default COM visibility of types in the assembly to invisible.

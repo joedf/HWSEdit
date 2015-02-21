@@ -19,8 +19,8 @@ namespace HWSEdit
 		public static string AppName = "HWSEdit";
 		public static string AppTitle = AppName + " - Hammerwatch Save Editor";
 		public static string AppURL = "http://hammerwatch.com/forum/index.php?topic=2197.0";
-		public static string AppAuthors = "Joe DF, Drew Burden";
-		public static string RevisionDate = "15/10/2014";
+		public static string AppAuthors = "Joe DF & Drew Burden";
+		public static string RevisionDate = "20/2/2015";
 
 		/// <summary>
 		/// Program entry point.
