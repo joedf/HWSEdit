@@ -128,65 +128,65 @@
   <data name="splitContainer.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
-  <data name="button2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="buttonCollapseAll.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="buttonCollapseAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>369, 0</value>
+  <data name="buttonCollapseAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>349, 0</value>
   </data>
-  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="buttonCollapseAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+  <data name="buttonCollapseAll.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="button2.Text" xml:space="preserve">
+  <data name="buttonCollapseAll.Text" xml:space="preserve">
     <value>Collapse All</value>
   </data>
-  <data name="&gt;&gt;button2.Name" xml:space="preserve">
-    <value>button2</value>
+  <data name="&gt;&gt;buttonCollapseAll.Name" xml:space="preserve">
+    <value>buttonCollapseAll</value>
   </data>
-  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonCollapseAll.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonCollapseAll.Parent" xml:space="preserve">
     <value>splitContainer.Panel1</value>
   </data>
-  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonCollapseAll.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="button1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="buttonExpandAll.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="buttonExpandAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>288, 0</value>
+  <data name="buttonExpandAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>268, 0</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="buttonExpandAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+  <data name="buttonExpandAll.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
+  <data name="buttonExpandAll.Text" xml:space="preserve">
     <value>Expand All</value>
   </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
+  <data name="&gt;&gt;buttonExpandAll.Name" xml:space="preserve">
+    <value>buttonExpandAll</value>
   </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+  <data name="&gt;&gt;buttonExpandAll.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;buttonExpandAll.Parent" xml:space="preserve">
     <value>splitContainer.Panel1</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;buttonExpandAll.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="tree.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -205,7 +205,7 @@
     <value>tree</value>
   </data>
   <data name="&gt;&gt;tree.Type" xml:space="preserve">
-    <value>HWSEdit.UpgradeTreeView, HWSEdit, Version=1.0.5530.17530, Culture=neutral, PublicKeyToken=null</value>
+    <value>HWSEdit.UpgradeTreeView, HWSEdit, Version=1.0.5530.26943, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tree.Parent" xml:space="preserve">
     <value>splitContainer.Panel1</value>

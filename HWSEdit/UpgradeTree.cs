@@ -75,6 +75,7 @@ namespace HWSEdit
 			splitContainer.Panel2Collapsed = true;
 		}
 
+		#region Event callbacks
 		protected void tree_AfterCheck(object sender, TreeViewEventArgs e)
 		{
 			if (e.Action != TreeViewAction.Unknown)
@@ -87,23 +88,6 @@ namespace HWSEdit
 				}
 			}
 		}
-		protected void checkChildren(TreeNode parent)
-		{
-			foreach (TreeNode child in parent.Nodes)
-			{
-				child.Checked = parent.Checked;
-				checkChildren(child);
-			}
-		}
-		protected void checkParents(TreeNode child)
-		{
-			if (child.Checked && child.Parent != null)
-			{
-				child.Parent.Checked = true;
-				checkParents(child.Parent);
-			}
-		}
-
 		private void upgradeTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
 		{
 			UpgradeTreeNode node = e.Node as UpgradeTreeNode;
@@ -132,5 +116,28 @@ namespace HWSEdit
 		{
 			splitContainer.SplitterDistance = 99999999;
 		}
+
+		private void buttonExpandAll_Click(object sender, EventArgs e) { tree.ExpandAll(); }
+		private void buttonCollapseAll_Click(object sender, EventArgs e) { tree.CollapseAll(); }
+		#endregion
+
+		#region Util
+		protected void checkChildren(TreeNode parent)
+		{
+			foreach (TreeNode child in parent.Nodes)
+			{
+				child.Checked = parent.Checked;
+				checkChildren(child);
+			}
+		}
+		protected void checkParents(TreeNode child)
+		{
+			if (child.Checked && child.Parent != null)
+			{
+				child.Parent.Checked = true;
+				checkParents(child.Parent);
+			}
+		}
+		#endregion
 	}
 }

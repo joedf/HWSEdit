@@ -30,8 +30,8 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpgradeTree));
 			this.splitContainer = new System.Windows.Forms.SplitContainer();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
+			this.buttonCollapseAll = new System.Windows.Forms.Button();
+			this.buttonExpandAll = new System.Windows.Forms.Button();
 			this.panel = new System.Windows.Forms.Panel();
 			this.button3 = new System.Windows.Forms.Button();
 			this.upgradeDescription = new System.Windows.Forms.Label();
@@ -51,8 +51,8 @@
 			// 
 			// splitContainer.Panel1
 			// 
-			this.splitContainer.Panel1.Controls.Add(this.button2);
-			this.splitContainer.Panel1.Controls.Add(this.button1);
+			this.splitContainer.Panel1.Controls.Add(this.buttonCollapseAll);
+			this.splitContainer.Panel1.Controls.Add(this.buttonExpandAll);
 			this.splitContainer.Panel1.Controls.Add(this.tree);
 			// 
 			// splitContainer.Panel2
@@ -60,17 +60,19 @@
 			this.splitContainer.Panel2.BackColor = System.Drawing.Color.Transparent;
 			this.splitContainer.Panel2.Controls.Add(this.panel);
 			// 
-			// button2
+			// buttonCollapseAll
 			// 
-			resources.ApplyResources(this.button2, "button2");
-			this.button2.Name = "button2";
-			this.button2.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.buttonCollapseAll, "buttonCollapseAll");
+			this.buttonCollapseAll.Name = "buttonCollapseAll";
+			this.buttonCollapseAll.UseVisualStyleBackColor = true;
+			this.buttonCollapseAll.Click += new System.EventHandler(this.buttonCollapseAll_Click);
 			// 
-			// button1
+			// buttonExpandAll
 			// 
-			resources.ApplyResources(this.button1, "button1");
-			this.button1.Name = "button1";
-			this.button1.UseVisualStyleBackColor = true;
+			resources.ApplyResources(this.buttonExpandAll, "buttonExpandAll");
+			this.buttonExpandAll.Name = "buttonExpandAll";
+			this.buttonExpandAll.UseVisualStyleBackColor = true;
+			this.buttonExpandAll.Click += new System.EventHandler(this.buttonExpandAll_Click);
 			// 
 			// panel
 			// 
@@ -134,8 +136,8 @@
 		private System.Windows.Forms.Label upgradeName;
 		private UpgradeTreeView tree;
 		private System.Windows.Forms.Label upgradeDescription;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button buttonExpandAll;
+		private System.Windows.Forms.Button buttonCollapseAll;
 		private System.Windows.Forms.Button button3;
 
 	}

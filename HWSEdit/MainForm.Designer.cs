@@ -117,6 +117,7 @@ namespace HWSEdit
 			this.InputPlayerPotion = new System.Windows.Forms.ComboBox();
 			this.InputPlayerMoney = new System.Windows.Forms.NumericUpDown();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.upgradeTree1 = new HWSEdit.UpgradeTree();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
 			this.label21 = new System.Windows.Forms.Label();
@@ -129,6 +130,8 @@ namespace HWSEdit
 			this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
 			this.label26 = new System.Windows.Forms.Label();
 			this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+			this.label19 = new System.Windows.Forms.Label();
+			this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
 			this.button3 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
@@ -147,9 +150,6 @@ namespace HWSEdit
 			this.openHWSConvertDialog = new System.Windows.Forms.OpenFileDialog();
 			this.saveHWSConvertDialog = new System.Windows.Forms.SaveFileDialog();
 			this.saveXMLConvertDialog = new System.Windows.Forms.SaveFileDialog();
-			this.label19 = new System.Windows.Forms.Label();
-			this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-			this.upgradeTree1 = new HWSEdit.UpgradeTree();
 			this.menuStrip1.SuspendLayout();
 			this.tabPageSelector.SuspendLayout();
 			this.tabGeneral.SuspendLayout();
@@ -183,9 +183,9 @@ namespace HWSEdit
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
 			this.toolStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
@@ -832,6 +832,11 @@ namespace HWSEdit
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
+			// upgradeTree1
+			// 
+			resources.ApplyResources(this.upgradeTree1, "upgradeTree1");
+			this.upgradeTree1.Name = "upgradeTree1";
+			// 
 			// tabPage3
 			// 
 			this.tabPage3.Controls.Add(this.tableLayoutPanel4);
@@ -930,6 +935,21 @@ namespace HWSEdit
             0,
             0});
 			this.numericUpDown5.Name = "numericUpDown5";
+			// 
+			// label19
+			// 
+			resources.ApplyResources(this.label19, "label19");
+			this.label19.Name = "label19";
+			// 
+			// numericUpDown6
+			// 
+			resources.ApplyResources(this.numericUpDown6, "numericUpDown6");
+			this.numericUpDown6.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+			this.numericUpDown6.Name = "numericUpDown6";
 			// 
 			// button3
 			// 
@@ -1047,26 +1067,6 @@ namespace HWSEdit
 			this.saveXMLConvertDialog.DefaultExt = "*.xml";
 			resources.ApplyResources(this.saveXMLConvertDialog, "saveXMLConvertDialog");
 			// 
-			// label19
-			// 
-			resources.ApplyResources(this.label19, "label19");
-			this.label19.Name = "label19";
-			// 
-			// numericUpDown6
-			// 
-			resources.ApplyResources(this.numericUpDown6, "numericUpDown6");
-			this.numericUpDown6.Maximum = new decimal(new int[] {
-            2147483647,
-            0,
-            0,
-            0});
-			this.numericUpDown6.Name = "numericUpDown6";
-			// 
-			// upgradeTree1
-			// 
-			resources.ApplyResources(this.upgradeTree1, "upgradeTree1");
-			this.upgradeTree1.Name = "upgradeTree1";
-			// 
 			// MainForm
 			// 
 			resources.ApplyResources(this, "$this");
@@ -1115,11 +1115,11 @@ namespace HWSEdit
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

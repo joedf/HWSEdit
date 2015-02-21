@@ -50,9 +50,6 @@ namespace HWSEdit
 		
 		public MainForm()
 		{
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
 			InitializeComponent();
 
 			this.classImageList.Images.SetKeyName(System.Convert.ToInt16(Resources.ClassIds.class_paladin_id), Resources.Classes.class_paladin_uname);
