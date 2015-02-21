@@ -117,7 +117,18 @@ namespace HWSEdit
 			this.InputPlayerPotion = new System.Windows.Forms.ComboBox();
 			this.InputPlayerMoney = new System.Windows.Forms.NumericUpDown();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
-			this.upgradeTree1 = new HWSEdit.UpgradeTree();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+			this.label21 = new System.Windows.Forms.Label();
+			this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+			this.label22 = new System.Windows.Forms.Label();
+			this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+			this.label23 = new System.Windows.Forms.Label();
+			this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+			this.label24 = new System.Windows.Forms.Label();
+			this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+			this.label26 = new System.Windows.Forms.Label();
+			this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
 			this.button3 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
@@ -136,6 +147,9 @@ namespace HWSEdit
 			this.openHWSConvertDialog = new System.Windows.Forms.OpenFileDialog();
 			this.saveHWSConvertDialog = new System.Windows.Forms.SaveFileDialog();
 			this.saveXMLConvertDialog = new System.Windows.Forms.SaveFileDialog();
+			this.label19 = new System.Windows.Forms.Label();
+			this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+			this.upgradeTree1 = new HWSEdit.UpgradeTree();
 			this.menuStrip1.SuspendLayout();
 			this.tabPageSelector.SuspendLayout();
 			this.tabGeneral.SuspendLayout();
@@ -162,8 +176,16 @@ namespace HWSEdit
 			((System.ComponentModel.ISupportInitialize)(this.InputPlayerMana)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.InputPlayerMoney)).BeginInit();
 			this.tabPage2.SuspendLayout();
+			this.tabPage3.SuspendLayout();
+			this.tableLayoutPanel4.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
 			this.toolStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
@@ -648,6 +670,7 @@ namespace HWSEdit
 			// 
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Controls.Add(this.tabPage3);
 			resources.ApplyResources(this.tabControl1, "tabControl1");
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
@@ -787,10 +810,7 @@ namespace HWSEdit
             resources.GetString("InputPlayerPotion.Items"),
             resources.GetString("InputPlayerPotion.Items1"),
             resources.GetString("InputPlayerPotion.Items2"),
-            resources.GetString("InputPlayerPotion.Items3"),
-            resources.GetString("InputPlayerPotion.Items4"),
-            resources.GetString("InputPlayerPotion.Items5"),
-            resources.GetString("InputPlayerPotion.Items6")});
+            resources.GetString("InputPlayerPotion.Items3")});
 			this.InputPlayerPotion.Name = "InputPlayerPotion";
 			this.InputPlayerPotion.SelectedIndexChanged += new System.EventHandler(this.InputPlayerPotion_SelectedIndexChanged);
 			// 
@@ -812,10 +832,104 @@ namespace HWSEdit
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.UseVisualStyleBackColor = true;
 			// 
-			// upgradeTree1
+			// tabPage3
 			// 
-			resources.ApplyResources(this.upgradeTree1, "upgradeTree1");
-			this.upgradeTree1.Name = "upgradeTree1";
+			this.tabPage3.Controls.Add(this.tableLayoutPanel4);
+			resources.ApplyResources(this.tabPage3, "tabPage3");
+			this.tabPage3.Name = "tabPage3";
+			this.tabPage3.UseVisualStyleBackColor = true;
+			// 
+			// tableLayoutPanel4
+			// 
+			resources.ApplyResources(this.tableLayoutPanel4, "tableLayoutPanel4");
+			this.tableLayoutPanel4.Controls.Add(this.label21, 0, 0);
+			this.tableLayoutPanel4.Controls.Add(this.numericUpDown1, 1, 0);
+			this.tableLayoutPanel4.Controls.Add(this.label22, 0, 1);
+			this.tableLayoutPanel4.Controls.Add(this.numericUpDown2, 1, 1);
+			this.tableLayoutPanel4.Controls.Add(this.label23, 0, 2);
+			this.tableLayoutPanel4.Controls.Add(this.numericUpDown3, 1, 2);
+			this.tableLayoutPanel4.Controls.Add(this.label24, 0, 3);
+			this.tableLayoutPanel4.Controls.Add(this.numericUpDown4, 1, 3);
+			this.tableLayoutPanel4.Controls.Add(this.label26, 0, 4);
+			this.tableLayoutPanel4.Controls.Add(this.numericUpDown5, 1, 4);
+			this.tableLayoutPanel4.Controls.Add(this.label19, 0, 5);
+			this.tableLayoutPanel4.Controls.Add(this.numericUpDown6, 1, 5);
+			this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+			// 
+			// label21
+			// 
+			resources.ApplyResources(this.label21, "label21");
+			this.label21.Name = "label21";
+			// 
+			// numericUpDown1
+			// 
+			resources.ApplyResources(this.numericUpDown1, "numericUpDown1");
+			this.numericUpDown1.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+			this.numericUpDown1.Name = "numericUpDown1";
+			// 
+			// label22
+			// 
+			resources.ApplyResources(this.label22, "label22");
+			this.label22.Name = "label22";
+			// 
+			// numericUpDown2
+			// 
+			resources.ApplyResources(this.numericUpDown2, "numericUpDown2");
+			this.numericUpDown2.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+			this.numericUpDown2.Name = "numericUpDown2";
+			// 
+			// label23
+			// 
+			resources.ApplyResources(this.label23, "label23");
+			this.label23.Name = "label23";
+			// 
+			// numericUpDown3
+			// 
+			resources.ApplyResources(this.numericUpDown3, "numericUpDown3");
+			this.numericUpDown3.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+			this.numericUpDown3.Name = "numericUpDown3";
+			// 
+			// label24
+			// 
+			resources.ApplyResources(this.label24, "label24");
+			this.label24.Name = "label24";
+			// 
+			// numericUpDown4
+			// 
+			resources.ApplyResources(this.numericUpDown4, "numericUpDown4");
+			this.numericUpDown4.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+			this.numericUpDown4.Name = "numericUpDown4";
+			// 
+			// label26
+			// 
+			resources.ApplyResources(this.label26, "label26");
+			this.label26.Name = "label26";
+			// 
+			// numericUpDown5
+			// 
+			resources.ApplyResources(this.numericUpDown5, "numericUpDown5");
+			this.numericUpDown5.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+			this.numericUpDown5.Name = "numericUpDown5";
 			// 
 			// button3
 			// 
@@ -933,6 +1047,26 @@ namespace HWSEdit
 			this.saveXMLConvertDialog.DefaultExt = "*.xml";
 			resources.ApplyResources(this.saveXMLConvertDialog, "saveXMLConvertDialog");
 			// 
+			// label19
+			// 
+			resources.ApplyResources(this.label19, "label19");
+			this.label19.Name = "label19";
+			// 
+			// numericUpDown6
+			// 
+			resources.ApplyResources(this.numericUpDown6, "numericUpDown6");
+			this.numericUpDown6.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+			this.numericUpDown6.Name = "numericUpDown6";
+			// 
+			// upgradeTree1
+			// 
+			resources.ApplyResources(this.upgradeTree1, "upgradeTree1");
+			this.upgradeTree1.Name = "upgradeTree1";
+			// 
 			// MainForm
 			// 
 			resources.ApplyResources(this, "$this");
@@ -974,10 +1108,18 @@ namespace HWSEdit
 			((System.ComponentModel.ISupportInitialize)(this.InputPlayerMana)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.InputPlayerMoney)).EndInit();
 			this.tabPage2.ResumeLayout(false);
+			this.tabPage3.ResumeLayout(false);
+			this.tableLayoutPanel4.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1080,5 +1222,19 @@ namespace HWSEdit
 		private System.Windows.Forms.OpenFileDialog openHWSConvertDialog;
 		private System.Windows.Forms.SaveFileDialog saveHWSConvertDialog;
 		private System.Windows.Forms.SaveFileDialog saveXMLConvertDialog;
+		private System.Windows.Forms.TabPage tabPage3;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+		private System.Windows.Forms.Label label21;
+		private System.Windows.Forms.NumericUpDown numericUpDown1;
+		private System.Windows.Forms.Label label22;
+		private System.Windows.Forms.NumericUpDown numericUpDown2;
+		private System.Windows.Forms.Label label23;
+		private System.Windows.Forms.NumericUpDown numericUpDown3;
+		private System.Windows.Forms.Label label24;
+		private System.Windows.Forms.NumericUpDown numericUpDown4;
+		private System.Windows.Forms.Label label26;
+		private System.Windows.Forms.NumericUpDown numericUpDown5;
+		private System.Windows.Forms.Label label19;
+		private System.Windows.Forms.NumericUpDown numericUpDown6;
 	}
 }

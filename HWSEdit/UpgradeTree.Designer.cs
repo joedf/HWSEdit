@@ -32,11 +32,11 @@
 			this.splitContainer = new System.Windows.Forms.SplitContainer();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
-			this.tree = new HWSEdit.UpgradeTreeView();
 			this.panel = new System.Windows.Forms.Panel();
 			this.button3 = new System.Windows.Forms.Button();
 			this.upgradeDescription = new System.Windows.Forms.Label();
 			this.upgradeName = new System.Windows.Forms.Label();
+			this.tree = new HWSEdit.UpgradeTreeView();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
 			this.splitContainer.Panel1.SuspendLayout();
 			this.splitContainer.Panel2.SuspendLayout();
@@ -72,17 +72,6 @@
 			this.button1.Name = "button1";
 			this.button1.UseVisualStyleBackColor = true;
 			// 
-			// tree
-			// 
-			resources.ApplyResources(this.tree, "tree");
-			this.tree.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.tree.CheckBoxes = true;
-			this.tree.Class = -1;
-			this.tree.HideSelection = false;
-			this.tree.Name = "tree";
-			this.tree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.upgradeTreeView1_AfterSelect);
-			this.tree.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tree_MouseUp);
-			// 
 			// panel
 			// 
 			resources.ApplyResources(this.panel, "panel");
@@ -110,6 +99,17 @@
 			// 
 			resources.ApplyResources(this.upgradeName, "upgradeName");
 			this.upgradeName.Name = "upgradeName";
+			// 
+			// tree
+			// 
+			resources.ApplyResources(this.tree, "tree");
+			this.tree.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.tree.CheckBoxes = true;
+			this.tree.Class = -1;
+			this.tree.HideSelection = false;
+			this.tree.Name = "tree";
+			this.tree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.upgradeTreeView1_AfterSelect);
+			this.tree.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tree_MouseUp);
 			// 
 			// UpgradeTree
 			// 

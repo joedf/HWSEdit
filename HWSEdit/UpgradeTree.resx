@@ -131,6 +131,9 @@
   <data name="button2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
+  <data name="button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
     <value>369, 0</value>
   </data>
@@ -158,6 +161,9 @@
   </data>
   <data name="button1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
+  </data>
+  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>288, 0</value>
@@ -187,10 +193,10 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="tree.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 29</value>
+    <value>0, 3</value>
   </data>
   <data name="tree.Size" type="System.Drawing.Size, System.Drawing">
-    <value>444, 106</value>
+    <value>444, 132</value>
   </data>
   <data name="tree.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -199,7 +205,7 @@
     <value>tree</value>
   </data>
   <data name="&gt;&gt;tree.Type" xml:space="preserve">
-    <value>HWSEdit.UpgradeTreeView, HWSEdit, Version=1.0.5529.39662, Culture=neutral, PublicKeyToken=null</value>
+    <value>HWSEdit.UpgradeTreeView, HWSEdit, Version=1.0.5530.17530, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;tree.Parent" xml:space="preserve">
     <value>splitContainer.Panel1</value>
@@ -234,6 +240,9 @@
   <data name="button3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 6.25pt</value>
   </data>
+  <data name="button3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
     <value>426, -1</value>
   </data>
@@ -260,6 +269,9 @@
   </data>
   <data name="upgradeDescription.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="upgradeDescription.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="upgradeDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 29</value>
@@ -296,6 +308,9 @@
   </data>
   <data name="upgradeName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="upgradeName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="upgradeName.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 8</value>

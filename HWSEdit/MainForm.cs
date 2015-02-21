@@ -507,7 +507,7 @@ namespace HWSEdit
 					tabGeneral.Enabled = true;
 					tabModifiers.Enabled = true;
 					tabPlayers.Enabled = true;
-					tabPageSelector.SelectedIndex = 0;
+					//tabPageSelector.SelectedIndex = 0;
 
 					ValidifyModifiersCheckBoxes();
 
