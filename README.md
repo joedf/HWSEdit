@@ -3,6 +3,9 @@ HWSEdit
   
 Hammerwatch Save Editor  
   
+![screenshot](screenshots/hXPtCmO.png)
+  
+### old screenshots
 ![Screenshot01](screenshots/2014-10-14_213241.png)
 ![Screenshot02](screenshots/2014-10-14_213259.png)
 ![Screenshot03](screenshots/2014-10-14_215838.png)
