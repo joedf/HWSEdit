@@ -120,6 +120,9 @@
   <data name="class_paladin_id" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="class_sorcerer_id" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="class_priest_id" xml:space="preserve">
     <value>5</value>
   </data>

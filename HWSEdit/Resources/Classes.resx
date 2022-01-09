@@ -135,4 +135,7 @@
   <data name="class_wizard_uname" xml:space="preserve">
     <value>Wizard</value>
   </data>
+  <data name="class_sorcerer_uname" xml:space="preserve">
+    <value>Sorcerer</value>
+  </data>
 </root>
