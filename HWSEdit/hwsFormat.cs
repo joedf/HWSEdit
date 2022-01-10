@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 // using System.Drawing;
 using System.Globalization;
@@ -8,7 +8,7 @@ using System.Xml;
 using System.Xml.Linq;
 using OpenTK;
 
-// Code from Myrad / hammerwatch
+// Code from Myran / hammerwatch
 // See http://hammerwatch.com/forum/index.php?topic=2197.msg5313#msg5313
 
 namespace hwsFormat

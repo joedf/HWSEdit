@@ -58,6 +58,7 @@ namespace HWSEdit
 			this.classImageList.Images.SetKeyName(System.Convert.ToInt16(Resources.ClassIds.class_warlock_id), Resources.Classes.class_warlock_uname);
 			this.classImageList.Images.SetKeyName(System.Convert.ToInt16(Resources.ClassIds.class_thief_id), Resources.Classes.class_thief_uname);
 			this.classImageList.Images.SetKeyName(System.Convert.ToInt16(Resources.ClassIds.class_priest_id), Resources.Classes.class_priest_uname);
+			this.classImageList.Images.SetKeyName(System.Convert.ToInt16(Resources.ClassIds.class_sorcerer_id), Resources.Classes.class_sorcerer_uname);
 
 			// Add classes
 			Dictionary<short, string> class_ids = new Dictionary<short, string>();
@@ -67,6 +68,7 @@ namespace HWSEdit
 			class_ids.Add(System.Convert.ToInt16(Resources.ClassIds.class_wizard_id), Resources.Classes.class_wizard_uname);
 			class_ids.Add(System.Convert.ToInt16(Resources.ClassIds.class_ranger_id), Resources.Classes.class_ranger_uname);
 			class_ids.Add(System.Convert.ToInt16(Resources.ClassIds.class_priest_id), Resources.Classes.class_priest_uname);
+			class_ids.Add(System.Convert.ToInt16(Resources.ClassIds.class_sorcerer_id), Resources.Classes.class_sorcerer_uname);
 			foreach (KeyValuePair<short, string> tuple in class_ids.OrderBy(id => id.Key))
 			{
 				this.InputPlayerClass.Items.Add(tuple.Value);
